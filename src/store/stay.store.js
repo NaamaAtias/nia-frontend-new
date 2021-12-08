@@ -7,7 +7,7 @@ export const stayStore = {
         stays: [],
         currStayReviews: [],
         currPrice: {},
-        filterBy: { type: '', city: '', price: '' }, //minPrice: '', maxPrice: ''
+        filterBy: { type: '', city: '', price: '' },
     },
     getters: {
         currStay(state) {
