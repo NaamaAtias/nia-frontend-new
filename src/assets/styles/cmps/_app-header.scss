@@ -1,0 +1,191 @@
+@media (max-width: 500px){
+    a.hover{
+        display: none;
+    }
+}
+
+@media (max-width: 760px){
+    header { 
+        font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+        color: $clr6;
+        font-weight: 400;
+        padding-bottom: 1rem;
+        position: fixed;
+        width: 100%;
+        img{
+            height: 30px;    
+        }    
+        .header-right{
+            align-self: center;
+        }
+        nav {
+            display: flex;
+            flex-direction: row;
+            font-size: 14px;
+                   
+            .logo {
+            font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+            font-size: 14px;
+            display: flex;
+            flex-direction: row;
+            align-self: center;
+            padding: 4px;
+            .logo-txt{
+            align-self: center;
+            padding-left: 2px;
+            padding-right: 10px;
+
+            }
+            }    
+            a{
+                text-decoration: none;
+                font-size: 14px;
+                padding: 22px;
+                font-weight: 600;
+                letter-spacing: 0.04em;                
+            }
+             
+        }      
+        nav .active {
+            color: $clr1;
+        }        
+    }
+    .login-btn{
+        display: flex;
+        flex-direction: row;
+        color: $clr6;
+        position: fixed;
+        right: 0;
+        top: 0;
+        .bar{
+            padding: 0.2em;
+        }
+        .user-img{
+            display: none;
+        }
+    }
+}
+
+@media (min-width: 760px){
+    header { 
+        font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+        color: $clr6;
+        font-weight: 600;
+        padding-bottom: 1rem;
+        position: fixed;
+        width: 100%;
+        z-index: 10;
+        img{
+            height: 30px;
+    
+        }
+    
+        .loggedin-user {
+            background-color: $clr1;
+            padding: 2px 8px;
+            border-radius: 1em;
+            align-self: flex-end;
+            color: $clr6;
+            span{
+                background-color: $clr1;
+                padding: 4px;
+                margin: 10px;
+                border-radius: 50%;
+            }
+        }
+        nav {
+            align-self: center;
+            align-items: center;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            font-size: 1.3em;
+            padding: 0.7em 0;
+            margin: 0;
+                    
+            .logo {
+            font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+            font-size: 20px;
+            display: flex;
+            flex-direction: row;
+            align-self: center;
+            padding: 0;
+            
+            .logo-txt{
+            align-self: center;
+            padding-left: 8px ;
+            }
+            }
+    
+            a{
+                text-decoration: none;
+                font-size: 14px;
+                padding: 0.8rem;
+                font-weight: 600;
+                letter-spacing: 0.04em;
+                align-self: center;
+            }
+    
+            .header-right{
+                display: flex;
+                flex-direction: row;
+                margin: 0;
+                align-self: center;
+                justify-self: center;
+    
+                .hover{
+                align-self: center;
+                padding: 10px;
+                }
+    
+                .hover:hover{
+                    color: $clr5;
+                    border-radius: 22px;
+                    background-color: rgba(128, 128, 128, 0.247);
+                    text-decoration: none;
+                    padding: 10px;
+                }
+            }     
+        }
+    
+        .login-btn{
+            display: flex;
+            flex-direction: row;
+            background-color: $clr6;
+            border-radius: 50px;
+            color: $clr4;
+            padding: 0.2em;
+            margin: 0;
+            margin-left: 1rem;
+            border: 1px solid $clr3;
+            cursor: pointer;
+    
+    
+            .bar{
+                align-self: center;
+                padding: 0.2em;
+                margin-left: 0.6em;
+                justify-content: space-between;        }
+    
+            .user-img{
+                height: 31px;
+            }
+    
+            img{
+                border-radius: 50px;
+                align-self: center;
+                justify-self: center;
+                margin-bottom: 0;
+                // padding: 0.1em;
+                margin-left: 0.6em;
+                margin-right: 0.2em;
+            }
+        }
+    
+        nav .active {
+            color: $clr1;
+        }
+        
+    }
+}
+

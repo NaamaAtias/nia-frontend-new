@@ -1,0 +1,13 @@
+.price-filter-container{
+ position: fixed;
+ top: 15%;
+ left: 10%;
+ z-index: 10;
+ width: 50%;
+ margin: auto;
+ background-color:#fff;
+ padding: 50px;
+ .irs-handle{
+opacity: 70%;
+ }
+}

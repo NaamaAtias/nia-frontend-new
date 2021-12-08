@@ -1,0 +1,155 @@
+.stay-order-form {
+    position: sticky;
+    top: 120px;
+    right: 5%;
+    height:fit-content;
+    // height: 250.800px;
+    width: 342.600px;    
+    text-align: center;
+    padding:24px;
+    border: 1px rgb(221, 221, 221) solid;
+    border-radius: 12px;
+    box-shadow: rgb(0 0 0 / 12%) 0px 6px 16px;
+    background-color: white;
+
+    .order-box {
+        justify-content: flex-end;
+        height: 100%;
+        width: 100%;
+        min-width: 200px;
+
+        .order-input {
+            width: 95%;
+            text-align: center;
+            // text-overflow: ellipsis;
+            
+            .order-dates {
+                width:100%;
+                text-align: center;
+                align-items: center;
+                justify-content: space-between;
+                text-align: center;
+                // border-top-left-radius: 13px;
+                // border-top-right-radius: 13px;
+
+                .check-in-order {
+                    border: 1px $clr4 solid;
+                    border-top-left-radius: 13px;
+                    width: 50%;
+                    justify-content: flex-start;
+
+                }
+                .check-out-order {
+                    border: 1px $clr4 solid;
+                    border-top-right-radius: 13px;
+                    width: 50%;
+
+                }
+        
+            }
+
+            .order-guests {
+                border: 1px $clr4 solid;
+                border-bottom-left-radius: 13px;
+                border-bottom-right-radius: 13px;
+                width: 100%;
+                padding: 26px 36px 10px 12px !important;
+
+                input {
+                    border-color: transparent ;
+
+                }
+            }
+
+            label {
+                padding: 10px 12px;
+                cursor: pointer;
+                text-transform: uppercase;
+                font-size: 10px;
+                line-height: 12px;
+                font-weight: 800;
+                letter-spacing: 0.1px;
+                font-family: airbnb-book;
+            }
+        }
+    }
+}
+
+// .sticky-div {
+//     position: sticky;
+//     top: 120px;
+//     align-items: end;
+// }
+
+.order-btn {
+    --mouse-x: 50;
+    --mouse-y: 50;
+    padding: 20px 30px;
+    min-width: 200px;
+    width: 100%;
+    background-size: 200% 200%;
+    background-position: calc((100 - var(--mouse-x, 0)) * 1%) calc((100 - var(--mouse-y, 0)) * 1%);
+    background-image: radial-gradient(circle at center center, rgb(255, 56, 92) 0%, rgb(230, 30, 77) 27.5%, rgb(227, 28, 95) 40%, rgb(215, 4, 102) 57.5%, rgb(189, 30, 89) 75%, rgb(189, 30, 89) 100%) !important;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    margin-top: 16px;
+}
+
+
+
+// input {
+//     font-family: airbnb-book;
+//     text-align: end;
+// }
+
+.order-header {
+    font-family: airbnb-book;
+    color: $clr7;
+
+    .price-span {
+        font-size: 22px;
+        font-weight: 600;
+    }
+
+    .rate-span {        
+        .reviews-span {
+            color: $clr4;
+            padding-left: 2px;
+            text-decoration: underline;        }
+    }
+}
+
+.price-details {
+    font-family: airbnb-book;
+    letter-spacing: 0.02em;
+    // justify-content: space-between;
+
+    .prices-display-left {
+        width: 50%;
+        text-align: start;
+        text-decoration: underline;
+        line-height: 30px;
+    }
+    .prices-display-right {
+        width: 50%;
+        text-align: end;
+        line-height: 30px;
+    }
+}
+.total-price-display {
+    justify-content: space-between;
+    padding: 10px;
+    font-weight: 800;
+}
+// .display-left {
+//     text-align: start;
+// }
+// .display-right {
+//     text-align: end;
+// }

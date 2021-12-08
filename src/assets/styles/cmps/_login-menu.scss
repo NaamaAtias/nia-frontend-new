@@ -1,0 +1,35 @@
+.login-menu{
+    color: $clr5;
+    background-color: $clr6;
+    border-radius: 10px;
+    position: fixed;
+    right: 50px;
+    top: 65px;
+}
+
+.login-menu-btn{
+    justify-content: space-between;
+    padding-right: 30px;
+    padding-left: 30px;
+    padding: 10px;
+    a{
+        text-decoration: none;
+        color: $clr5;
+        font-size: 14px;
+        font-weight: 300;
+    }
+
+    &.bold a{
+        font-weight: 600;
+    }
+    &.border{
+        border-top: 1px solid $clr3;
+    }    
+}
+
+.login-menu-btn:hover{
+    color: $clr5;
+    background-color: rgba(128, 128, 128, 0.247);
+    text-decoration: none;
+    width: 100%;
+}

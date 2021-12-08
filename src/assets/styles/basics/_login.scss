@@ -1,0 +1,76 @@
+.screen{
+ background: rgba(128, 128, 128, 0.061);
+ height: 1000px;
+}
+
+@media (max-width: 740px){
+    .login-main-container{
+        background-color: $clr6;
+        top: 10%;
+        position: absolute;
+        margin: 0 auto;
+        right:50%;
+        transform: translateX(50%);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 2px 2px 2px $clr3;
+        padding: 5px;
+        width: 70%;
+        h2{
+            font-size: 20px;
+        }
+        input{
+            border: 1px solid $clr3;
+            margin: 5px;
+            padding: 3px;
+            width: 60%;
+        }
+        button{
+            text-decoration: none;
+            box-shadow: 1px 1px 1px $clr3;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 3px;
+            background-color: $clr1;
+            color: $clr6;
+            width: 60%;
+        }
+    }
+    }
+
+@media (min-width: 740px){
+.login-main-container{
+    background-color: $clr6;
+    top: 20%;
+    position: absolute;
+    margin: 0 auto;
+    right:50%;
+    transform: translateX(50%);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 2px 2px $clr3;
+    padding: 5px;
+    width: 30%;
+    h2{
+        font-size: 20px;
+    }
+    input{
+        border: 1px solid $clr3;
+        margin: 5px;
+        padding: 3px;
+        width: 60%;
+    }
+    button{
+        text-decoration: none;
+        box-shadow: 1px 1px 1px $clr3;
+        cursor: pointer;
+        font-size: 16px;
+        border-radius: 3px;
+        background-color: $clr1;
+        color: $clr6;
+        width: 60%;
+    }
+}
+}
