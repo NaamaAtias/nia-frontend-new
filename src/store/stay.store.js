@@ -160,6 +160,24 @@ export const stayStore = {
         clearFilter({ commit, dispatch }) {
             commit({ type: 'clearFilter' })
             dispatch({ type: 'loadStays' })
+        },
+        async getRateById({dispatch}, {stayId }){
+            try {
+                var stay = await stayService.getById(stayId);
+                var reviews = stay.reviews;
+                let sum = reviews.reduce((sum, review) => {
+                    sum += review.rate;
+                    return sum;
+                }, 0);
+                return { 
+                    rate: (sum / reviews.length).toFixed(2),
+                    reviews: reviews.length
+                }
+            } catch (err) {
+                console.log('stayStore: Error in removeStay', err);
+                throw err;
+            }   
+
         }
     },
 };

@@ -158,6 +158,8 @@
                 font-size: 20px;
                 text-align: left;
                 margin: 0;
+                padding: 10px;
+                line-height: 20px;               
             }
             } 
     
@@ -173,7 +175,11 @@
     }
 }
 
-
+.reviewsInTopRated{
+    color: $clr4;
+    font-weight: 300;
+    margin-left: 3px;
+}
 
 .hidden{
     display: none;

@@ -112,7 +112,7 @@
                   >
                     <option value="apartment">apartment</option>
                     <option value="castle">castle</option>
-                    <option value="houseboat">houseboat</option>
+                    <option value="houseboat">eboat</option>
                     <option value="luxe">luxe</option>
                   </select>
                 </div>
