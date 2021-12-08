@@ -9,6 +9,12 @@
         :loop="false"
       >
         <el-carousel-item v-for="imgUrl in stay.imgUrls" :key="imgUrl">
+           <span class="heart-favorite" @click.stop="isFavorite=!isFavorite"
+          ><i
+            class="fas fa-heart"
+            :style="heartColor"
+          ></i
+        ></span>
           <img :src="imgUrl" alt="" ref="img" />
         </el-carousel-item>
       </el-carousel>
@@ -56,6 +62,7 @@ export default {
       isWide: true,
       // isMid: false,
       isNarrow: true,
+      isFavorite: false
     };
   },
   created() {
@@ -105,6 +112,9 @@ export default {
     // fullPricePerNight() {
     //   return this.$store.getters.fullPricePerNight
     // }
+    heartColor() {
+      return this.isFavorite ? "color: #ff375c; opacity: 100%" : "color: #222222; opacity: 70%";
+    }
   },
   watch: {},
 };

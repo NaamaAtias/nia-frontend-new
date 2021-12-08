@@ -23,6 +23,9 @@ export default {
     stayList,
     PriceFilter,
   },
+  created() {
+        this.$store.dispatch({ type: "loadStays" });
+  },
   computed: {
     isLoading() {
       return this.$store.getters.isLoading;

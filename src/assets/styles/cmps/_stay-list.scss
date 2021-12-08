@@ -5,7 +5,7 @@
     gap:20px;
     grid-auto-flow: dense;
     justify-content: center;
-    margin: 30px 0;
+    margin: 70px 0;
     // padding: 10px;
     margin-top: 150px;
 
@@ -99,4 +99,13 @@
         padding-right: 3px;
 
      }
+}
+.heart-favorite {
+    z-index: 2;
+    position: absolute;
+    top:5%;
+    right:5%;
+    // opacity: 70%;
+    font-size: 20px;
+    text-shadow: 1px 1px 0 $clr6, 1px -1px 0 $clr6, -1px 1px 0 $clr6, -1px -1px 0 $clr6, 1px 0px 0 $clr6, 0px 1px 0 $clr6, -1px 0px 0 $clr6, 0px -1px 0 $clr6;
 }

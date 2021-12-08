@@ -61,16 +61,9 @@
           />
         </div>
       </div>
+      <hr>
       <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero aliquid distinctio ratione itaque at fugit fuga et laboriosam laudantium cupiditate sequi, alias quia deleniti in hic non! Voluptas, laudantium sapiente.</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero aliquid distinctio ratione itaque at fugit fuga et laboriosam laudantium cupiditate sequi, alias quia deleniti in hic non! Voluptas, laudantium sapiente.</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero aliquid distinctio ratione itaque at fugit fuga et laboriosam laudantium cupiditate sequi, alias quia deleniti in hic non! Voluptas, laudantium sapiente.</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero aliquid distinctio ratione itaque at fugit fuga et laboriosam laudantium cupiditate sequi, alias quia deleniti in hic non! Voluptas, laudantium sapiente.</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero aliquid distinctio ratione itaque at fugit fuga et laboriosam laudantium cupiditate sequi, alias quia deleniti in hic non! Voluptas, laudantium sapiente.</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero aliquid distinctio ratione itaque at fugit fuga et laboriosam laudantium cupiditate sequi, alias quia deleniti in hic non! Voluptas, laudantium sapiente.</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero aliquid distinctio ratione itaque at fugit fuga et laboriosam laudantium cupiditate sequi, alias quia deleniti in hic non! Voluptas, laudantium sapiente.</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero aliquid distinctio ratione itaque at fugit fuga et laboriosam laudantium cupiditate sequi, alias quia deleniti in hic non! Voluptas, laudantium sapiente.</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero aliquid distinctio ratione itaque at fugit fuga et laboriosam laudantium cupiditate sequi, alias quia deleniti in hic non! Voluptas, laudantium sapiente.</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero aliquid distinctio ratione itaque at fugit fuga et laboriosam laudantium cupiditate sequi, alias quia deleniti in hic non! Voluptas, laudantium sapiente.</p>
+      <hr>
       </section>
       <section class="order-form-cmp">
       <stay-order-form :stayId="stay._id"></stay-order-form>

@@ -1,7 +1,7 @@
 .stay-order-form {
     position: sticky;
     top: 120px;
-    right: 5%;
+    left: 100%;
     height:fit-content;
     // height: 250.800px;
     width: 342.600px;    
@@ -11,6 +11,7 @@
     border-radius: 12px;
     box-shadow: rgb(0 0 0 / 12%) 0px 6px 16px;
     background-color: white;
+    margin-top: 18.26px;
 
     .order-box {
         justify-content: flex-end;

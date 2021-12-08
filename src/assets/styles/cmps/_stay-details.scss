@@ -37,6 +37,10 @@ img{
     
 }
 
+.main-details-container {
+    margin-top: 30px;
+}
+
 .text-details {
     max-width: 50%;
 }
@@ -44,5 +48,6 @@ img{
 .order-form-cmp {
     max-width: 50%;
     height: 100%;
-
+    position: sticky;
+    left: 100%;
 }

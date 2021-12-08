@@ -6,7 +6,7 @@ export const stayStore = {
         currStay: null,
         stays: [],
         currStayReviews: [],
-        currPrice: {},
+        // currPrice: {},
         filterBy: { type: '', city: '', price: '' },
     },
     getters: {
@@ -16,12 +16,6 @@ export const stayStore = {
         stays(state) {
             return state.stays;
         },
-        // staysToShow(state) {
-        //     let filteredstays = state.stays;
-        //     console.log(filteredstays);
-        //     return filteredstays
-        // },
-
         avgStayRate(state) {
             var reviews = state.currStay.reviews;
             let sum = reviews.reduce((sum, review) => {
@@ -33,14 +27,20 @@ export const stayStore = {
         isLoading({ isLoading }) {
             return isLoading
         },
-        currPrice(state) {
-            return state.currPrice;
+        // currPrice(state) {
+        //     return state.currPrice;
+        // },
+        cleaningFee(state, getters) {
+            return getters.nights > 0 ? 15 : 0;
+        },
+        serviceFee(state, getters) {
+            return getters.nights > 0 ? 25 : 0
         },
         totalPriceNoFees(state, getters) {
-          return state.currPrice.pricePerNight * getters.nights;
+            return state.currStay.price * getters.nights;
         },
         totalPrice(state, getters) {
-            return getters.totalPriceNoFees + state.currPrice.cleaningFee + state.currPrice.serviceFee;
+            return getters.totalPriceNoFees + getters.cleaningFee + getters.serviceFee;
         },
         // fullPricePerNight(state, getters) {
         //     return (getters.totalPrice / getters.nights);
@@ -71,13 +71,13 @@ export const stayStore = {
         setCurrStay(state, { stay }) {
             state.currStay = stay;
         },
-        setPrice(state, { stay }) {
-            state.currPrice = {
-                pricePerNight: stay.price,
-                cleaningFee: 15,
-                serviceFee: 25
-            }
-        },
+        // setPrice(state, { stay }) {
+        //     state.currPrice = {
+        //         pricePerNight: stay.price,
+        //         cleaningFee: state.getters.nights > 0 ? 15 : 0,
+        //         serviceFee: state.getters.nights > 0 ? 25 : 0,
+        //     }
+        // },
 
         addStay(state, { stay }) {
             state.stays.push(stay);
@@ -117,7 +117,7 @@ export const stayStore = {
                 const stay = await stayService.getById(stayId);
                 // console.log(stay);
                 context.commit({ type: 'setCurrStay', stay });
-                context.commit({ type: 'setPrice', stay });
+                // context.commit({ type: 'setPrice', stay });
                 // socketService.off(SOCKET_EVENT_REVIEW_ADDED)
                 // socketService.on(SOCKET_EVENT_REVIEW_ADDED, stay => {
                 // //     console.log('Got stay from socket', stay);

@@ -1,7 +1,9 @@
 <template>
-  <div v-if="alive" class="alert" :class="alertClass">
-    {{ msg.txt }}
-  </div>
+  <transition name="fade">
+    <div v-if="alive" class="alert" :class="alertClass">
+      {{ msg.txt }}
+    </div>
+  </transition>
 </template>
 
 
