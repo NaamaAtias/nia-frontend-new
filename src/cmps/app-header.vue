@@ -30,6 +30,10 @@
           </button>
         </div>
 
+        <button @click="isSmallFilter = !isSmallFilter" v-if="isSmallFilter" class="mobile-small-filter">
+            <i class="fas fa-search"></i>
+        </button>
+
         <div class="header-right">
           <router-link class="hover" :style="routerClr" to="/stay"
             >Explore</router-link
