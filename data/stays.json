@@ -1,9 +1,8 @@
 [
     {
-        "_id": "s101",
-        "createdAt": 20180203073000,
         "name": "Charming Duplex",
         "type": "Apartment",
+        "city": "London",
         "imgUrls": [
             "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638304294/London/pexels-olga-lioncat-7247545_i4ltzk.jpg",
             "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638304294/London/pexels-john-tekeridis-1428348_ecxyee.jpg",
@@ -14,7 +13,7 @@
         "price": 80,
         "summary": "Fantastic duplex apartment with three bedrooms, located in the historic area.",
         "capacity": 8,
-        "bedroom": 2,
+        "and": 2,
         "beds": 4,
         "bath": 1,
         "amenities": ["TV", "Wifi", "Kitchen", "Pets allowed"],
@@ -149,10 +148,10 @@
         ]
     },
     {
-        "_id": "s102",
-        "createdAt": 20180203073000,
+
         "name": "Light and Airy Bedroom in Camden",
         "type": "Apartment",
+        "city": "London",
         "imgUrls": [
             "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638304300/London/pexels-olga-lioncat-7245356_hg78cw.jpg",
             "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638302844/beds/bed11_cjcvih.jpg",
@@ -298,10 +297,10 @@
         ]
     },
     {
-        "_id": "s103",
-        "createdAt": 20180203073000,
+
         "name": "Great and Cosy London Studio Flat",
         "type": "Apartment",
+        "city": "London",
         "imgUrls": [
             "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638304291/London/pexels-lina-kivaka-4482667_srz4ve.jpg",
             "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638265491/beds/zz5sniezdreet4wotz2s.jpg",
@@ -447,10 +446,10 @@
         ]
     },
     {
-        "_id": "s104",
-        "createdAt": 20180203073000,
+
         "name": "London Bridge",
         "type": "Apartment",
+        "city": "London",
         "imgUrls": [
             "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638304311/London/pexels-connor-danylenko-3075532_ulswcp.jpg",
             "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638302846/beds/bed12_e3gt9v.jpg",
@@ -596,10 +595,10 @@
         ]
     },
     {
-        "_id": "s105",
-        "createdAt": 20180203072000,
+
         "name": "Boutique studio in downtown",
         "type": "Apartment",
+        "city": "Budapest",
         "imgUrls": [
             "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638304278/London/pexels-daria-shevtsova-3326213_hwgyif.jpg",
             "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638302846/beds/bed14_h9be8a.jpg",
@@ -745,10 +744,10 @@
         ]
     },
     {
-        "_id": "s106",
-        "createdAt": 20180203072000,
+
         "name": "Buda Castle",
         "type": "castle",
+        "city": "Budapest",
         "imgUrls": [
             "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638306588/castle/pexels-vadim-lu-6288487_qegvna.jpg",
             "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638306563/castle/pexels-krisztina-papp-2486258_ygynij.jpg",
@@ -894,10 +893,10 @@
         ]
     },
     {
-        "_id": "s107",
-        "createdAt": 20180203072000,
+
         "name": "Koko Castle",
         "type": "castle",
+        "city": "Budapest",
         "imgUrls": [
             "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638306561/castle/pexels-mike-112284_ixuqaj.jpg",
             "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638306563/castle/pexels-krisztina-papp-2486258_ygynij.jpg",
@@ -1043,10 +1042,10 @@
         ]
     },
     {
-        "_id": "s108",
-        "createdAt": 20180203072000,
+
         "name": "Dodo Castle",
         "type": "castle",
+        "city": "Budapest",
         "imgUrls": [
             "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638306550/castle/pexels-mike-van-schoonderwalt-5483723_xlzijh.jpg",
             "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638306563/castle/pexels-krisztina-papp-2486258_ygynij.jpg",
@@ -1192,10 +1191,10 @@
         ]
     },
     {
-        "_id": "s109",
-        "createdAt": 20180203072000,
+
         "name": "Buda Boat",
         "type": "houseboat",
+        "city": "Budapest",
         "imgUrls": [
             "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638305160/boats/pexels-pok-rie-249024_oj83pi.jpg",
             "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638305186/boats/pexels-daria-shevtsova-6844404_npkovc.jpg",
@@ -1341,10 +1340,10 @@
         ]
     },
     {
-        "_id": "s110",
-        "createdAt": 20180203072000,
+
         "name": "Beautiful Paris",
         "type": "Apartment",
+        "city": "Paris",
         "imgUrls": [
             "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638307321/Paris/pexels-taryn-elliott-4112236_b2rmym.jpg",
             "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638307307/Paris/pexels-evgenia-basyrova-5028910_nuvtbo.jpg",
@@ -1496,10 +1495,10 @@
         ]
     },
     {
-        "_id": "s111",
-        "createdAt": 20180203072000,
+
         "name": "Holiday Castle",
         "type": "castle",
+        "city": "Paris",
         "imgUrl": [
             "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638306522/castle/pexels-bruna-noronha-6270891_vasbpu.jpg",
             "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638306530/castle/pexels-jensen-r-1381729_cx2cet.jpg",
@@ -1651,10 +1650,10 @@
         ]
     },
     {
-        "_id": "s112",
-        "createdAt": 20180203072000,
+
         "name": "Mudy Castle",
         "type": "castle",
+        "city": "Paris",
         "imgUrls": [
             "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638306500/castle/pexels-ryan-smith-955731_g6rzxo.jpg",
             "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638306530/castle/pexels-jensen-r-1381729_cx2cet.jpg",
@@ -1800,10 +1799,10 @@
         ]
     },
     {
-        "_id": "s113",
-        "createdAt": 20180203072000,
+ 
         "name": "Life in Paris",
         "type": "Apartment",
+        "city": "Paris",
         "imgUrls": [
             "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638307304/Paris/pexels-leah-kelley-952586_n07jss.jpg",
             "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638304294/London/pexels-john-tekeridis-1428348_ecxyee.jpg",
@@ -1955,10 +1954,10 @@
         ]
     },
     {
-        "_id": "s114",
-        "createdAt": 20180203072000,
+
         "name": "Life in New York",
         "type": "Apartment",
+        "city": "New York",
         "imgUrls": [
             "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638304898/New%20York/pexels-max-vakhtbovych-7195534_mqb90n.jpg",
             "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638304818/New%20York/pexels-vecislavas-popa-3741317_pyvurg.jpg",
@@ -2104,10 +2103,10 @@
         ]
     },
     {
-        "_id": "s115",
-        "createdAt": 20180203072000,
+
         "name": "My Quiet Place",
         "type": "Apartment",
+        "city": "New York",
         "imgUrls": [
             "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638304886/New%20York/pexels-max-vakhtbovych-6969866_pajfoi.jpg",
             "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638304882/New%20York/pexels-max-vakhtbovych-7195598_dpjlgw.jpg",
@@ -2253,10 +2252,10 @@
         ]
     },
     {
-        "_id": "s116",
-        "createdAt": 20180203072000,
+
         "name": "Life-style in New York",
         "type": "Entire luxe unit",
+        "city": "New York",
         "imgUrls": [
             "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638307307/Paris/pexels-maria-orlova-4916534_jyewl6.jpg",
             "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638307304/Paris/pexels-deeana-arts-2565222_tvdeyy.jpg",
@@ -2402,10 +2401,10 @@
         ]
     },
     {
-        "_id": "s117",
-        "createdAt": 20180203072000,
+
         "name": "New York Castle",
         "type": "castle",
+        "city": "New York",
         "imgUrls": [
             "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638306506/castle/pexels-kylene-hashimoto-1334441_u1ixgr.jpg",
             "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638306563/castle/pexels-krisztina-papp-2486258_ygynij.jpg",
@@ -2551,10 +2550,10 @@
         ]
     },
     {
-        "_id": "s118",
-        "createdAt": 20180203080000,
+ 
         "name": "Holy City",
         "type": "castle",
+        "city": "Jerusalem",
         "imgUrls": [
             "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638306503/castle/pexels-super-claudioo-6697718_lxbsuh.jpg",
             "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638306563/castle/pexels-krisztina-papp-2486258_ygynij.jpg",
@@ -2700,10 +2699,10 @@
         ]
     },
     {
-        "_id": "s119",
-        "createdAt": 20180203080000,
+
         "name": "Palace of David",
         "type": "Luxe",
+        "city": "Jerusalem",
         "imgUrls": [
             "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638307305/Paris/pexels-maria-orlova-4906510_djw0kr.jpg",
             "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638304294/London/pexels-john-tekeridis-1428348_ecxyee.jpg",
@@ -2849,10 +2848,10 @@
         ]
     },
     {
-        "_id": "s120",
-        "createdAt": 20180203080000,
+
         "name": "Palace of Solomon",
         "type": "Luxe",
+        "city": "Jerusalem",
         "imgUrls": [
             "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638307298/Paris/pexels-pixabay-53464_aoqprv.jpg",
             "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638304882/New%20York/pexels-max-vakhtbovych-7195598_dpjlgw.jpg",
@@ -2998,10 +2997,10 @@
         ]
     },
     {
-        "_id": "s121",
-        "createdAt": 20180203080000,
+
         "name": "Life in the Holy City",
         "type": "Apartment",
+        "city": "Jerusalem",
         "imgUrls": [
             "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638307304/Paris/pexels-deeana-arts-2565222_tvdeyy.jpg",
             "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_1500,h_1000,g_face/v1638302846/beds/bed14_h9be8a.jpg",

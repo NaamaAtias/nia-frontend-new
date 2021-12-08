@@ -111,7 +111,10 @@ export default {
       this.searchData.nights = this.nights;
       this.searchData.persons = this.persons;
       this.searchData.pets = this.pets;
-      console.log("searchData:", this.searchData);
+
+      const filterBy = {filterType: "city", filter: this.searchData.location}
+      this.$store.dispatch({ type: "setFilter", filterBy});
+
       this.$store.commit({type: 'setCurrTrip', trip: this.searchData})
 
     },

@@ -9,7 +9,6 @@
         font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
         color: $clr6;
         font-weight: 400;
-        padding-bottom: 1rem;
         position: fixed;
         width: 100%;
         img{
@@ -71,7 +70,6 @@
         font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
         color: $clr6;
         font-weight: 600;
-        padding-bottom: 1rem;
         position: fixed;
         width: 100%;
         z-index: 10;
@@ -176,7 +174,6 @@
                 align-self: center;
                 justify-self: center;
                 margin-bottom: 0;
-                // padding: 0.1em;
                 margin-left: 0.6em;
                 margin-right: 0.2em;
             }
