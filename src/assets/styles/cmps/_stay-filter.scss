@@ -181,6 +181,7 @@ padding: 0;
 }
 
 .max-filter{
+    z-index: 100;
     width: 600px;
     height: 66px;
     background-color: $clr6;     
@@ -201,6 +202,7 @@ padding: 0;
     width: 25%;
     text-align: left;
     font-size: 12px;
+    z-index: 100;
 
     .filter-input, .mx-input{
         font-size: 11px;
@@ -239,6 +241,7 @@ padding: 0;
 .filter-hover:hover{
     background-color: $clr3;
     border-radius: 50px;
+    z-index: 100;
 }
 
 button.filter-explore{
@@ -346,6 +349,7 @@ button.filter-explore{
     }
     
     .max-filter{
+        z-index: 100;
         width: 849.98px;
         height: 66px;
         background-color: $clr6;     
@@ -365,6 +369,7 @@ button.filter-explore{
         padding: 14px 0px 0px;
         width: 25%;
         text-align: left;
+        z-index: 100;
         
         &.filter-location{
             padding-left: 1em;
@@ -399,6 +404,7 @@ button.filter-explore{
     .filter-hover:hover{
         background-color: $clr3;
         border-radius: 50px;
+        z-index: 100;
     }
     
     button.filter-explore{

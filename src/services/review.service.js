@@ -36,5 +36,4 @@ async function add(review) {
     }
     reviews = freshReviews
   });
-})()
-
+})
