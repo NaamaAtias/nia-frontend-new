@@ -152,7 +152,6 @@ export default {
     stayRate,
   },
 };
-// Todo - Itzik - page of stay - Shows details about the stay, allows booking and chat
 </script>
 
 <style>
