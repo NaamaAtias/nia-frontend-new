@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="main-layout">
-      <div class="filter-stayApp-container-main">
+      <div class="filter-stayApp-container-main main-layout">
         <div class="filter-btns-stayApp-container">
           <div @click="isOnPriceFilter = !isOnPriceFilter" class="onFilter-btn">
             Price <i class="fa fa-angle-down" style="font-size: 14px"></i>
