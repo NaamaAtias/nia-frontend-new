@@ -212,25 +212,25 @@ export default {
     window.addEventListener("scroll", this.handleScroll);
     var rateJerusalem = await this.$store.dispatch({
       type: "getRateById",
-      stayId: "61b068746882643874b89777",
+      stayId: "61b1324b68826438747c9041"
     });
     this.avgStayRateJerusalem = rateJerusalem.rate;
     this.reviewsJerusalem = rateJerusalem.reviews;
     var rateNY = await this.$store.dispatch({
       type: "getRateById",
-      stayId: "61b068746882643874b89773",
+      stayId: "61b1324b68826438747c9041",
     });
     this.avgStayRateNY = rateNY.rate;
     this.reviewsNY = rateNY.reviews;
     var rateLondon = await this.$store.dispatch({
       type: "getRateById",
-      stayId: "61b068746882643874b89769",
+      stayId: "61b1324b68826438747c9041",
     });
     this.avgStayRateLondon = rateLondon.rate;
     this.reviewsLondon = rateLondon.reviews;
     var rateBoutique = await this.$store.dispatch({
       type: "getRateById",
-      stayId: "61b068746882643874b8976a",
+      stayId: "61b1324b68826438747c9044",
     });
     this.avgStayRateBoutique = rateBoutique.rate;
     this.reviewsBoutique = rateBoutique.reviews;
@@ -260,12 +260,4 @@ export default {
   },
 };
 
-// London bridge
-// ObjectId("61b068746882643874b89769")
-// Life in NY
-// ObjectId("61b068746882643874b89773")
-// Holy City
-// ObjectId("61b068746882643874b89777")
-// Boutique studio in downtown
-// ObjectId("61b068746882643874b8976a")
 </script>
