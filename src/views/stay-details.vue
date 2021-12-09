@@ -1,6 +1,6 @@
 <template>
   <section class="main-layout" v-if="stay">
-    <div class="stay-details main-layout">
+    <div class="stay-details">
       <p class="less-margin fs26 bold">{{ stay.name }}</p>
       <div class="details-header align-center">
         <div class="">
@@ -36,7 +36,7 @@
           :key="idx"
         />
       </div>
-      <section class="main-details-container main-layout">
+      <section class="main-details-container flex">
         <section class="flex">
           <section class="text-details">
             <div>

@@ -36,16 +36,18 @@
               </label>
             </div>
           </div>
-          <div class="order-guests flex column">
-            <label name="guests"
+          <div class="order-guests flex column" >
+            <label for="guests" 
               >Guests
-              <input
-                @click="isOnGuests = !isOnGuests"
+            </label>
+                <input
                 id="guests"
                 type="text"
                 :placeholder="guests"
+                autocomplete="off"
+                @focus="isOnGuests = !isOnGuests"
+                @blur="isOnGuests = !isOnGuests"
               />
-            </label>
           </div>
           <guests
             class="guests-order-box"
@@ -56,7 +58,7 @@
             ref="btn"
             class="order-btn"
             v-if="!isAvailable"
-            @click.prevent="checkAvailability()"
+            @click.prevent="checkAvailability($event)"
           >
             Check availability
           </button>
@@ -184,14 +186,15 @@ export default {
       this.currTrip.persons = guests.totalPers;
       this.currTrip.pets = guests.pets;
     },
-    checkAvailability() {
+    checkAvailability(ev) {
       if (
         this.currTrip.persons > 0 &&
         this.currTrip.persons <= this.currStay.capacity
       ) {
         this.isAvailable = true;
       } else {
-        showMsg("Please enter number of guests to continue", "danger");
+        console.log(ev);
+        showMsg("Please enter number of guests to continue", "danger",ev.pageY-ev.offsetY, ev.pageX-ev.offsetX);
       }
     },
   },

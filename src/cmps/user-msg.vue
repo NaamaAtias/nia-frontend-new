@@ -1,6 +1,11 @@
 <template>
   <transition name="fade">
-    <div v-if="alive" class="alert" :class="alertClass">
+    <div
+      v-if="alive"
+      class="alert"
+      :class="alertClass"
+      :style="{ top: msg.top +'px', right: msg.right+'px' }"
+    >
       {{ msg.txt }}
     </div>
   </transition>
