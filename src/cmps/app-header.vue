@@ -9,7 +9,7 @@
           <div v-else>
             <img src="../assets/img/logo-cloud-white.jpg" alt="" />
           </div>
-          <div class="logo-txt">niabnb</div>
+          <div class="logo-txt logo-niabnb">niabnb</div>
         </router-link>
 
         <div
