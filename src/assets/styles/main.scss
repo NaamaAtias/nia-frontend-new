@@ -2,7 +2,6 @@
 @import "setup/variables";
 @import "setup/mixins";
 @import "setup/fonts";
-@import "setup/functions";
 
 // Basics
 @import "basics/helpers";
@@ -27,6 +26,7 @@
 @import "cmps/user-msg";
 @import "cmps/stay-rate";
 @import "cmps/stay-amenity";
+@import "cmps/stay-review";
 
 
 

@@ -76,7 +76,7 @@ export default {
       this.sendCity()
     },
     NewYork() {
-      this.selectedCity = "NewYork";
+      this.selectedCity = "New York";
       this.sendCity()
     },
     Paris() {

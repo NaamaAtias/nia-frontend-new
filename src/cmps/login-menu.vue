@@ -21,14 +21,10 @@ export default {
     return {};
   },
   created() {
-    // "created at": 1564640965 = timeStamp
-    var milliseconds = new Date().getTime()
-    console.log(milliseconds)     
-    const timeStamp = milliseconds/1000 // "created at": new Date().getTime()/1000
-    var date = new Date(timeStamp * 1000)
+    const timeStamp = Date.now() // "created at": Date.now()
+    var date = new Date(timeStamp)
     date = date.toString()
-    console.log(date)
-    console.log(date.slice(4,7) + ' ' + date.slice(11,15)) //date to sho: MMM YYYY
+    console.log(date.slice(4,7) + ' ' + date.slice(11,15)) //date to sho: MMM YYYY (Dec 2021)
   },
   methods: {},
 };
