@@ -20,7 +20,7 @@ export default {
   computed: {
     createAt() {
       const timeStamp = new Date(this.review.created)
-      var date = new Date(timeStamp);
+      var date = new Date(timeStamp*1000);
       date = date.toString();
       return date.slice(4, 7) + " " + date.slice(11, 15);
     },
