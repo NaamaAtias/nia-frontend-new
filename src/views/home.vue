@@ -192,6 +192,9 @@
 
 <script>
 export default {
+  created() {
+    window.scrollTo(0, 0);
+  },
   name: "home",
   data() {
     return {
@@ -212,7 +215,7 @@ export default {
     window.addEventListener("scroll", this.handleScroll);
     var rateJerusalem = await this.$store.dispatch({
       type: "getRateById",
-      stayId: "61b20f7868826438744c6dbb"
+      stayId: "61b20f7868826438744c6dbb",
     });
     this.avgStayRateJerusalem = rateJerusalem.rate;
     this.reviewsJerusalem = rateJerusalem.reviews;
@@ -259,5 +262,4 @@ export default {
     },
   },
 };
-
 </script>

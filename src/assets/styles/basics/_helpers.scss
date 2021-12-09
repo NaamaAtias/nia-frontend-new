@@ -3,8 +3,8 @@
 }
 
 html {
-    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
-
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
+        Helvetica Neue, sans-serif;
 }
 
 body {
@@ -17,7 +17,6 @@ body {
 // flex helpers
 
 .flex {
-
     display: flex;
 
     > *.full {
@@ -41,6 +40,19 @@ body {
     list-style: none;
     margin: 0;
     padding: 0;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+.gray-font {
+    color: rgb(113, 113, 113);
+}
+
+.details-font {
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
+        Helvetica Neue, sans-serif;
 }
 
 // Media helpers

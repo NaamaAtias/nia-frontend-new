@@ -1,56 +1,59 @@
 <template>
-<div class="screen">
-  <div class="login-main-container">
-    <h2>Login</h2>
-    <form @submit.prevent="doLogin">
-      <div>
-        <input
-          type="text"
-          v-model="loginCred.username"
-          placeholder="User name"
-        />
-      </div>
-      <div>
-        <input
-          type="password"
-          v-model="loginCred.password"
-          placeholder="Password"
-        />
-      </div>
-      <button>Login</button>
-    </form>
-    <br>
-    <form @submit.prevent="doSignup">
-      <h2>Signup</h2>
-      <div>
-        <input
-          type="text"
-          v-model="signupCred.fullname"
-          placeholder="Your full name"
-        />
-      </div>
-      <div>
-        <input
-          type="password"
-          v-model="signupCred.password"
-          placeholder="Password"
-        />
-      </div>
-      <div>
-        <input
-          type="text"
-          v-model="signupCred.username"
-          placeholder="email@email.com"
-        />
-      </div>
-      <button>Signup</button>
-    </form>
-  </div>
+  <div class="screen">
+    <div class="login-main-container">
+      <h2>Login</h2>
+      <form @submit.prevent="doLogin">
+        <div>
+          <input
+            type="text"
+            v-model="loginCred.username"
+            placeholder="User name"
+          />
+        </div>
+        <div>
+          <input
+            type="password"
+            v-model="loginCred.password"
+            placeholder="Password"
+          />
+        </div>
+        <button>Login</button>
+      </form>
+      <br />
+      <form @submit.prevent="doSignup">
+        <h2>Signup</h2>
+        <div>
+          <input
+            type="text"
+            v-model="signupCred.fullname"
+            placeholder="Your full name"
+          />
+        </div>
+        <div>
+          <input
+            type="password"
+            v-model="signupCred.password"
+            placeholder="Password"
+          />
+        </div>
+        <div>
+          <input
+            type="text"
+            v-model="signupCred.username"
+            placeholder="email@email.com"
+          />
+        </div>
+        <button>Signup</button>
+      </form>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
+  created() {
+    window.scrollTo(0, 0);
+  },
   name: "test",
   data() {
     return {

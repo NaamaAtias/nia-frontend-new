@@ -21,10 +21,12 @@
 <script>
 //User profile including owned, visited and liked stays - Todo!!!!!
 
-
 // import {userService} from '../services/user.service';
 
 export default {
+  created() {
+    window.scrollTo(0, 0);
+  },
   data() {
     return {
       // user: null

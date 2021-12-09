@@ -1,8 +1,8 @@
 <template>
   <section class="main-layout" v-if="stay">
-   <order-modal v-if="isOrdered"/>
+    <order-modal v-if="isOrdered" />
     <div class="stay-details">
-      <p class="less-margin fs26 bold">{{ stay.name }}</p>
+      <h1 class="less-margin fs26 bold details-font">{{ stay.name }}</h1>
       <div class="details-header align-center">
         <div class="">
           <span
@@ -11,22 +11,29 @@
               style="font-size: 14px; color: rgb(255, 55, 92)"
             ></i
           ></span>
-          <span> {{ avgStayRate }}</span
-          ><span>
-            ({{ stay.reviews.length }} <span class="underline">reviews</span> )
+          <span class="bold"> {{ avgStayRate }}</span
+          ><span class="gray-font bold details-font">
+            ({{ stay.reviews.length }}
+            <span class="underline bold gray-font details-font">reviews</span> )
           </span>
-          <span class="dote"> · </span>
-          <span class="underline"> {{ stay.loc.city }}</span>
+          <span class="dote gray-font bold"> · </span>
+          <span class="underline bold gray-font details-font">
+            {{ stay.loc.city }}</span
+          >
         </div>
         <div class="details-btns flex align-center">
-          <label class="share-btn" @click="share">
-            <img class="icon-btn" src="@/assets/img/share.jpg" />
-            <button>Share</button>
-          </label>
-          <label class="share-btn" @click="save">
-            <img class="icon-btn" src="@/assets/img/heart.png" />
-            <button>Save</button>
-          </label>
+          <div>
+            <label class="share-btn" @click="share">
+              <img class="icon-btn" src="@/assets/img/share.jpg" />
+              <button>Share</button>
+            </label>
+          </div>
+          <div>
+            <label class="share-btn" @click="save">
+              <img class="icon-btn" src="@/assets/img/heart.png" />
+              <button>Save</button>
+            </label>
+          </div>
         </div>
       </div>
       <div class="stay-details-imgs-container main-layout">
@@ -187,6 +194,9 @@ import userAvatar from "../cmps/user-avatar.vue";
 import orderModal from "../cmps/order-modal.vue";
 
 export default {
+  created() {
+    window.scrollTo(0, 0);
+  },
   data() {
     return {
       stay: null,
@@ -206,7 +216,7 @@ export default {
     },
     isOrdered() {
       return this.$store.getters.isOrdered;
-    }
+    },
   },
   watch: {
     "$route.params.stayId": {
@@ -228,8 +238,7 @@ export default {
     stayOrderForm,
     stayRate,
     userAvatar,
-    orderModal
-
+    orderModal,
   },
 };
 </script>

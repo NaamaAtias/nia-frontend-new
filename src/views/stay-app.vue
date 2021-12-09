@@ -76,6 +76,9 @@
 import stayList from "@/cmps/stay-list";
 import PriceFilter from "../cmps/price-filter.vue";
 export default {
+  created() {
+    window.scrollTo(0, 0);
+  },
   name: "stay",
   data() {
     return {

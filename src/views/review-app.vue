@@ -6,13 +6,14 @@
         <p>
           About
           <router-link :to="`user/${review.aboutUser._id}`">
-            {{review.aboutUser.fullname}}
-          </router-link> 
+            {{ review.aboutUser.fullname }}
+          </router-link>
         </p>
-        <h3>{{review.txt}}</h3>
-        <p>By 
+        <h3>{{ review.txt }}</h3>
+        <p>
+          By
           <router-link :to="`user/${review.byUser._id}`">
-            {{review.byUser.fullname}}
+            {{ review.byUser.fullname }}
           </router-link>
         </p>
         <hr />
@@ -22,11 +23,14 @@
     <form v-if="loggedInUser" @submit.prevent="addReview()">
       <h2>Your gossip:</h2>
       <select v-model="reviewToEdit.aboutUserId">
-        <option v-for="user in users" :key="user._id" :value="user._id" >
-          {{user.fullname}}
+        <option v-for="user in users" :key="user._id" :value="user._id">
+          {{ user.fullname }}
         </option>
       </select>
-      <textarea placeholder="Your Opinion Matters..." v-model="reviewToEdit.txt"></textarea>
+      <textarea
+        placeholder="Your Opinion Matters..."
+        v-model="reviewToEdit.txt"
+      ></textarea>
       <button>Save</button>
     </form>
   </div>
@@ -34,37 +38,41 @@
 
 <script>
 export default {
-  name: 'home',
+  created() {
+    window.scrollTo(0, 0);
+  },
+  name: "home",
   data() {
     return {
       reviewToEdit: {
-        txt: '',
-        aboutUserId: null
-      }
-    }
+        txt: "",
+        aboutUserId: null,
+      },
+    };
   },
   computed: {
     reviews() {
       return this.$store.getters.reviews;
     },
     users() {
-      return this.$store.getters.users
+      return this.$store.getters.users;
     },
     loggedInUser() {
-      return this.$store.getters.loggedinUser
-    }
+      return this.$store.getters.loggedinUser;
+    },
   },
   created() {
-    this.$store.dispatch({type: 'loadUsers'})
-    this.$store.dispatch({type: 'loadReviews'})
+    this.$store.dispatch({ type: "loadUsers" });
+    this.$store.dispatch({ type: "loadReviews" });
   },
   methods: {
     async addReview() {
-      await this.$store.dispatch({type: 'addReview', review: this.reviewToEdit})
-      this.reviewToEdit = {txt: '', aboutUserId: null}
-    }
-  }
-
-  
-}
+      await this.$store.dispatch({
+        type: "addReview",
+        review: this.reviewToEdit,
+      });
+      this.reviewToEdit = { txt: "", aboutUserId: null };
+    },
+  },
+};
 </script>

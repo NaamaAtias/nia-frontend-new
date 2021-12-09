@@ -257,7 +257,11 @@
 </template>
 
 <script>
-export default {};
+export default {
+  created() {
+    window.scrollTo(0, 0);
+  },
+};
 //todo - Allow creating, updating (and deleting) a stay
 </script>
 
