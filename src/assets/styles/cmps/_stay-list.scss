@@ -7,7 +7,7 @@
     justify-content: center;
     margin: 70px 0;
     // padding: 10px;
-    margin-top: 150px;
+    margin-top: 180px;
 
     img {
             max-width: 100%;
@@ -18,8 +18,11 @@
     a {
         text-decoration: none;
         color: $clr7;
-
-    }  
+    }
+    
+    .preview-text{
+        padding-top: 5px;
+    }
 
 }
 

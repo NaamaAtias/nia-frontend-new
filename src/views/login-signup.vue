@@ -1,5 +1,5 @@
 <template>
-<div class="screen">
+<div class="screen-login">
   <div class="login-main-container">
     <h2>Login</h2>
     <form @submit.prevent="doLogin">

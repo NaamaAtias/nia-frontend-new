@@ -8,6 +8,90 @@
       </div>
     </div>
     <div class="home main-layout">
+            <div class="explore-location">
+        <h1>Top rated</h1>
+        <div class="explore-locations top">
+          <div
+            class="explore-location"
+            @click.stop="goToDetails('61b20f7868826438744c6dbb')"
+          >
+            <img
+              src="https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,h_300,w_257,g_face/v1638306503/castle/pexels-super-claudioo-6697718_lxbsuh.jpg"
+              alt=""
+            />
+            <h6>
+              <i
+                class="fas fa-star"
+                style="font-size: 14px; color: rgb(255, 55, 92)"
+              ></i
+              ><span>{{ avgStayRateJerusalem }}</span>
+              <span class="reviewsInTopRated"
+                >({{ reviewsJerusalem }} reviews)</span
+              ><br />
+              Holy City, Jerusalem
+            </h6>
+          </div>
+          <div
+            class="explore-location"
+            @click.stop="goToDetails('61b20f7868826438744c6dcb')"
+          >
+            <img
+              src="https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,h_300,w_257,g_face/v1638304898/New%20York/pexels-max-vakhtbovych-7195534_mqb90n.jpg"
+              alt=""
+            />
+            <h6>
+              <i
+                class="fas fa-star"
+                style="font-size: 14px; color: rgb(255, 55, 92)"
+              ></i
+              ><span>{{ avgStayRateNY }}</span>
+              <span class="reviewsInTopRated">({{ reviewsNY }} reviews)</span
+              ><br />
+              Life in New York, New York
+            </h6>
+          </div>
+          <div
+            class="explore-location"
+            @click.stop="goToDetails('61b20f7868826438744c6dc3')"
+          >
+            <img
+              src="https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,h_300,w_257,g_face/v1638304278/London/pexels-daria-shevtsova-3326213_hwgyif.jpg"
+              alt=""
+            />
+            <h6>
+              <i
+                class="fas fa-star"
+                style="font-size: 14px; color: rgb(255, 55, 92)"
+              ></i
+              ><span>{{ avgStayRateBoutique }}</span>
+              <span class="reviewsInTopRated"
+                >({{ reviewsBoutique }} reviews)</span
+              ><br />
+              Boutique studio, Budapest
+            </h6>
+          </div>
+          <div
+            class="explore-location"
+            @click.stop="goToDetails('61b20f7868826438744c6dae')"
+          >
+            <img
+              src="https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,h_300,w_257,g_face/v1638304311/London/pexels-connor-danylenko-3075532_ulswcp.jpg"
+              alt=""
+            />
+            <h6>
+              <i
+                class="fas fa-star"
+                style="font-size: 14px; color: rgb(255, 55, 92)"
+              ></i
+              ><span>{{ avgStayRateLondon }}</span>
+              <span class="reviewsInTopRated"
+                >({{ reviewsLondon }} reviews)</span
+              ><br />
+              London Bridge, London
+            </h6>
+          </div>
+        </div>
+      </div>
       <div class="explore-location">
         <h1>Popular destinations</h1>
         <div class="explore-locations">
@@ -96,90 +180,7 @@
           </div>
         </div>
       </div>
-      <div class="explore-location">
-        <h1>Top rated</h1>
-        <div class="explore-locations top">
-          <div
-            class="explore-location"
-            @click.stop="goToDetails('61b20f7868826438744c6dbb')"
-          >
-            <img
-              src="https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,h_300,w_257,g_face/v1638306503/castle/pexels-super-claudioo-6697718_lxbsuh.jpg"
-              alt=""
-            />
-            <h6>
-              <i
-                class="fas fa-star"
-                style="font-size: 14px; color: rgb(255, 55, 92)"
-              ></i
-              ><span>{{ avgStayRateJerusalem }}</span>
-              <span class="reviewsInTopRated"
-                >({{ reviewsJerusalem }} reviews)</span
-              ><br />
-              Holy City, Jerusalem
-            </h6>
-          </div>
-          <div
-            class="explore-location"
-            @click.stop="goToDetails('61b20f7868826438744c6dcb')"
-          >
-            <img
-              src="https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,h_300,w_257,g_face/v1638304898/New%20York/pexels-max-vakhtbovych-7195534_mqb90n.jpg"
-              alt=""
-            />
-            <h6>
-              <i
-                class="fas fa-star"
-                style="font-size: 14px; color: rgb(255, 55, 92)"
-              ></i
-              ><span>{{ avgStayRateNY }}</span>
-              <span class="reviewsInTopRated">({{ reviewsNY }} reviews)</span
-              ><br />
-              Life in New York, New York
-            </h6>
-          </div>
-          <div
-            class="explore-location"
-            @click.stop="goToDetails('61b20f7868826438744c6dc3')"
-          >
-            <img
-              src="https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,h_300,w_257,g_face/v1638304278/London/pexels-daria-shevtsova-3326213_hwgyif.jpg"
-              alt=""
-            />
-            <h6>
-              <i
-                class="fas fa-star"
-                style="font-size: 14px; color: rgb(255, 55, 92)"
-              ></i
-              ><span>{{ avgStayRateBoutique }}</span>
-              <span class="reviewsInTopRated"
-                >({{ reviewsBoutique }} reviews)</span
-              ><br />
-              Boutique studio, Budapest
-            </h6>
-          </div>
-          <div
-            class="explore-location"
-            @click.stop="goToDetails('61b20f7868826438744c6dae')"
-          >
-            <img
-              src="https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,h_300,w_257,g_face/v1638304311/London/pexels-connor-danylenko-3075532_ulswcp.jpg"
-              alt=""
-            />
-            <h6>
-              <i
-                class="fas fa-star"
-                style="font-size: 14px; color: rgb(255, 55, 92)"
-              ></i
-              ><span>{{ avgStayRateLondon }}</span>
-              <span class="reviewsInTopRated"
-                >({{ reviewsLondon }} reviews)</span
-              ><br />
-              London Bridge, London
-            </h6>
-          </div>
-        </div>
-      </div>
+
 
       <div class="questions-about-hosting-container">
         <router-link to="/stay/edit/:id">
@@ -246,6 +247,8 @@ export default {
       this.$router.push("/stay/" + stayId);
     },
     goToStays(filterType, filter) {
+      const trip = {location: filter}
+      this.$store.commit({type: "setCurrTrip", trip})
       const filterBy = { filterType: filterType, filter: filter };
       this.$store.dispatch({ type: "setFilter", filterBy });
       this.$router.push("/stay/");
