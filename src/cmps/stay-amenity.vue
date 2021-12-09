@@ -33,15 +33,5 @@ export default {
 </script>
 
 <style>
-.amenities-icons {
-  height: 24px;
-  width: 24px;
-  margin-inline-end: 15px;
-}
-.amenities-icons {
-  margin-block-end: 16px;
-}
-.amenity-item {
-  margin-block-end: 16px;
-}
+
 </style>

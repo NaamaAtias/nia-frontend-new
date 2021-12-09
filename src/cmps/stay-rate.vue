@@ -1,5 +1,5 @@
 <template>
-  <section class="stay-rate">
+  <section class="stay-rate main-layout">
     <div class="rate-category flex space-between align-center" v-for="(value, name) in categoryRateMap" :key="name">
       <h1>{{ name }}</h1>
       <div>
