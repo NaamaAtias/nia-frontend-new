@@ -43,7 +43,7 @@
               <section class="hosted-by flex row">
                 <div>
                   <p class="less-margin fs22 bold">
-                    {{ stay.type }} hosted by {{ stay.host.fullname }}
+                    {{ stay.type }} hosted by {{ stay.host.fullName }}
                   </p>
                   <p>
                     <span>{{ stay.capacity }} guests</span
