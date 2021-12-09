@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="main-layout">
     
     <span>{{ review.txt }}</span>
   </section>

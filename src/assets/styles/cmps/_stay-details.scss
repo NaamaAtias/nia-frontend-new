@@ -1,3 +1,54 @@
+.stay-details {
+    margin-top: 80px;
+
+    .underline {
+        text-decoration-line: underline;
+      }
+      .icon-btn {
+        height: 16px;
+        margin-inline-end: 8px;
+      }
+      button {
+        font-weight: 400;
+        background-color: transparent;
+        border: none;
+        text-decoration-line: underline;
+        transition: box-shadow 0.2s ease 0s, -ms-transform 0.1s ease 0s,
+          -webkit-transform 0.1s ease 0s, transform 0.1s ease 0s !important;
+      }
+      .share-btn {
+        display: flex;
+        margin-inline-start: 8px;
+        margin-bottom: 0px;
+      }
+      .share-btn :hover {
+        cursor: pointer;
+      }
+      .details-btns {
+        display: flex;
+        margin-bottom: 0px;
+      }
+      .details-header {
+        display: flex;
+        justify-content: space-between;
+      }
+      .star {
+        background-color: rgb 255.55.92;
+        padding-right: 6px;
+      }
+      .dote {
+        margin: 0 5px;
+      }
+      hr {
+        border-top-width: 1px !important;
+        border-top-style: solid !important;
+        color: rgb(221, 221, 221);
+      }
+      >* {
+          font-family: airbnb-book;
+      }
+  }
+
 .stay-details-imgs-container{
 margin-top: 2rem;
 justify-content: center;
@@ -42,12 +93,59 @@ img{
 }
 
 .text-details {
-    max-width: 50%;
+    width: 60%;
 }
 
 .order-form-cmp {
-    max-width: 50%;
+    max-width: 40%;
     height: 100%;
     position: sticky;
     left: 100%;
 }
+
+.stay-details-features-main {
+    margin: 35px 0px;
+    font-family: airbnb-book;
+    font-weight: 0;
+    // line-height: 4em;
+    letter-spacing: 0.02em;
+
+    p {
+        color: $clr4;
+        padding: 2px;
+        font-size: 14px;
+
+        &.bold {
+            font-size: 16px;
+        color: $clr5;
+        font-weight: 600;
+
+    }
+
+}
+
+}
+
+.summary {
+    margin: 40px 0px;
+    font-family: airbnb-book;
+
+}
+
+.bold {
+    font-weight: 600;
+}
+
+.margin {
+    margin: 35px 0px;
+}
+
+.less-margin {
+    margin-block-end: 12px;
+}
+
+.hosted-by {
+    justify-content: space-between;
+    align-items: center;
+}
+

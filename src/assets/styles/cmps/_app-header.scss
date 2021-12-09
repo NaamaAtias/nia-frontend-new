@@ -1,3 +1,10 @@
+//naama 09.12
+.logo-niabnb {
+    font-weight: bold;
+    font-size: 24px;
+    letter-spacing: -1px !important;
+}
+
 @media (max-width: 500px){
     a.hover{
         display: none;
@@ -6,6 +13,9 @@
 
 @media (max-width: 760px){
     header { 
+        //naama
+        box-shadow: rgb(0 0 0 / 12%) 0px 6px 16px;
+
         font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
         color: $clr6;
         font-weight: 400;
@@ -29,11 +39,12 @@
             flex-direction: row;
             align-self: center;
             padding: 4px;
+
             .logo-txt{
             align-self: center;
             padding-left: 2px;
             padding-right: 10px;
-
+        
             }
             }    
             a{
@@ -67,6 +78,9 @@
 
 @media (min-width: 760px){
     header { 
+        //naama
+        box-shadow: rgb(0 0 0 / 12%) 0px 6px 16px;
+
         font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
         color: $clr6;
         font-weight: 600;

@@ -1,7 +1,7 @@
 <template>
   <section class="main-layout" v-if="stay">
-    <div class="stay-details">
-      <h1 class="big-font">{{ stay.name }}</h1>
+    <div class="stay-details main-layout">
+      <p class="less-margin fs26 bold">{{ stay.name }}</p>
       <div class="details-header align-center">
         <div class="">
           <span
@@ -40,20 +40,79 @@
         <section class="flex">
           <section class="text-details">
             <div>
-              <div>
-                <h2 class="big-font">{{ stay.summary }}</h2>
-              </div>
-              <div>
-                <span>{{ stay.capacity }} guests</span
-                ><span class="dote"> · </span
-                ><span> {{ stay.bedroom }} bedrooms</span
-                ><span class="dote"> · </span><span> {{ stay.bed }} beds</span
-                ><span class="dote"> · </span><span> {{ stay.bath }} bath</span>
-              </div>
+              <section class="hosted-by flex row">
+                <div>
+                  <p class="less-margin fs22 bold">
+                    {{ stay.type }} hosted by {{ stay.host.fullname }}
+                  </p>
+                  <p>
+                    <span>{{ stay.capacity }} guests</span
+                    ><span class="dote"> · </span
+                    ><span> {{ stay.bedroom }} bedrooms</span
+                    ><span class="dote"> · </span
+                    ><span> {{ stay.bed }} beds</span
+                    ><span class="dote"> · </span
+                    ><span> {{ stay.bath }} bath</span>
+                  </p>
+                </div>
+                <user-avatar :imgUrl="stay.host.imgUrl"></user-avatar>
+              </section>
 
-              <hr />
+              <hr class="margin" />
+              <div class="stay-details-features-main fs14">
+                <div class="stay-feature-container">
+                  <div class="stay-feature-container-left">
+                    <i
+                      class="fas fa-home"
+                      aria-hidden="true"
+                      style="font-size: 25px"
+                    ></i>
+                  </div>
+                  <div class="stay-feature-container-right">
+                    <p class="bold">Entire place</p>
+                    <p>You'll have the place to yourself.</p>
+                  </div>
+                </div>
+                <div class="stay-feature-container">
+                  <div class="stay-feature-container-left">
+                    <i class="fas fa-hand-sparkles" style="font-size: 25px"></i>
+                  </div>
+                  <div class="stay-feature-container-right">
+                    <p class="bold">Enhanced Clean</p>
+                    <p>
+                      This host committed to niabnb's 5-step enhanced cleaning
+                      process.
+                    </p>
+                  </div>
+                </div>
+                <div class="stay-feature-container">
+                  <div class="stay-feature-container-left">
+                    <i class="fas fa-door-closed" style="font-size: 25px"></i>
+                  </div>
+                  <div class="stay-feature-container-right">
+                    <p class="bold">Self check-in</p>
+                    <p>Check yourself in with the lockbox.</p>
+                  </div>
+                </div>
+                <div class="stay-feature-container">
+                  <div class="stay-feature-container-left">
+                    <i class="fas fa-wifi" style="font-size: 25px"></i>
+                  </div>
+                  <div class="stay-feature-container-right">
+                    <p class="bold">Wifi</p>
+                    <p>Guests often search for this popular amenity.</p>
+                  </div>
+                </div>
+              </div>
+              <hr class="margin" />
+              <section class="summary">
+                <p>
+                  {{ stay.summary }}
+                </p>
+              </section>
+              <hr class="margin" />
               <div>
-                <h2 class="big-font">What this place offers</h2>
+                <p class="fs22 bold">What this place offers</p>
                 <stay-amenity
                   v-for="item in stay.amenities"
                   :key="item"
@@ -61,37 +120,34 @@
                 />
               </div>
             </div>
-            <section>
-              <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero
-                aliquid distinctio ratione itaque at fugit fuga et laboriosam
-                laudantium cupiditate sequi, alias quia deleniti in hic non!
-                Voluptas, laudantium sapiente.
-              </p>
-            </section>
           </section>
           <section class="order-form-cmp">
             <stay-order-form :stayId="stay._id"></stay-order-form>
           </section>
         </section>
       </section>
-      <hr />
-      <span
-        ><i
-          class="fas fa-star"
-          style="font-size: 14px; color: rgb(255, 55, 92)"
-        ></i
-      ></span>
-      <span> {{ avgStayRate }}</span>
-      <span class="dote"> · </span>
-      <span> {{ stay.reviews.length }} <span>reviews</span> </span>
-      <stay-rate :reviews="stay.reviews" />
-      <stay-review
-        v-for="review in stay.reviews"
-        :key="review.id"
-        :review="review"
-      />
-      <hr />
+      <hr class="margin" />
+
+      <section class="main-layout">
+        <div class="flex row fs22 bold">
+          <span class="star"
+            ><i
+              class="fas fa-star"
+              style="font-size: 16px; color: rgb(255, 55, 92)"
+            ></i
+          ></span>
+          <span> {{ avgStayRate }}</span>
+          <span class="dote"> · </span>
+          <span> {{ stay.reviews.length }} <span>reviews</span> </span>
+        </div>
+        <stay-rate :reviews="stay.reviews" />
+        <stay-review
+          v-for="review in stay.reviews"
+          :key="review.id"
+          :review="review"
+        />
+        <hr />
+      </section>
       <section class="main-layout map">
         <GmapMap
           :center="{ lat: stay.loc.lat, lng: stay.loc.lng }"
@@ -112,6 +168,7 @@ import stayAmenity from "@/cmps/stay-amenity";
 import stayReview from "@/cmps/stay-review";
 import stayOrderForm from "@/cmps/stay-order-form";
 import stayRate from "@/cmps/stay-rate";
+import userAvatar from "../cmps/user-avatar.vue";
 export default {
   data() {
     return {
@@ -150,58 +207,10 @@ export default {
     stayReview,
     stayOrderForm,
     stayRate,
+    userAvatar,
   },
 };
-// Todo - Itzik - page of stay - Shows details about the stay, allows booking and chat
 </script>
 
 <style>
-.stay-details {
-  margin-top: 200px;
-}
-.underline {
-  text-decoration-line: underline;
-}
-.icon-btn {
-  height: 16px;
-  margin-inline-end: 8px;
-}
-button {
-  font-weight: 400;
-  background-color: transparent;
-  border: none;
-  text-decoration-line: underline;
-  transition: box-shadow 0.2s ease 0s, -ms-transform 0.1s ease 0s,
-    -webkit-transform 0.1s ease 0s, transform 0.1s ease 0s !important;
-}
-.share-btn {
-  display: flex;
-  margin-inline-start: 8px;
-  margin-bottom: 0px;
-}
-.share-btn :hover {
-  cursor: pointer;
-}
-.details-btns {
-  display: flex;
-  margin-bottom: 0px;
-}
-.details-header {
-  display: flex;
-  justify-content: space-between;
-}
-.star {
-  background-color: rgb 255.55.92;
-}
-.big-font {
-  font-size: 22px;
-}
-.dote {
-  margin: 0 5px;
-}
-hr {
-  border-top-width: 1px !important;
-  border-top-style: solid !important;
-  color: rgb(221, 221, 221);
-}
 </style>

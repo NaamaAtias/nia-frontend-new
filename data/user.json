@@ -1,0 +1,180 @@
+[
+                    {
+                        "fullName": "Lola Kulan",
+                        "imgUrl": "https://res.cloudinary.com/db0wqgy42/image/upload/v1638786774/avatars/avatar12_c2fk8k.jpg"
+                    },
+                    {
+                        "fullName": "Bela Cohen",
+                        "imgUrl": "https://res.cloudinary.com/db0wqgy42/image/upload/v1638786774/avatars/avatar1_ydl3ev.png"
+                    },
+                    {
+                        "fullName": "Zehava Shara",
+                        "imgUrl": "https://res.cloudinary.com/db0wqgy42/image/upload/v1638786774/avatars/avatar13_bd50y0.jpg"
+                    },
+                    {
+                        "fullName": "Nina Penina",
+                        "userName": "nina@amdadi.com",
+                        "password": "nina",
+                        "isAdmin": true,
+                        "imgUrl": "https://res.cloudinary.com/db0wqgy42/image/upload/v1638786774/avatars/avatar13_bd50y0.jpg"
+                    },
+                    {
+                        "fullName": "Jhon Snow",
+                        "userName": "jhon@amdadi.com",
+                        "password": "jhon",
+                        "isAdmin": true,
+                        "imgUrl": "https://res.cloudinary.com/db0wqgy42/image/upload/v1638786773/avatars/avatar4_qnojew.png"
+                    }
+                    ,
+                    {
+                        "fullName": "Jacob Shein",
+                        "userName": "jacob@amdadi.com",
+                        "password": "jacob",
+                        "isAdmin": true,
+                        "imgUrl": "https://res.cloudinary.com/db0wqgy42/image/upload/v1638786773/avatars/avatar8_lfy71z.png"
+                    },
+                    {
+                        "fullName": "Bob Robi",
+                        "userName": "bob@amdadi.com",
+                        "password": "bob",
+                        "isAdmin": true,
+                        "imgUrl": "https://res.cloudinary.com/db0wqgy42/image/upload/v1638786773/avatars/avatar11_zrmnuw.jpg"
+                    },
+                    {
+                        "fullName": "Tom Frog",
+                        "userName": "tom@amdadi.com",
+                        "password": "tom",
+                        "isAdmin": true,
+                        "imgUrl": "https://res.cloudinary.com/db0wqgy42/image/upload/v1638786773/avatars/avatar2_znrytb.png"
+                    },
+                    {
+                        "fullName": "Moshe Gur",
+                        "userName": "moshe@amdadi.com",
+                        "password": "moshe",
+                        "isAdmin": true,
+                        "imgUrl": "https://res.cloudinary.com/db0wqgy42/image/upload/v1638786773/avatars/avatar7_z8e9gw.png"
+                    },
+                    {
+                        "fullName": "Ayelet Dayan",
+                        "userName": "ayelet@amdadi.com",
+                        "password": "ayelet",
+                        "isAdmin": true,
+                        "imgUrl": "https://res.cloudinary.com/db0wqgy42/image/upload/v1638786773/avatars/avatar6_vqrh3l.png"
+                    },
+                    {
+                        "fullName": "Naama Atias",
+                        "userName": "naama@amdadi.com",
+                        "password": "naama",
+                        "isAdmin": true,
+                        "imgUrl": "https://res.cloudinary.com/db0wqgy42/image/upload/v1638786773/avatars/avatar3_m1dr5v.png"
+                    },
+                    {
+                        "fullName": "Yosi Zar",
+                        "userName": "yosi@amdadi.com",
+                        "password": "yosi",
+                        "isAdmin": true,
+                        "imgUrl": "https://res.cloudinary.com/db0wqgy42/image/upload/v1638786773/avatars/avatar9_fc6dnp.png"
+                    },
+                    {
+                        "fullName": "Itzik Dahan",
+                        "userName": "itzik@amdadi.com",
+                        "password": "itzik",
+                        "isAdmin": true,
+                        "imgUrl": "https://res.cloudinary.com/db0wqgy42/image/upload/v1638786773/avatars/avatar5_titi4p.png"
+                    }
+                ]
+
+                [
+                    {
+                        "fullName": "Lola Kulan",
+                        "userName": "lola@amdadi.com",
+                        "password": "lola",
+                        "isAdmin": true,
+                        "imgUrl": "https://res.cloudinary.com/db0wqgy42/image/upload/v1638786774/avatars/avatar12_c2fk8k.jpg"
+                    },
+                    {
+                        "fullName": "Bela Cohen",
+                        "userName": "bela@amdadi.com",
+                        "password": "bela",
+                        "isAdmin": true,
+                        "imgUrl": "https://res.cloudinary.com/db0wqgy42/image/upload/v1638786774/avatars/avatar1_ydl3ev.png"
+                    },
+                    {
+                        "fullName": "Zehava Shara",
+                        "userName": "zehava@amdadi.com",
+                        "password": "zehava",
+                        "isAdmin": true,
+                        "imgUrl": "https://res.cloudinary.com/db0wqgy42/image/upload/v1638786774/avatars/avatar13_bd50y0.jpg"
+                    },
+                    {
+                        "fullName": "Nina Penina",
+                        "userName": "nina@amdadi.com",
+                        "password": "nina",
+                        "isAdmin": true,
+                        "imgUrl": "https://res.cloudinary.com/db0wqgy42/image/upload/v1638786774/avatars/avatar13_bd50y0.jpg"
+                    },
+                    {
+                        "fullName": "Jhon Snow",
+                        "userName": "jhon@amdadi.com",
+                        "password": "jhon",
+                        "isAdmin": true,
+                        "imgUrl": "https://res.cloudinary.com/db0wqgy42/image/upload/v1638786773/avatars/avatar4_qnojew.png"
+                    }
+                    ,
+                    {
+                        "fullName": "Jacob Shein",
+                        "userName": "jacob@amdadi.com",
+                        "password": "jacob",
+                        "isAdmin": true,
+                        "imgUrl": "https://res.cloudinary.com/db0wqgy42/image/upload/v1638786773/avatars/avatar8_lfy71z.png"
+                    },
+                    {
+                        "fullName": "Bob Robi",
+                        "userName": "bob@amdadi.com",
+                        "password": "bob",
+                        "isAdmin": true,
+                        "imgUrl": "https://res.cloudinary.com/db0wqgy42/image/upload/v1638786773/avatars/avatar11_zrmnuw.jpg"
+                    },
+                    {
+                        "fullName": "Tom Frog",
+                        "userName": "tom@amdadi.com",
+                        "password": "tom",
+                        "isAdmin": true,
+                        "imgUrl": "https://res.cloudinary.com/db0wqgy42/image/upload/v1638786773/avatars/avatar2_znrytb.png"
+                    },
+                    {
+                        "fullName": "Moshe Gur",
+                        "userName": "moshe@amdadi.com",
+                        "password": "moshe",
+                        "isAdmin": true,
+                        "imgUrl": "https://res.cloudinary.com/db0wqgy42/image/upload/v1638786773/avatars/avatar7_z8e9gw.png"
+                    },
+                    {
+                        "fullName": "Ayelet Dayan",
+                        "userName": "ayelet@amdadi.com",
+                        "password": "ayelet",
+                        "isAdmin": true,
+                        "imgUrl": "https://res.cloudinary.com/db0wqgy42/image/upload/v1638786773/avatars/avatar6_vqrh3l.png"
+                    },
+                    {
+                        "fullName": "Naama Atias",
+                        "userName": "naama@amdadi.com",
+                        "password": "naama",
+                        "isAdmin": true,
+                        "imgUrl": "https://res.cloudinary.com/db0wqgy42/image/upload/v1638786773/avatars/avatar3_m1dr5v.png"
+                    },
+                    {
+                        "fullName": "Yosi Zar",
+                        "userName": "yosi@amdadi.com",
+                        "password": "yosi",
+                        "isAdmin": true,
+                        "imgUrl": "https://res.cloudinary.com/db0wqgy42/image/upload/v1638786773/avatars/avatar9_fc6dnp.png"
+                    },
+                    {
+                        "fullName": "Itzik Dahan",
+                        "userName": "itzik@amdadi.com",
+                        "password": "itzik",
+                        "isAdmin": true,
+                        "imgUrl": "https://res.cloudinary.com/db0wqgy42/image/upload/v1638786773/avatars/avatar5_titi4p.png"
+                    }
+                ]
