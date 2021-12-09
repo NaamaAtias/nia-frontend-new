@@ -62,11 +62,11 @@
               <div class="stay-details-features-main fs14">
                 <div class="stay-feature-container">
                   <div class="stay-feature-container-left">
-                    <i
-                      class="fas fa-home"
-                      aria-hidden="true"
-                      style="font-size: 25px"
-                    ></i>
+                    <img
+                      class="stay-features"
+                      src="https://res.cloudinary.com/itzikdahan/image/upload/v1639042599/nia-bnb/home_ib5ono.png"
+                      alt=""
+                    />
                   </div>
                   <div class="stay-feature-container-right">
                     <p class="bold">Entire place</p>
@@ -75,7 +75,11 @@
                 </div>
                 <div class="stay-feature-container">
                   <div class="stay-feature-container-left">
-                    <i class="fas fa-hand-sparkles" style="font-size: 25px"></i>
+                    <img
+                      class="stay-features"
+                      src="https://res.cloudinary.com/itzikdahan/image/upload/v1639042599/nia-bnb/sparkle_m0gx4w.png"
+                      alt=""
+                    />
                   </div>
                   <div class="stay-feature-container-right">
                     <p class="bold">Enhanced Clean</p>
@@ -87,7 +91,11 @@
                 </div>
                 <div class="stay-feature-container">
                   <div class="stay-feature-container-left">
-                    <i class="fas fa-door-closed" style="font-size: 25px"></i>
+                    <img
+                      class="stay-features"
+                      src="https://res.cloudinary.com/itzikdahan/image/upload/v1639042599/nia-bnb/door_f2lbgu.png"
+                      alt=""
+                    />
                   </div>
                   <div class="stay-feature-container-right">
                     <p class="bold">Self check-in</p>
@@ -96,7 +104,11 @@
                 </div>
                 <div class="stay-feature-container">
                   <div class="stay-feature-container-left">
-                    <i class="fas fa-wifi" style="font-size: 25px"></i>
+                    <img
+                      class="stay-features"
+                      src="https://res.cloudinary.com/itzikdahan/image/upload/v1639042604/nia-bnb/wifi_fa9ypi.png"
+                      alt=""
+                    />
                   </div>
                   <div class="stay-feature-container-right">
                     <p class="bold">Wifi</p>
@@ -141,11 +153,13 @@
           <span> {{ stay.reviews.length }} <span>reviews</span> </span>
         </div>
         <stay-rate :reviews="stay.reviews" />
-        <stay-review
-          v-for="review in stay.reviews"
-          :key="review.id"
-          :review="review"
-        />
+        <div class="review-out flex space-between">
+          <stay-review
+            v-for="review in stay.reviews"
+            :key="review.id"
+            :review="review"
+          />
+        </div>
         <hr />
       </section>
       <section class="main-layout map">
