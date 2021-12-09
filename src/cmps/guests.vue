@@ -21,24 +21,38 @@
       </div>
       <div class="guests-btns">
         <div>
-          <button type="button" class="guests-btn" @click="addAdults">+</button>
+          <button type="button" class="guests-btn" @click="reduceAdults">
+            -
+          </button>
           <span class="quantity">{{ quantityAdults }}</span>
-          <button type="button" class="guests-btn" @click="reduceAdults">-</button>
+          <button type="button" class="guests-btn" @click="addAdults">+</button>
         </div>
         <div>
-          <button type="button" class="guests-btn" @click="addChildren">+</button>
+          <button type="button" class="guests-btn" @click="reduceChildren">
+            -
+          </button>
           <span class="quantity">{{ quantityChildren }}</span>
-          <button type="button" class="guests-btn" @click="reduceChildren">-</button>
+          <button type="button" class="guests-btn" @click="addChildren">
+            +
+          </button>
         </div>
         <div>
-          <button type="button" class="guests-btn" @click="addInfants">+</button>
+          <button type="button" class="guests-btn" @click="reduceInfants">
+            -
+          </button>
+
           <span class="quantity">{{ quantityInfants }}</span>
-          <button type="button" class="guests-btn" @click="reduceInfants">-</button>
+          <button type="button" class="guests-btn" @click="addInfants">
+            +
+          </button>
         </div>
         <div>
-          <button type="button" class="guests-btn" @click="addPets">+</button>
+          <button type="button" class="guests-btn" @click="reducePets">
+            -
+          </button>
+
           <span class="quantity">{{ quantityPets }}</span>
-          <button type="button" class="guests-btn" @click="reducePets">-</button>
+          <button type="button" class="guests-btn" @click="addPets">+</button>
         </div>
       </div>
       <div></div>
@@ -56,47 +70,51 @@ export default {
     return {
       quantityAdults: 0,
       quantityChildren: 0,
-      quantityInfants:0,
-      quantityPets:0,
+      quantityInfants: 0,
+      quantityPets: 0,
     };
   },
   methods: {
     addAdults() {
       this.quantityAdults++;
-      this.sumTotalPers()
+      this.sumTotalPers();
     },
     reduceAdults() {
       if (this.quantityAdults) this.quantityAdults--;
-      this.sumTotalPers()
+      this.sumTotalPers();
     },
-        addChildren() {
+    addChildren() {
       this.quantityChildren++;
-      this.sumTotalPers()
+      this.sumTotalPers();
     },
     reduceChildren() {
       if (this.quantityChildren) this.quantityChildren--;
-      this.sumTotalPers()
+      this.sumTotalPers();
     },
-        addInfants() {
+    addInfants() {
       this.quantityInfants++;
-      this.sumTotalPers()
+      this.sumTotalPers();
     },
     reduceInfants() {
       if (this.quantityInfants) this.quantityInfants--;
-      this.sumTotalPers()
+      this.sumTotalPers();
     },
-        addPets() {
+    addPets() {
       this.quantityPets++;
-      this.sumTotalPers()
+      this.sumTotalPers();
     },
     reducePets() {
       if (this.quantityPets) this.quantityPets--;
-      this.sumTotalPers()
+      this.sumTotalPers();
     },
-    sumTotalPers(){
-      const totalPers = this.quantityAdults + this.quantityChildren + this.quantityInfants;
-      this.$emit("totalPers", {totalPers: totalPers, pets: this.quantityPets});
-    }
+    sumTotalPers() {
+      const totalPers =
+        this.quantityAdults + this.quantityChildren + this.quantityInfants;
+      this.$emit("totalPers", {
+        totalPers: totalPers,
+        pets: this.quantityPets,
+      });
+    },
   },
 };
 </script>

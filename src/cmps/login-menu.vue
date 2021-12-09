@@ -20,12 +20,6 @@ export default {
   data() {
     return {};
   },
-  created() {
-    const timeStamp = Date.now() // "created at": Date.now()
-    var date = new Date(1639057505000)
-    date = date.toString()
-    console.log(date.slice(4,7) + ' ' + date.slice(11,15)) //date to sho: MMM YYYY (Dec 2021)
-  },
   methods: {},
 };
 </script>

@@ -13,6 +13,7 @@
     right: 85%;
     text-align: center;
     .small-filter-txt{
+        text-transform: capitalize;
         flex-direction: row;
         text-decoration: none;
         font-size: 12px;
@@ -100,6 +101,7 @@
         &.filter-location{
             .filter-input{
                 padding-left: 1.2rem;
+                text-transform: capitalize;
             }
         }
         &.filter-check-in, &.filter-check-out{
@@ -146,6 +148,7 @@
         letter-spacing: 0.04em;
         text-align: left;
         padding-left: 1.7em;
+        text-transform: capitalize;
      }
     
     .filter-input{
@@ -182,7 +185,9 @@
         letter-spacing: 0.04em;
         color: $clr5;
         padding-right: 10px;
-        padding-left: 7px;        
+        padding-left: 7px;
+        text-transform: capitalize;
+        
     }
     .small-filter-txt:nth-child(2){
         border-right: 1px solid $clr3;
@@ -339,7 +344,6 @@ button.filter-explore{
         position: absolute;
         right: 50%;
         transform: translateX(50%);
-
         display: flex;
         flex-direction: row;
         border: 1px solid $clr3;
@@ -356,7 +360,8 @@ button.filter-explore{
             letter-spacing: 0.04em;
             color: $clr5;
             padding-right: 10px;
-            padding-left: 7px;        
+            padding-left: 7px;
+            text-transform: capitalize;
         }
         .small-filter-txt:nth-child(2){
             border-right: 1px solid $clr3;
@@ -479,7 +484,7 @@ button.filter-explore{
      }
     
     .filter-input{
-        margin-top: 0.5rem;
+        margin-top: 3px;
         color: $clr4;
         font-weight: 400;
         width: 100%;

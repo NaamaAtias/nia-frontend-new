@@ -61,13 +61,16 @@
 }
 
 //stay-app
-.filter-stayApp-container-main{
+.filter-stayApp-container-main{  
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 6px 16px;
     top: 55px;
     z-index: 5;
     margin-top: 0;  
     width: 100%;
     position: fixed;
     padding-top: 15px;
+    border-bottom: 1px solid rgb(221, 221, 221);
+
     .filter-btns-stayApp-container{
         background-color: $clr6;
         gap: 10px;

@@ -38,8 +38,21 @@
       padding: 5px;
         display: flex;
         justify-content: space-between;
-    }
-    .star {
+        padding: 7px;
+        label.share-btn{
+          padding: 7px 3px;
+          .icon-btn{
+            margin: 0;
+          }
+        }
+        label.share-btn:hover{
+          padding: 7px 3px;
+          background-color: $clr3;
+          border-radius: 10px;
+          }
+        }
+      
+      .star {
         background-color: rgb 255.55.92;
         padding-right: 6px;
     }
