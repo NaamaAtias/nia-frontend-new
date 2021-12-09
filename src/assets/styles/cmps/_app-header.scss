@@ -9,12 +9,17 @@
     a.hover{
         display: none;
     }
+    header{
+        z-index: 100;
+    }  
 }
 
 @media (max-width: 760px){
     header { 
         //naama
         box-shadow: rgb(0 0 0 / 12%) 0px 6px 16px;
+
+        z-index: 100;
 
         font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
         color: $clr6;
@@ -61,6 +66,7 @@
         }        
     }
     .login-btn{
+        z-index: 10;
         display: flex;
         flex-direction: row;
         color: $clr6;
@@ -80,6 +86,7 @@
     header { 
         //naama
         box-shadow: rgb(0 0 0 / 12%) 0px 6px 16px;
+        z-index: 100;
 
         font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
         color: $clr6;
