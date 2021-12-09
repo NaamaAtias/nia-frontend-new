@@ -1,14 +1,16 @@
 
 .alert {
-    background-color: $clr6;
-    color: $clr1;
-    position: absolute;
-    bottom: 50px;
-    right: 50px;
-    padding: 5px 15px 25px 15px;
-    border: 1px solid $clr4;
-    border-radius: 2em;
-
+    background-color: $clr1;
+    color: $clr6;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 15px;
+    padding: 10px;
+    border: 1px solid $clr6;
+    border-radius: 10px;
+    font-weight: 600;
+    height: fit-content;
 }
 
 

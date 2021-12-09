@@ -4,7 +4,6 @@
       v-if="alive"
       class="alert"
       :class="alertClass"
-      :style="{ top: msg.top +'px', right: msg.right+'px' }"
     >
       {{ msg.txt }}
     </div>

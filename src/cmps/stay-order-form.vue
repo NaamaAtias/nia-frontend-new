@@ -46,7 +46,6 @@
                 :placeholder="guests"
                 autocomplete="off"
                 @focus="isOnGuests = !isOnGuests"
-                @blur="isOnGuests = !isOnGuests"
               />
           </div>
           <guests
@@ -155,6 +154,11 @@ export default {
     guests,
   },
   methods: {
+    // OrderModal {
+    // closeGuests(ev) {
+    //   if (ev.relatedTarget._prevClass === 'guests-btn') return;
+    //   this.isOnGuests = !this.isOnGuests;
+    // },
     sendOrder() {
       console.log('sent')
       this.currTrip.stay = {
@@ -194,7 +198,7 @@ export default {
         this.isAvailable = true;
       } else {
         console.log(ev);
-        showMsg("Please enter number of guests to continue", "danger",ev.pageY-ev.offsetY, ev.pageX-ev.offsetX);
+        showMsg("Please enter number of guests to continue", "danger",ev.pageY, ev.pageX);
       }
     },
   },

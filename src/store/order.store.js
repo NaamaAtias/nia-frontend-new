@@ -6,7 +6,9 @@ export const orderStore = {
     state: {
         currOrder: null,
         orders: [],
-        currTrip: {}
+        currTrip: {},
+        isOrdered: false
+
     },
     getters: {
         showCurrOrder(state) {
@@ -21,6 +23,9 @@ export const orderStore = {
         nights(state) {
             if (state.currTrip.nights) return state.currTrip.nights;
             else return 0;
+        },
+        isOrdered(state) {
+            return state.isOrdered;
         }
     },
     mutations: {
@@ -28,6 +33,7 @@ export const orderStore = {
             state.currOrder = order;
             state.currTrip = {};
             console.log('order', state.currOrder)
+            state.isOrdered = true;
         },
         setCurrOrder(state, { order }) {
             state.currOrder = order;
@@ -41,6 +47,9 @@ export const orderStore = {
         addOrder(state, { order }) {
             state.orders.push(order);
         },
+        cleanScreen(state) {
+            state.isOrdered = false;
+        }
     },
     actions: {
         async addOrder(context, { order }) {

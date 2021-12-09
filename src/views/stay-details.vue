@@ -1,5 +1,6 @@
 <template>
   <section class="main-layout" v-if="stay">
+   <order-modal v-if="isOrdered"/>
     <div class="stay-details">
       <p class="less-margin fs26 bold">{{ stay.name }}</p>
       <div class="details-header align-center">
@@ -183,6 +184,8 @@ import stayReview from "@/cmps/stay-review";
 import stayOrderForm from "@/cmps/stay-order-form";
 import stayRate from "@/cmps/stay-rate";
 import userAvatar from "../cmps/user-avatar.vue";
+import orderModal from "../cmps/order-modal.vue";
+
 export default {
   data() {
     return {
@@ -201,6 +204,9 @@ export default {
     avgStayRate() {
       return this.$store.getters.avgStayRate;
     },
+    isOrdered() {
+      return this.$store.getters.isOrdered;
+    }
   },
   watch: {
     "$route.params.stayId": {
@@ -222,6 +228,8 @@ export default {
     stayOrderForm,
     stayRate,
     userAvatar,
+    orderModal
+
   },
 };
 </script>
