@@ -101,7 +101,7 @@
         <div class="explore-locations top">
           <div
             class="explore-location"
-            @click.stop="goToDetails('61b1324b68826438747c903c')"
+            @click.stop="goToDetails('61b20f7868826438744c6dbb')"
           >
             <img
               src="https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,h_300,w_257,g_face/v1638306503/castle/pexels-super-claudioo-6697718_lxbsuh.jpg"
@@ -121,7 +121,7 @@
           </div>
           <div
             class="explore-location"
-            @click.stop="goToDetails('61b1324b68826438747c9038')"
+            @click.stop="goToDetails('61b20f7868826438744c6dcb')"
           >
             <img
               src="https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,h_300,w_257,g_face/v1638304898/New%20York/pexels-max-vakhtbovych-7195534_mqb90n.jpg"
@@ -140,7 +140,7 @@
           </div>
           <div
             class="explore-location"
-            @click.stop="goToDetails('61b1324b68826438747c9044')"
+            @click.stop="goToDetails('61b20f7868826438744c6dc3')"
           >
             <img
               src="https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,h_300,w_257,g_face/v1638304278/London/pexels-daria-shevtsova-3326213_hwgyif.jpg"
@@ -160,7 +160,7 @@
           </div>
           <div
             class="explore-location"
-            @click.stop="goToDetails('61b1324b68826438747c902e')"
+            @click.stop="goToDetails('61b20f7868826438744c6dae')"
           >
             <img
               src="https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,h_300,w_257,g_face/v1638304311/London/pexels-connor-danylenko-3075532_ulswcp.jpg"
@@ -212,25 +212,25 @@ export default {
     window.addEventListener("scroll", this.handleScroll);
     var rateJerusalem = await this.$store.dispatch({
       type: "getRateById",
-      stayId: "61b1324b68826438747c903c"
+      stayId: "61b20f7868826438744c6dbb"
     });
     this.avgStayRateJerusalem = rateJerusalem.rate;
     this.reviewsJerusalem = rateJerusalem.reviews;
     var rateNY = await this.$store.dispatch({
       type: "getRateById",
-      stayId: "61b1324b68826438747c9038",
+      stayId: "61b20f7868826438744c6dc3",
     });
     this.avgStayRateNY = rateNY.rate;
     this.reviewsNY = rateNY.reviews;
     var rateLondon = await this.$store.dispatch({
       type: "getRateById",
-      stayId: "61b1324b68826438747c902e",
+      stayId: "61b20f7868826438744c6dcb",
     });
     this.avgStayRateLondon = rateLondon.rate;
     this.reviewsLondon = rateLondon.reviews;
     var rateBoutique = await this.$store.dispatch({
       type: "getRateById",
-      stayId: "61b1324b68826438747c9044",
+      stayId: "61b20f7868826438744c6dae",
     });
     this.avgStayRateBoutique = rateBoutique.rate;
     this.reviewsBoutique = rateBoutique.reviews;

@@ -44,7 +44,7 @@
               <section class="hosted-by flex row">
                 <div>
                   <p class="less-margin fs22 bold">
-                    {{ stay.type }} hosted by {{ stay.host.fullname }}
+                    {{ stay.type }} hosted by {{ stay.host.fullName }}
                   </p>
                   <p>
                     <span>{{ stay.capacity }} guests</span
@@ -94,7 +94,7 @@
                   <div class="stay-feature-container-left">
                     <img
                       class="stay-features"
-                      src="https://res.cloudinary.com/itzikdahan/image/upload/v1639042599/nia-bnb/door_f2lbgu.png"
+                      src="https://res.cloudinary.com/itzikdahan/image/upload/v1639053179/nia-bnb/door_vozorw.png"
                       alt=""
                     />
                   </div>

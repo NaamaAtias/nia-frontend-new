@@ -2,11 +2,23 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    font-family: airbnb-book;
 
     .review {
-        
     }
     .review-inner {
         width: 45%;
     }
+}
+
+.review-container {
+    align-items: center;
+    gap: 15px;
+    .review-name {
+        font-weight: bold;
+    }
+}
+
+.review-container p {
+    margin: 0px;
 }
