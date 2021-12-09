@@ -2,6 +2,7 @@
   <header class="full main-layout" :style="bgc">
     <div>
       <nav :style="bgc">
+        <div class="header-mobile">
         <router-link class="logo" :style="bgc" to="/">
           <div v-if="home && !isScroll">
             <img src="../assets/img/logo-cloud.jpg" alt="" />
@@ -11,6 +12,8 @@
           </div>
           <div class="logo-txt logo-niabnb">niabnb</div>
         </router-link>
+        </div>
+
 
         <div
           class="small-filter"
@@ -29,10 +32,6 @@
             <i class="fas fa-search"></i>
           </button>
         </div>
-
-        <button @click="isSmallFilter = !isSmallFilter" v-if="isSmallFilter" class="mobile-small-filter">
-            <i class="fas fa-search"></i>
-        </button>
 
         <div class="header-right">
           <router-link class="hover" :style="routerClr" to="/stay"
@@ -57,7 +56,7 @@
           </div>
         </div>
       </nav>
-      <div v-if="!isSmallFilter" :style="bigFilter">
+      <div v-if="!isSmallFilter && !isMenuOpen" :style="bigFilter">
         <stay-filter key="filter" />
       </div>
     </div>
