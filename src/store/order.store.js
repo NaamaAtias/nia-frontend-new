@@ -35,8 +35,9 @@ export const orderStore = {
             console.log('order', state.currOrder)
             state.isOrdered = true;
         },
-        setCurrOrder(state, { order }) {
+        addOrder(state, { order }) {
             state.currOrder = order;
+            //add to array of all the orders - should include user name
         },
         setCurrTrip(state, { trip }) {
             state.currTrip = trip;
@@ -66,7 +67,7 @@ export const orderStore = {
             try {
                 const order = await orderService.getById(orderId);
                 console.log(stay);
-                context.commit({ type: 'setCurrOrder', order });
+                context.commit({ type: 'addOrder', order });
                 // socketService.off(SOCKET_EVENT_REVIEW_ADDED)
                 // socketService.on(SOCKET_EVENT_REVIEW_ADDED, stay => {
                 // //     console.log('Got stay from socket', stay);

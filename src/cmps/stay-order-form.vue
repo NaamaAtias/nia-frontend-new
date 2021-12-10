@@ -166,6 +166,9 @@ export default {
         name: this.currStay.name,
         price: this.currStay.price,
       };
+      //add user to the order object before saving it - if not logged in add guest, should i add id??
+      // this.currTrip.user = this.$store.getters.loggedinUser || {fullname: 'Guest 1', imgUrl: '../assets/img/user-portrait.jpg'};
+      
       this.$store.commit({ type: "setOrder", order: this.currTrip });
       this.currTrip = {};
       this.isAvailable = false;

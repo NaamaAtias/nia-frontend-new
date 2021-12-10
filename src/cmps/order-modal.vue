@@ -9,7 +9,7 @@
       <p class="fs18">Stay name: {{order.stay.name}}</p>
       <p class="fs18">Dates: {{order.startDate}} - {{order.endDate}}</p>
       <p class="fs18">Guests number: {{order.persons}} <span v-if="order.pets > 0">+ {{order.pets}}</span></p>
-      <!-- <p class="fs18">Total price: {{totalPrice}}</p> -->
+      <p class="fs18">Total price: {{totalPrice}}</p>
     </div>
   </div>
 </template>
@@ -24,6 +24,9 @@ export default {
     computed: {
         order() {
            return this.$store.getters.showCurrOrder;
+        },
+        totalPrice() {
+          return this.$store.getters.totalPrice; //to check when possible
         }
     }
 };
