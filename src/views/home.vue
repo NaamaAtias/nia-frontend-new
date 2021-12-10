@@ -8,7 +8,7 @@
       </div>
     </div>
     <div class="home main-layout">
-            <div class="explore-location">
+      <div class="explore-location">
         <h1>Top rated</h1>
         <div class="explore-locations top">
           <div
@@ -72,7 +72,7 @@
           </div>
           <div
             class="explore-location"
-            @click.stop="goToDetails('61b20f7868826438744c6dae')"
+            @click.stop="goToDetails('61b2f4c8f6d9df0cb72a14a1')"
           >
             <img
               src="https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,h_300,w_257,g_face/v1638304311/London/pexels-connor-danylenko-3075532_ulswcp.jpg"
@@ -181,7 +181,6 @@
         </div>
       </div>
 
-
       <div class="questions-about-hosting-container">
         <router-link to="/stay/edit/:id">
           <img src="../assets/img/host-home.jpg" alt=""
@@ -228,13 +227,13 @@ export default {
     this.reviewsNY = rateNY.reviews;
     var rateLondon = await this.$store.dispatch({
       type: "getRateById",
-      stayId: "61b20f7868826438744c6dcb",
+      stayId: "61b2f4c8f6d9df0cb72a14a1",
     });
     this.avgStayRateLondon = rateLondon.rate;
     this.reviewsLondon = rateLondon.reviews;
     var rateBoutique = await this.$store.dispatch({
       type: "getRateById",
-      stayId: "61b20f7868826438744c6dae",
+      stayId: "61b20f7868826438744c6dc3",
     });
     this.avgStayRateBoutique = rateBoutique.rate;
     this.reviewsBoutique = rateBoutique.reviews;
@@ -250,8 +249,8 @@ export default {
       this.$router.push("/stay/" + stayId);
     },
     goToStays(filterType, filter) {
-      const trip = {location: filter}
-      this.$store.commit({type: "setCurrTrip", trip})
+      const trip = { location: filter };
+      this.$store.commit({ type: "setCurrTrip", trip });
       const filterBy = { filterType: filterType, filter: filter };
       this.$store.dispatch({ type: "setFilter", filterBy });
       this.$router.push("/stay/");
