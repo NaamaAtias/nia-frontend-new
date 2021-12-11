@@ -8,7 +8,7 @@
       <span>response rate</span>
     </div>
     <div class="host-flex">
-      <div class="reservation-list">reservation-list</div>
+      <host-orders-list></host-orders-list>
       <div class="hosting-summary">
         <h2>Hosting summary</h2>
         <h4>Fantastic job <span>V</span></h4>
@@ -30,6 +30,7 @@
 </template>
 
 <script>
+import hostOrdersList from '../cmps/host-orders-list.vue'
 export default {
   data() {
     return {
@@ -67,6 +68,9 @@ export default {
       return " 30"; //todo
     },
   },
+  components: {
+    hostOrdersList
+  }
 };
 </script>
 
