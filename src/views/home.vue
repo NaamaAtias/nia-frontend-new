@@ -1,13 +1,27 @@
 <template>
   <section>
     <div :style="homeBgc">
-      <div class="home main-layout">
-        <router-link to="/stay">
-          <img src="../assets/img/home-img.jpg" />
-        </router-link>
+      <div>
+        <div class="home-img-desk main-layout">
+          <router-link to="/stay">
+            <div class="home-img">
+              <img src="../assets/img/home-1-img.jpg" />
+              <!-- <span>Discover</span>
+          <span>stays to live,</span>
+          <span>or just relax</span> -->
+            </div>
+          </router-link>
+        </div>
+        <div class="home-img-mobile">
+          <router-link to="/stay">
+            <div class="home-img">
+              <img src="../assets/img/home-img.jpg" />
+            </div>
+          </router-link>
+        </div>
       </div>
     </div>
-    <div class="home main-layout">
+    <div class="home-explore main-layout">
       <div class="explore-location">
         <h1>Top rated</h1>
         <div class="explore-locations top">

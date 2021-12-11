@@ -45,7 +45,6 @@
         />
       </div>
       <section class="main-details-container flex">
-        <section class="flex">
           <section class="text-details">
             <div>
               <section class="hosted-by flex row">
@@ -143,7 +142,6 @@
           </section>
           <section class="order-form-cmp">
             <stay-order-form :stayId="stay._id"></stay-order-form>
-          </section>
         </section>
       </section>
       <hr class="margin" />

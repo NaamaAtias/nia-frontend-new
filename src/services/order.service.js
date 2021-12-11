@@ -1,9 +1,16 @@
-import { storageService } from './async-storage.service';
-import { userService } from './user.service';
+// import { storageService } from './async-storage.service';
+// import { userService } from './user.service';
 
-const ORDER_KEY = 'orders';
-var gOrders = query() || [] ;
-// createOrders();
+import { httpService } from './http.service';
+import Axios from 'axios'; var axios = Axios.create({ withCredentials: true });
+
+// const ORDER_KEY = 'orders';
+// var gOrders = query() || [] ;
+// // createOrders();
+
+const STAY_URL = (process.env.NODE_ENV !== 'development')
+  ? '/api/order/'
+  : '//localhost:3030/api/order/';
 
 export const orderService = {
     add,
@@ -12,8 +19,18 @@ export const orderService = {
     getById,
 };
 
-function query() {
-    return storageService.query(ORDER_KEY);
+// function query() {
+//     return storageService.query(ORDER_KEY);
+// }
+async function query(filterBy) {
+    console.log('order filter:', filterBy)
+  try {
+    return httpService.get('order/', filterBy)
+  }
+  catch (err) {
+    console.log(err)
+    throw err;
+  }
 }
 
 // function remove(orderId) {
@@ -21,9 +38,17 @@ function query() {
 // }
 
 async function add(order) {
-    order.byUser = userService.getLoggedinUser()
-    const addedOrder = storageService.post(ORDER_KEY, order);
-    return addedOrder;
+    // order.byUser = userService.getLoggedinUser()
+    try {
+        return httpService.post('order/', order)
+      }
+      catch (err) {
+        console.log(err)
+        throw err;
+      }
+
+    // const addedOrder = storageService.post(ORDER_KEY, order);
+    // return addedOrder;
 }
 
 // async function createOrders() {

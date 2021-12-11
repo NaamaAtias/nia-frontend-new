@@ -8,7 +8,7 @@
         <router-link to="/login">Log in</router-link>
       </div>
       <div class="login-menu-btn border">
-        <router-link to="/stay/edit/:id">Host your home</router-link>
+        <router-link to="/host">Host page</router-link>
       </div>
     </div>
   </section>

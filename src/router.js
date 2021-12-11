@@ -7,6 +7,7 @@ import loginSignup from './views/login-signup.vue'
 import userDetails from './views/user-details.vue'
 import stayDetails from './views/stay-details.vue'
 import stayEdit from './views/stay-edit.vue'
+import host from './views/host.vue'
 
 Vue.use(Router)
 
@@ -48,6 +49,11 @@ export const router = new Router({
       path: '/user/:id',
       name: 'user-details',
       component: userDetails
+    },
+    {
+      path: '/host',
+      name: 'host',
+      component: host
     }
   ]
 })

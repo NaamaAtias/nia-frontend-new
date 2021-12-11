@@ -13,13 +13,13 @@ function getUsers() {
     return axios.get(`user`)
 }
 
-function login(username, password) {
-    console.log(username, password);
-    return axios.post(AUTH_URL + 'login', {username, password}).then(res => res.data)
+function login(userName, password) {
+    console.log(userName, password);
+    return axios.post(AUTH_URL + 'login', {userName, password}).then(res => res.data)
 }
 
-function signup(username, password) {
-    return axios.post(AUTH_URL + 'signup', {username, password}).then(res => res.data)
+function signup(userName, password) {
+    return axios.post(AUTH_URL + 'signup', {userName, password}).then(res => res.data)
 }
 
 function logout() {

@@ -1,12 +1,12 @@
 <template>
-  <div class="screen">
+  <div class="screen-login">
     <div class="login-main-container">
       <h2>Login</h2>
       <form @submit.prevent="doLogin">
         <div>
           <input
             type="text"
-            v-model="loginCred.username"
+            v-model="loginCred.userName"
             placeholder="User name"
           />
         </div>
@@ -39,7 +39,7 @@
         <div>
           <input
             type="text"
-            v-model="signupCred.username"
+            v-model="signupCred.userName"
             placeholder="email@email.com"
           />
         </div>
@@ -53,30 +53,30 @@
 export default {
   created() {
     window.scrollTo(0, 0);
+    this.loadUsers();
   },
   name: "test",
   data() {
     return {
       msg: "",
-      loginCred: { username: "", password: "" },
-      signupCred: { username: "", password: "", email: "" },
+      loginCred: { userName: "", password: "" },
+      signupCred: { userName: "", password: "", email: "" },
     };
   },
   computed: {
     users() {
-      return this.$store.getters.users;
+      console.log(this.$store.getters.users);
+      return this.$store.getters.users;      
     },
     loggedinUser() {
       return this.$store.getters.loggedinUser;
     },
   },
-  created() {
-    this.loadUsers();
-  },
   methods: {
     async doLogin() {
-      if (!this.loginCred.username) {
-        this.msg = "Please enter username/password";
+      console.log(this.loginCred);
+      if (!this.loginCred.userName) {
+        this.msg = "Please enter userName/password";
         return;
       }
       try {
@@ -94,7 +94,7 @@ export default {
       if (
         !this.signupCred.fullname ||
         !this.signupCred.password ||
-        !this.signupCred.username
+        !this.signupCred.userName
       ) {
         this.msg = "Please fill up the form";
         return;
