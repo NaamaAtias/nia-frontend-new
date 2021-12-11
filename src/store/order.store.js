@@ -83,6 +83,7 @@ export const orderStore = {
         async loadOrders(context, { filterBy }) {
             try {
                 // var filterBy = state.filterBy ? state.filterBy : ''
+                console.log(filterBy);
                 const orders = await orderService.query(filterBy);
                 context.commit({ type: 'setOrders', orders });
             } catch (err) {
@@ -94,7 +95,7 @@ export const orderStore = {
         setOrdersFilter({ commit, dispatch }, { filterBy }) {
             console.log(filterBy);
             commit({ type: 'setOrdersFilter', filterBy })
-            dispatch({ type: 'loadOrders' })
+            dispatch({ type: 'loadOrders', filterBy })
         },
         clearOrdersFilter({ commit, dispatch }) {
             commit({ type: 'clearOrdersFilter' })

@@ -12,21 +12,18 @@
       <div class="hosting-summary">
         <h2>Hosting summary</h2>
         <h4>Fantastic job <span>V</span></h4>
-        <span>Gusts love wat you're doing. keep up the great work!</span>
-        <br/><br/>
+        <span>Guests love what you're doing. keep up the great work!</span>
+        <br /><br />
         <span>View details</span>
-        <br><br>
-        <hr>
-        <br>
-        <span>November earning</span><span>{{earning}}</span>
-        <br/><br>
-        <span>30-day views</span><span>{{views}}</span>
-        <br><br>
-        <hr>
-        <br>
-        <span>Overall rating</span><span>{{rating}}</span>
-        <br/><br>
-        <span>Total reviews</span><span>{{reviews}}</span>
+        <br /><br />
+        <hr />
+        <br />
+        <span>December earnings</span><span>{{ earnings }}</span> <br /><br />
+        <span>30-day views</span><span>{{ views }}</span> <br /><br />
+        <hr />
+        <br />
+        <span>Overall rating</span><span>{{ rating }}</span> <br /><br />
+        <span>Total reviews</span><span>{{ reviews }}</span>
       </div>
     </div>
   </div>
@@ -35,27 +32,40 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+        currentUser: null,
+        orders: null,
+    };
+  },
+  created() {
+    this.currentUser = this.$store.getters.loggedinUser;
+    const filterBy = { filterType: "host", filter: this.currentUser._id };
+    this.$store.dispatch({ type: "setOrdersFilter", filterBy });
+    this.orders = this.$store.getters.orders;
+    console.log(this.orders);
   },
   computed: {
     numNewItems() {
+      console.log(this.$store.getters.orders);
       return "4 "; //todo
     },
     responseRate() {
+        
       return "75% "; //todo
     },
-    earning(){
-        return " 2570$" //todo
+    earnings() {
+        // const earn = orders.map(order => {order.nights})
+      return " 2570$"; //todo
     },
-    views(){
-        return " 678" //todo
+    views() {
+      return " 678"; //todo
     },
-        rating(){
-        return " 4.9*" //todo
+    rating() {
+      return " 4.9*"; //todo
     },
-        reviews(){
-        return " 30" //todo
-    }
+    reviews() {
+      return " 30"; //todo
+    },
   },
 };
 </script>

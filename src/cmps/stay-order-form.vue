@@ -193,6 +193,7 @@ export default {
       this.currTrip.pets = guests.pets;
     },
     checkAvailability(ev) {
+      if (!this.currTrip.startDate || !this.currTrip.endDate) return showMsg("Please enter date", "danger");
       if (
         this.currTrip.persons > 0 &&
         this.currTrip.persons <= this.currStay.capacity
@@ -200,7 +201,7 @@ export default {
         this.isAvailable = true;
       } else {
         console.log(ev);
-        showMsg("Please enter number of guests to continue", "danger",ev.pageY, ev.pageX);
+        showMsg("Please enter number of guests according to capacity", "danger");
       }
     },
   },
