@@ -9,6 +9,7 @@ export const orderStore = {
         currTrip: {},
         isOrdered: false,
         filterOrdersBy: { host: '', byUser: '', isAprooved: 'all' },
+        // filterOrdersByHostId: '',
 
     },
     getters: {
@@ -48,11 +49,12 @@ export const orderStore = {
         cleanScreen(state) {
             state.isOrdered = false;
         },
-        setOrdersFilter(state, { filterBy }) {
+        setOrdersFilter(state,  {filterBy} ) {
+            // state.filterOrdersByHostId = filterByHostId;
             if (filterBy.filterType === 'host') state.filterOrdersBy.host = filterBy.filter;
             else if (filterBy.filterType === 'byUser') state.filterOrdersBy.byUser = filterBy.filter;
             else if (filterBy.filterType === 'isApproved') state.filterOrdersBy.isApproved = filterBy.filter;
-            console.log(state.filterOrdersBy);
+            console.log('orders filter - mute', state.filterBy);
         },
         clearOrdersFilter(state) {
             state.filterBy =  { host: '', byUser: '', isAprooved: 'all' }
@@ -80,7 +82,7 @@ export const orderStore = {
         //         throw err;
         //     }
         // },
-        async loadOrders(context, { filterBy }) {
+        async loadOrders(context,  {filterBy} ) {
             try {
                 // var filterBy = state.filterBy ? state.filterBy : ''
                 const orders = await orderService.query(filterBy);
@@ -91,10 +93,10 @@ export const orderStore = {
             }
         },
 
-        setOrdersFilter({ commit, dispatch }, { filterBy }) {
-            console.log(filterBy);
+        setOrdersFilter({ commit, dispatch }, {filterBy}) {
+            console.log('ordersFilter', filterBy);
             commit({ type: 'setOrdersFilter', filterBy })
-            dispatch({ type: 'loadOrders' })
+            dispatch({ type: 'loadOrders', filterBy })
         },
         clearOrdersFilter({ commit, dispatch }) {
             commit({ type: 'clearOrdersFilter' })
