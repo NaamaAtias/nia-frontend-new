@@ -4,7 +4,6 @@
     <div class="preview-crousel">
       <el-carousel
         trigger="click"
-        :height="height"
         :autoplay="false"
         :loop="false"
       >
@@ -68,50 +67,36 @@ export default {
   created() {
     this.$store.commit({ type: "setCurrStay", stay: this.currStay });
     this.avgRate = this.$store.getters.avgStayRate;
-    window
-      .matchMedia("(min-width: 750px)")
-      .addEventListener("change", this.handleWide);
-    // window.matchMedia('(min-width: 1000px)').addEventListener('change', this.handleMid);
-    window
-      .matchMedia("(max-width: 425px)")
-      .addEventListener("change", this.handleWide);
-    window
-      .matchMedia("(min-width: 425px)")
-      .addEventListener("change", this.handleNarrow);
-    // window.matchMedia('(max-width: 1000px)').addEventListener('change', this.handleWide);
-    // window.matchMedia('(min-width: 600px)').addEventListener('change', this.handleMid);
-    window
-      .matchMedia("(max-width: 750px)")
-      .addEventListener("change", this.handleNarrow);
-  },
-  mounted() {},
-  methods: {
-    handleWide(mql) {
-      if (mql.matches) this.isWide = true;
-      else this.isWide = false;
-    },
-    // handleMid(mql) {
-    //   if (mql.matches) this.isMid = true;
-    //   else this.isMid = false;
+  //   window
+  //     .matchMedia("(min-width: 750px)")
+  //     .addEventListener("change", this.handleWide);
+  //   window
+  //     .matchMedia("(max-width: 425px)")
+  //     .addEventListener("change", this.handleWide);
+  //   window
+  //     .matchMedia("(min-width: 425px)")
+  //     .addEventListener("change", this.handleNarrow);
+  //   window
+  //     .matchMedia("(max-width: 750px)")
+  //     .addEventListener("change", this.handleNarrow);
+  // },
+  // mounted() {},
+  // methods: {
+    // handleWide(mql) {
+    //   if (mql.matches) this.isWide = true;
+    //   else this.isWide = false;
     // },
-    handleNarrow(mql) {
-      if (mql.matches) this.isNarrow = true;
-      else this.isNarrow = false;
-    },
+    // handleNarrow(mql) {
+    //   if (mql.matches) this.isNarrow = true;
+    //   else this.isNarrow = false;
+    // },
   },
   computed: {
-    height() {
-      // console.log('wide', this.isWide)
-      // console.log('mid', this.isMid)
-      // console.log('narrow', this.isNarrow)
+    // height() {
+    //     if (this.isWide) return "190px";
+    //   else if (this.isNarrow) return "300px";
+    // },
 
-      if (this.isWide) return "190px";
-      // else if (this.isMid) return "210px";
-      else if (this.isNarrow) return "300px";
-    },
-    // fullPricePerNight() {
-    //   return this.$store.getters.fullPricePerNight
-    // }
     heartColor() {
       return this.isFavorite ? "color: #ff375c; opacity: 100%" : "color: #222222; opacity: 70%";
     }

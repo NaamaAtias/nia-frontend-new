@@ -3,8 +3,6 @@
     top: 120px;
     left: 100%;
     height: fit-content;
-    // height: 250.800px;
-    width: em(342.6px);
     text-align: center;
     padding: 24px;
     border: 1px rgb(221, 221, 221) solid;
@@ -12,6 +10,18 @@
     box-shadow: rgb(0 0 0 / 12%) 0px 6px 16px;
     background-color: white;
     margin-top: 18.26px;
+     @include for-mobile-layout {
+        width: 200px;
+     }
+     @include for-narrow-layout {
+        width: 250px;
+     }
+     @include for-normal-layout {
+        width: 250px;
+     }
+     @include for-wide-layout {
+        width: 342.6px;
+    }
 
     .order-box {
         justify-content: flex-end;
@@ -169,9 +179,4 @@
     padding: 10px;
     font-weight: 800;
 }
-// .display-left {
-//     text-align: start;
-// }
-// .display-right {
-//     text-align: end;
-// }
+

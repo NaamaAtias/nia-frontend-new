@@ -14,8 +14,16 @@ body {
 .text-center {
     text-align: center;
 }
-// flex helpers
+// Font Sizes
+.fs12 { font-size: em(12px); }
+.fs14 { font-size: em(14px); }
+.fs18 { font-size: em(18px); }
+.fs22 { font-size: em(22px); }
+.fs24 { font-size: em(24px); }
+.fs28 { font-size: em(28px); }
+.fs30 { font-size: em(30px); }
 
+// flex helpers
 .flex {
     display: flex;
 

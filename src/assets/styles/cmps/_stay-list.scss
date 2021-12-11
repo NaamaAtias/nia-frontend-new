@@ -24,6 +24,23 @@
         padding-top: 5px;
     }
 
+    .el-carousel__container {
+        height: 190px;
+        @include for-mobile-layout {
+            height: 190px;
+        }
+        @include for-narrow-layout {
+            height: 400px;
+        }
+        @include for-normal-layout {
+            height: 210px;
+        }
+        @include for-wide-layout {
+            height: 180px;
+        }
+    }
+
+
 }
 
 .preview-crousel {
