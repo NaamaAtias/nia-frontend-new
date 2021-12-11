@@ -43,7 +43,7 @@
                 <input
                 id="guests"
                 type="text"
-                :placeholder="guests"
+                v-model="guests"
                 autocomplete="off"
                 @focus="isOnGuests = !isOnGuests"
               />
@@ -154,11 +154,6 @@ export default {
     guests,
   },
   methods: {
-    // OrderModal {
-    // closeGuests(ev) {
-    //   if (ev.relatedTarget._prevClass === 'guests-btn') return;
-    //   this.isOnGuests = !this.isOnGuests;
-    // },
     sendOrder() {
       console.log('sent')
       this.currTrip.stay = {
@@ -166,10 +161,14 @@ export default {
         name: this.currStay.name,
         price: this.currStay.price,
       };
-      //add user to the order object before saving it - if not logged in add guest, should i add id??
-      // this.currTrip.user = this.$store.getters.loggedinUser || {fullname: 'Guest 1', imgUrl: '../assets/img/user-portrait.jpg'};
-      
-      this.$store.commit({ type: "setOrder", order: this.currTrip });
+      this.currTrip.host = {
+        _id: this.currStay.host._id,
+        name: this.currStay.host.fullName
+      }
+      //add user to the order object before saving it - if no user login as guest, should i add id to guest??
+      this.currTrip.byUser = this.$store.getters.loggedinUser || {fullname: 'Guest user', imgUrl: '../assets/img/user-portrait.jpg'};
+      this.currTrip.isApproved = false;
+      this.$store.dispatch({ type: "addOrdertoDB", order: this.currTrip });
       this.currTrip = {};
       this.isAvailable = false;
     },

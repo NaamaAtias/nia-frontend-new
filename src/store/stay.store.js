@@ -27,9 +27,6 @@ export const stayStore = {
         isLoading({ isLoading }) {
             return isLoading
         },
-        // currPrice(state) {
-        //     return state.currPrice;
-        // },
         cleaningFee(state, getters) {
             return getters.nights > 0 ? 15 : 0;
         },

@@ -19,9 +19,7 @@ export const stayService = {
 };
 
 async function query(filterBy) {
-  console.log(filterBy);
     // return storageService.query(STAY_KEY);
-      // console.log(filterBy)
   try {
     // const res = await axios.get(STAY_URL, { params: filterBy })
     return httpService.get('stay/', filterBy)
