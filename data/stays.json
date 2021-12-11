@@ -502,6 +502,11 @@
             "lng": -0.08765,
             "lat": 51.5097
         },
+        "host": {
+            "_id": "61b1372f6882643874814edb",
+            "fullName": "Moshe Gur",
+            "imgUrl": "https://res.cloudinary.com/db0wqgy42/image/upload/v1638786773/avatars/avatar7_z8e9gw.png"
+        },
         "reviews": [
             {
                 "id": "r101",

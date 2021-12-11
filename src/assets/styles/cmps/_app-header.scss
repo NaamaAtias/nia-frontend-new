@@ -1,34 +1,126 @@
-//naama 09.12
-.logo-niabnb {
-    font-weight: bold;
-    font-size: 24px;
-    letter-spacing: -1px !important;
-}
-
 @media (max-width: 500px){
+    .logo-txt, .logo-img{
+       display: none;      
+    }
     a.hover{
         display: none;
     }
-    header{
+    .full{
+        &.main-layout{
+            display: none;
+        }
+    }
+
+header{
+    .header-mobile {
+        display: block; 
         z-index: 100;
-    }  
-}
-
-@media (max-width: 760px){
-    header { 
-        // //naama
-        // box-shadow: rgba(0, 0, 0, 0.04) 0px 6px 16px;
-
-        z-index: 100;
-
         font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
         color: $clr6;
         font-weight: 400;
         position: fixed;
         width: 100%;
-        img{
-            height: 30px;    
-        }    
+        .logo {
+            display: flex;
+            flex-direction: row;
+            img {
+                font-weight: bold;
+                font-size: 24px;
+                letter-spacing: -1px !important;
+                height: 30px;
+            }            
+            .logo-txt{
+            font-weight: bold;
+            font-size: 24px;
+            letter-spacing: -1px !important;
+            align-self: center;
+            font-weight: bold;
+            padding-left: 3px;
+        }
+        }   
+        .header-right{
+            align-self: center;
+        }
+        nav {
+            display: flex;
+            flex-direction: row;
+            font-size: 14px;
+                   
+            .logo {
+            font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+            font-size: 14px;
+            display: flex;
+            flex-direction: row;
+            align-self: center;
+            padding: 4px;
+
+            .logo-txt{
+            align-self: center;
+            padding-left: 2px;
+            padding-right: 10px;
+        
+            }
+            }    
+            a{
+                text-decoration: none;
+                font-size: 14px;
+                padding: 22px;
+                font-weight: 600;
+                letter-spacing: 0.04em;                
+            }
+             
+        }      
+        nav .active {
+            color: $clr1;
+        }        
+    }
+    .login-btn{
+        z-index: 10;
+        display: flex;
+        flex-direction: row;
+        color: $clr6;
+        position: fixed;
+        right: 0;
+        top: 0;
+        .bar{
+            padding: 0.2em;
+        }
+        .user-img{
+            display: none;
+        }
+    }  
+}
+}
+
+@media (max-width: 760px){
+    .header-mobile{
+        display: none;
+    }
+    header { 
+        z-index: 100;
+        font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+        color: $clr6;
+        font-weight: 400;
+        position: fixed;
+        width: 100%;
+        .logo {
+            display: flex;
+            flex-direction: row;
+            img {
+                font-weight: bold;
+                font-size: 24px;
+                letter-spacing: -1px !important;
+                height: 30px;
+            }            
+            .logo-txt{
+            font-weight: bold;
+            font-size: 24px;
+            letter-spacing: -1px !important;
+            align-self: center;
+            font-weight: bold;
+            padding-left: 3px;
+        }
+        }   
         .header-right{
             align-self: center;
         }
@@ -83,22 +175,37 @@
 }
 
 @media (min-width: 760px){
-    header { 
-        // //naama
-        // box-shadow: rgba(0, 0, 0, 0.04) 0px 6px 16px;
-        z-index: 100;
+    .header-mobile{
+        display: none;
+    }
 
+    header { 
+        z-index: 100;
         font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
         color: $clr6;
         font-weight: 600;
         position: fixed;
         width: 100%;
         z-index: 10;
-        img{
-            height: 30px;
-    
+        .logo {
+            display: flex;
+            flex-direction: row;
+            img {
+                font-weight: bold;
+                font-size: 24px;
+                letter-spacing: -1px !important;
+                height: 30px;
+            }            
+            .logo-txt{
+            font-weight: bold;
+            font-size: 24px;
+            letter-spacing: -1px !important;
+            align-self: center;
+            font-weight: bold;
+            padding-left: 3px;
         }
-    
+        }
+   
         .loggedin-user {
             background-color: $clr1;
             padding: 2px 8px;
@@ -120,22 +227,8 @@
             justify-content: space-between;
             font-size: 1.3em;
             padding: 0.7em 0;
-            margin: 0;
-                    
-            .logo {
-            font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
-            font-size: 20px;
-            display: flex;
-            flex-direction: row;
-            align-self: center;
-            padding: 0;
-            
-            .logo-txt{
-            align-self: center;
-            padding-left: 8px ;
-            }
-            }
-    
+            margin: 0;                    
+          
             a{
                 text-decoration: none;
                 font-size: 14px;
@@ -188,16 +281,16 @@
     
             .user-img{
                 height: 31px;
-            }
-    
-            img{
-                border-radius: 50px;
-                align-self: center;
-                justify-self: center;
-                margin-bottom: 0;
-                margin-left: 0.6em;
-                margin-right: 0.2em;
-            }
+                img{
+                    width: 31px;
+                    border-radius: 50px;
+                    align-self: center;
+                    justify-self: center;
+                    margin-bottom: 0;
+                    margin-left: 0.6em;
+                    margin-right: 0.2em;
+                }
+            }  
         }
     
         nav .active {

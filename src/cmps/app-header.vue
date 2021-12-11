@@ -1,20 +1,51 @@
 <template>
-  <header class="full main-layout" :style="bgc">
-    <div>
-      <nav :style="bgc">
-        <div class="header-mobile">
-        <router-link class="logo" :style="bgc" to="/">
-          <div v-if="home && !isScroll">
-            <img src="../assets/img/logo-cloud.jpg" alt="" />
-          </div>
-          <div v-else>
-            <img src="../assets/img/logo-cloud-white.jpg" alt="" />
-          </div>
-          <div class="logo-txt logo-niabnb">niabnb</div>
-        </router-link>
+  <header>
+    <div class="header-mobile">
+      <div
+        class="mobile-small-filter"
+        v-if="isMobileSmallFilter"
+        :style="mobileSmallFilter"
+        @click="isMobileSmallFilter = !isMobileSmallFilter"
+      >
+        <span class="small-filter-txt">{{ searchLocation }}</span>
+        <span :style="isTrip" class="small-filter-txt">{{ searchDates }}</span>
+        <span :style="isTrip" class="small-filter-txt">{{ searchGuests }}</span>
+        <button class="small-filter-explore">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+      <div v-if="!isMobileSmallFilter && !isMenuOpen" :style="bigFilter">
+        <stay-filter key="filter" />
+      </div>
+      <div class="login-btn" @click="isMenuOpen = !isMenuOpen">
+        <div class="bar">
+          <i class="fa fa-bars" aria-hidden="true"></i>
         </div>
+        <!-- <div class="user-img">
+          <img
+            src="https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_100,h_100,g_face/v1638252722/cats/nmlj2xgdlobdsrf7q22y.jpg"
+            alt=""
+          />
+        </div> -->
+        <div>
+          <login-menu v-if="isMenuOpen" />
+        </div>
+      </div>
+    </div>
 
-
+    <div class="full main-layout" :style="bgc">
+      <nav :style="bgc">
+        <div>
+          <router-link class="logo" :style="bgc" to="/">
+            <div class="logo-img" v-if="home && !isScroll">
+              <img src="../assets/img/logo-cloud.jpg" alt="" />
+            </div>
+            <div class="logo-img" v-else>
+              <img src="../assets/img/logo-cloud-white.jpg" alt="" />
+            </div>
+            <div class="logo-txt">niabnb</div>
+          </router-link>
+        </div>
         <div
           class="small-filter"
           v-if="isSmallFilter"
@@ -46,8 +77,7 @@
             </div>
             <div class="user-img">
               <img
-                src="https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_100,h_100,g_face/v1638252722/cats/nmlj2xgdlobdsrf7q22y.jpg"
-                alt=""
+                :src="currUser"               
               />
             </div>
             <div>
@@ -71,9 +101,10 @@ export default {
       home: null,
       isScroll: false,
       isMenuOpen: false,
-      isSmallFilter: false,
+      isSmallFilter: true,
       trip: null,
       isTripSet: false,
+      isMobileSmallFilter: true,
     };
   },
   components: {
@@ -90,6 +121,7 @@ export default {
     handleScroll(event) {
       this.isScroll = window.scrollY !== 0 ? true : false;
       this.isSmallFilter = !this.home || this.isScroll ? true : false;
+      this.isMobileSmallFilter = this.home || this.isScroll ? true : false;
     },
   },
 
@@ -98,6 +130,7 @@ export default {
       handler() {
         this.home = this.$route.name === "home" ? true : false;
         this.isSmallFilter = this.home ? false : true;
+        this.isMobileSmallFilter = this.home ? false : true;
       },
       immediate: true,
     },
@@ -119,6 +152,9 @@ export default {
     smallFilter() {
       return this.isSmallFilter ? "display: block;" : "display: none;";
     },
+    mobileSmallFilter() {
+      return this.isMobileSmallFilter ? "display: block;" : "display: none;";
+    },
     searchLocation() {
       this.trip = this.$store.getters.trip;
       this.isTripSet = this.trip.location ? true : false;
@@ -131,13 +167,18 @@ export default {
         : "Dates";
     },
     searchGuests() {
-      return this.trip.persons
-        ? this.trip.persons + " guests " : "Guests";
+      return this.trip.persons ? this.trip.persons + " guests " : "Guests";
     },
     isTrip() {
       console.log(this.isTripSet);
       return this.isTripSet ? "" : "display: none;";
     },
+    currUser(){
+      console.log(this.$store.getters.loggedinUser);
+      const user = this.$store.getters.loggedinUser;
+      return user? user.imgUrl : "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_100,h_100,g_face/v1638252722/cats/nmlj2xgdlobdsrf7q22y.jpg"
+
+    }
   },
 };
 </script>
