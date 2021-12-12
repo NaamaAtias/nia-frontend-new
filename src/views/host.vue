@@ -4,7 +4,7 @@
     <div>
       <span>{{ numNewItems }}</span>
       <span> new items</span><span class="dote"> · </span>
-      <span>{{ responseRate }}</span>
+      <span>{{ responseRate }}%</span>
       <span> response rate</span>
     </div>
     <div class="host-flex">
@@ -67,7 +67,7 @@ export default {
       this.orders.map((order) => {
         if (order.isApproved) totalApproved++;
       });
-      return totalApproved;
+      return (totalApproved/this.orders.length)*100;
     },
     earnings() {
       var sum = 0;
