@@ -1,4 +1,5 @@
 .order-modal {
+    font-family: airbnb-book;
     width: 50%;
     height: 50%;
     position: fixed;
@@ -11,6 +12,27 @@
     background-color: white;
     text-align: center;
     z-index: 200;
+    .confirmation {
+        color: rgba(35, 190, 144, 0.829);
+        font-weight: 800;
+        
+        // text-shadow: -1px 1px 1px rgba(200, 200, 200, 0.507);        
+        
+    }
+
+    .trip-details {
+       
+        p {
+            display: flex;
+            justify-content: space-between;
+            padding: 0px 100px;
+
+        }
+    }
+    .order-note {
+        color: $clr1;
+        padding-top: 10px;
+    }
 
 }
 

@@ -6,7 +6,6 @@ export const stayStore = {
         currStay: null,
         stays: [],
         currStayReviews: [],
-        // currPrice: {},
         filterBy: { type: '', city: '', price: '' },
     },
     getters: {
