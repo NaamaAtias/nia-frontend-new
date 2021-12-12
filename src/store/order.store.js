@@ -72,16 +72,16 @@ export const orderStore = {
                 throw err;
             }
         },
-        // async loadOrder(context, { orderId }) {
-        //     try {
-        //         const order = await orderService.getById(orderId);
-        //         console.log(stay);
-        //         context.commit({ type: 'setOrder', order });
-        //     } catch (err) {
-        //         console.log('orderStore: Error in loadOrder', err);
-        //         throw err;
-        //     }
-        // },
+        async loadOrder(context, { orderId }) {
+            try {
+                const order = await orderService.getById(orderId);
+                console.log(stay);
+                context.commit({ type: 'setOrder', order });
+            } catch (err) {
+                console.log('orderStore: Error in loadOrder', err);
+                throw err;
+            }
+        },
         async loadOrders(context,  {filterBy} ) {
             try {
                 // var filterBy = state.filterBy ? state.filterBy : ''

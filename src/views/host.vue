@@ -3,39 +3,52 @@
     <h1>Pending / Accepted</h1>
     <div>
       <span>{{ numNewItems }}</span>
-      <span>new items</span><span class="dote"> · </span>
+      <span> new items</span><span class="dote"> · </span>
       <span>{{ responseRate }}</span>
-      <span>response rate</span>
+      <span> response rate</span>
     </div>
     <div class="host-flex">
-      <host-orders-list></host-orders-list>
-      <div class="hosting-summary">
-        <h2>Hosting summary</h2>
-        <h4>Fantastic job <span>V</span></h4>
-        <span>Guests love what you're doing. keep up the great work!</span>
-        <br /><br />
-        <span>View details</span>
-        <br /><br />
-        <hr />
-        <br />
-        <span>December earnings</span><span>{{ earnings }}</span> <br /><br />
-        <span>30-day views</span><span>{{ views }}</span> <br /><br />
-        <hr />
-        <br />
-        <span>Overall rating</span><span>{{ rating }}</span> <br /><br />
-        <span>Total reviews</span><span>{{ reviews }}</span>
+      <host-orders-list></host-orders-list>      
+      <div class="hosting-summary-container">
+          <h2>Hosting summary</h2>
+        <div class="Fantastic-job">
+          <div class="title">Fantastic job</div>
+          <div class="v-img"><img src="../assets/img/check.png" alt="" /></div>
+        </div>
+        <div class="Fantastic-job">Guests love what you're doing. keep up the great work!</div>
+        <div class="Fantastic-job">View details</div>
+        <hr>
+        <div class="Fantastic-job">
+          <div>December earnings</div>
+          <div>{{ earnings }}$</div>
+        </div>
+        <div class="Fantastic-job">
+          <div>30-day views</div>
+          <div>{{ views }}</div>
+        </div>
+        <hr>
+        <div class="Fantastic-job"> 
+          <div>Overall rating </div>
+          <div class="border-line">{{ rating }} <i
+              class="fas fa-star"
+              style="font-size: 14px; color: rgb(255, 55, 92)"></i></div>
+        </div>
+        <div class="Fantastic-job">
+          <div>Total reviews</div>
+          <div>{{ reviews }}</div>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import hostOrdersList from '../cmps/host-orders-list.vue'
+import hostOrdersList from "../cmps/host-orders-list.vue";
 export default {
   data() {
     return {
-        currentUser: null,
-        orders: null,
+      currentUser: null,
+      orders: null,
     };
   },
   created() {
@@ -47,30 +60,36 @@ export default {
   },
   computed: {
     numNewItems() {
-      console.log(this.$store.getters.orders);
-      return "4 "; //todo
+      return this.orders.length;
     },
     responseRate() {
-        
-      return "75% "; //todo
+      var totalApproved = 0;
+      this.orders.map((order) => {
+        if (order.isApproved) totalApproved++;
+      });
+      return totalApproved;
     },
     earnings() {
-        // const earn = orders.map(order => {order.nights})
-      return " 2570$"; //todo
+      var sum = 0;
+      this.orders.map((order) => {
+        var totalPrice = order.nights * order.stay.price;
+        sum += totalPrice;
+      });
+      return sum;
     },
     views() {
       return " 678"; //todo
     },
     rating() {
-      return " 4.9*"; //todo
+      return " 4.9"; //todo
     },
     reviews() {
       return " 30"; //todo
     },
   },
   components: {
-    hostOrdersList
-  }
+    hostOrdersList,
+  },
 };
 </script>
 
