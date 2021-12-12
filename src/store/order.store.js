@@ -24,11 +24,12 @@ export const orderStore = {
         },
         nights(state) {
             if (state.currTrip.nights) return state.currTrip.nights;
+            else if (state.currOrder.nights) return state.currOrder.nights;
             else return 0;
         },
         isOrdered(state) {
             return state.isOrdered;
-        }
+        },
     },
     mutations: {
         setOrders(state, {orders}) {
@@ -48,6 +49,7 @@ export const orderStore = {
         },
         cleanScreen(state) {
             state.isOrdered = false;
+            state.currOrder = {}
         },
         setOrdersFilter(state,  {filterBy} ) {
             // state.filterOrdersByHostId = filterByHostId;

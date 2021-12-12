@@ -1,34 +1,39 @@
 <template>
+  <transition name="fade">
   <div v-if="order">
     <div class="screen" @click="orderDone()"></div>
     <div class="order-modal">
-      <p class="fs26 bold">Great Choice!</p>
+      <p class="fs28 confirmation">Reserved</p>
       <p class="fs22 bold">We can't wait for your visit</p>
       <hr />
-      <p class="fs16 bold">Your trip details:</p>
-      <p class="fs18">Stay name: {{order.stay.name}}</p>
-      <p class="fs18">Dates: {{order.startDate}} - {{order.endDate}}</p>
-      <p class="fs18">Guests number: {{order.persons}} <span v-if="order.pets > 0">+ {{order.pets}}</span></p>
-      <p class="fs18">Total price: {{totalPrice}}</p>
+      <div class="trip-details">
+        <p class="fs18"><span>Stay name: </span><span>{{ order.stay.name }}</span></p>
+        <p class="fs18"><span>Dates:</span><span>{{ order.startDate }} - {{ order.endDate }}</span></p>
+        <p class="fs18"><span>Guests number: </span><span><span>{{ order.persons }}</span>
+            <span v-if="order.pets > 0">+ {{ order.pets }}</span></span></p>
+         <p class="fs18 bold"><span>Total price:</span> <span>{{ totalPrice }}</span></p>
+      </div>
+      <p class="order-note fs 14 bold">Please make sure to recive the host confirmation</p>
     </div>
   </div>
+  </transition>
 </template>
 
 <script>
 export default {
-    methods: {
-        orderDone() {
-            this.$store.commit({type:'cleanScreen'});
-        },
+  methods: {
+    orderDone() {
+      this.$store.commit({ type: "cleanScreen" });
     },
-    computed: {
-        order() {
-           return this.$store.getters.showCurrOrder;
-        },
-        totalPrice() {
-          return this.$store.getters.totalPrice; //to check when possible
-        }
-    }
+  },
+  computed: {
+    order() {
+      return this.$store.getters.showCurrOrder;
+    },
+    totalPrice() {
+      return this.$store.getters.totalPrice;
+    },
+  },
 };
 </script>
 
