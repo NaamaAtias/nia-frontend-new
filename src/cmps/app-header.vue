@@ -158,7 +158,7 @@ export default {
     searchLocation() {
       this.trip = this.$store.getters.trip;
       this.isTripSet = this.trip.location ? true : false;
-      console.log(this.trip);
+      // console.log(this.trip);
       return this.isTripSet ? this.trip.location : "Start your search";
     },
     searchDates() {
@@ -170,11 +170,11 @@ export default {
       return this.trip.persons ? this.trip.persons + " guests " : "Guests";
     },
     isTrip() {
-      console.log(this.isTripSet);
+      // console.log(this.isTripSet);
       return this.isTripSet ? "" : "display: none;";
     },
     currUser(){
-      console.log(this.$store.getters.loggedinUser);
+      // console.log(this.$store.getters.loggedinUser);
       const user = this.$store.getters.loggedinUser;
       return user? user.imgUrl : "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_100,h_100,g_face/v1638252722/cats/nmlj2xgdlobdsrf7q22y.jpg"
 

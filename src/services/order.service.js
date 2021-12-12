@@ -2,7 +2,8 @@
 // import { userService } from './user.service';
 
 import { httpService } from './http.service';
-import Axios from 'axios'; var axios = Axios.create({ withCredentials: true });
+import Axios from 'axios';import { orderStore } from '../store/order.store';
+ var axios = Axios.create({ withCredentials: true });
 
 // const ORDER_KEY = 'orders';
 // var gOrders = query() || [] ;
@@ -17,13 +18,14 @@ export const orderService = {
     query,
     // remove,
     getById,
+    updateApprove
 };
 
 // function query() {
 //     return storageService.query(ORDER_KEY);
 // }
 async function query(filterBy) {
-    console.log('order filter:', filterBy)
+    // console.log('order filter:', filterBy)
   try {
     return httpService.get('order/', filterBy)
   }
@@ -63,8 +65,15 @@ async function add(order) {
 //     }
 // }
 
+async function updateApprove(order) {
+    const currOrder = await httpService.put(`order/${order._id}`, order);
+    // const user = await httpService.get(`user/${orderId}`)
+    return currOrder;
+}
 async function getById(orderId) {
     const order = await storageService.get(ORDER_KEY, orderId);
     // const user = await httpService.get(`user/${orderId}`)
     return order;
 }
+
+

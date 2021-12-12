@@ -1,10 +1,10 @@
 <template>
-  <div class="host-page main-layout">
+  <div v-if="currentUser" class="host-page main-layout">
     <h1>Pending / Accepted</h1>
     <div>
       <span>{{ numNewItems }}</span>
       <span> new items</span><span class="dote"> · </span>
-      <span>{{ responseRate }}</span>
+      <span>{{ responseRate }}%</span>
       <span> response rate</span>
     </div>
     <div class="host-flex">
@@ -47,18 +47,20 @@ import hostOrdersList from "../cmps/host-orders-list.vue";
 export default {
   data() {
     return {
-      currentUser: null,
-      orders: null,
     };
   },
   created() {
-    this.currentUser = this.$store.getters.loggedinUser;
     const filterBy = { filterType: "host", filter: this.currentUser._id };
+    this.$store.commit({type: "setOrders", orders: ''})
     this.$store.dispatch({ type: "setOrdersFilter", filterBy });
-    this.orders = this.$store.getters.orders;
-    console.log(this.orders);
   },
   computed: {
+    currentUser(){
+      return this.$store.getters.loggedinUser;
+    },
+    orders(){
+      return this.$store.getters.orders;
+    },
     numNewItems() {
       return this.orders.length;
     },
@@ -67,7 +69,7 @@ export default {
       this.orders.map((order) => {
         if (order.isApproved) totalApproved++;
       });
-      return totalApproved;
+      return (totalApproved/this.orders.length)*100;
     },
     earnings() {
       var sum = 0;

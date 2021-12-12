@@ -41,14 +41,11 @@ export const orderStore = {
     mutations: {
         setOrders(state, {orders}) {
             state.orders = orders;
-            console.log('setOrders:',state.orders);
         },
          setOrder(state, { order }) {
             state.currOrder = order;
             state.currTrip = {};
-            console.log('order', state.currOrder);
             state.isOrdered = true;
-            console.log(state.isOrdered);
         },
         setCurrTrip(state, { trip }) {
             state.currTrip = trip;
@@ -59,21 +56,35 @@ export const orderStore = {
             state.currOrder = {}
         },
         setOrdersFilter(state,  {filterBy} ) {
-            // state.filterOrdersByHostId = filterByHostId;
             if (filterBy.filterType === 'host') state.filterOrdersBy.host = filterBy.filter;
             else if (filterBy.filterType === 'byUser') state.filterOrdersBy.byUser = filterBy.filter;
             else if (filterBy.filterType === 'isApproved') state.filterOrdersBy.isApproved = filterBy.filter;
-            console.log('orders filter - mute', state.filterBy);
         },
         clearOrdersFilter(state) {
             state.filterBy =  { host: '', byUser: '', isAprooved: 'all' }
         },
+        updateOrder(state, {idx, order}) {
+            state.orders[idx] = order
+        }
     },
     actions: {
+        async approveOrder(context, { orderId, isApproved }){
+            try {
+                const idx = context.state.orders.findIndex((order) => order._id === orderId)
+                var order = JSON.parse(JSON.stringify(context.state.orders[idx]))
+                order.isApproved = isApproved
+               order = await orderService.updateApprove(order);
+                context.commit({ type: 'updateOrder', idx, order });
+                return order;
+            } catch (err) {
+                console.log('orderStore: Error in addOrderToDB', err);
+                throw err;
+            }
+        },
         async addOrdertoDB(context, { order }) {
             try {
                 order = await orderService.add(order);
-                console.log('orderService res',order)
+                // console.log('orderService res',order)
                 context.commit({ type: 'setOrder', order });
                 return order;
             } catch (err) {
@@ -84,7 +95,7 @@ export const orderStore = {
         async loadOrder(context, { orderId }) {
             try {
                 const order = await orderService.getById(orderId);
-                console.log(stay);
+                // console.log(stay);
                 context.commit({ type: 'setOrder', order });
             } catch (err) {
                 console.log('orderStore: Error in loadOrder', err);
@@ -94,7 +105,7 @@ export const orderStore = {
         async loadOrders(context,  {filterBy} ) {
             try {
                 // var filterBy = state.filterBy ? state.filterBy : ''
-                console.log(filterBy);
+                // console.log(filterBy);
                 const orders = await orderService.query(filterBy);
                 context.commit({ type: 'setOrders', orders });
             } catch (err) {
@@ -104,7 +115,7 @@ export const orderStore = {
         },
 
         setOrdersFilter({ commit, dispatch }, {filterBy}) {
-            console.log('ordersFilter', filterBy);
+            // console.log('ordersFilter', filterBy);
             commit({ type: 'setOrdersFilter', filterBy })
             dispatch({ type: 'loadOrders', filterBy })
         },

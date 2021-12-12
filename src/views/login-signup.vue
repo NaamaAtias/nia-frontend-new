@@ -65,7 +65,7 @@ export default {
   },
   computed: {
     users() {
-      console.log(this.$store.getters.users);
+      // console.log(this.$store.getters.users);
       return this.$store.getters.users;      
     },
     loggedinUser() {
@@ -74,7 +74,7 @@ export default {
   },
   methods: {
     async doLogin() {
-      console.log(this.loginCred);
+      // console.log(this.loginCred);
       if (!this.loginCred.userName) {
         this.msg = "Please enter userName/password";
         return;

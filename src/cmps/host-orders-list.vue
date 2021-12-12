@@ -22,18 +22,23 @@
           <div>
             <span
               class="accept"
-              v-if="!isAccepted && !isRejected"
+              v-if="!order.isApproved"
               @click="onAccept(order._id)"
               >accept</span
-            ><span v-if="!isAccepted && !isRejected"> /</span
+            ><span v-if="!order.isApproved"> /</span
             ><span
               class="reject"
-              v-if="!isAccepted && !isRejected"
+              v-if="!order.isApproved"
               @click="onReject(order._id)"
             >
               reject</span
-            ><span class="accept" v-if="isAccepted">Accepted</span
-            ><span class="reject" v-if="isRejected">Rejected</span>
+            ><span
+              class="accept"
+              v-if="order.isApproved && order.isApproved !== 'rejected'"
+              >Accepted</span
+            ><span class="reject" v-if="order.isApproved === 'rejected'"
+              >Rejected</span
+            >
           </div>
         </div>
       </li>
@@ -47,8 +52,6 @@ export default {
     return {
       currUser: {},
       orders: [],
-      isAccepted: false,
-      isRejected: false,
     };
   },
   created() {
@@ -59,11 +62,10 @@ export default {
   },
   methods: {
     onAccept(orderId) {
-      this.isAccepted = !this.isAccepted;
-      this.$store.dispatch({ type: "loadOrder", orderId });
+      this.$store.dispatch({type: "approveOrder", orderId, isApproved: true })
     },
     onReject(orderId) {
-      this.isRejected = !this.isRejected;
+      this.$store.dispatch({type: "approveOrder", orderId, isApproved: 'rejected' })
     },
   },
 };

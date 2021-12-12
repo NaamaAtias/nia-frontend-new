@@ -85,11 +85,11 @@ export const stayStore = {
             state.currStayReviews = stay.reviews;
         },
         setFilter(state, { filterBy }) {
-            console.log(filterBy);
+            // console.log(filterBy);
             if (filterBy.filterType === 'city') state.filterBy.city = filterBy.filter;
             else if (filterBy.filterType === 'type') state.filterBy.type = filterBy.filter;
             else if (filterBy.filterType === 'price') state.filterBy.price = filterBy.filter;
-            console.log(state.filterBy);
+            // console.log(state.filterBy);
         },
         clearFilter(state) {
             state.filterBy = { type: '', city: '', price: '' }
@@ -149,7 +149,7 @@ export const stayStore = {
             }
         },
         setFilter({ commit, dispatch }, { filterBy }) {
-            console.log(filterBy);
+            // console.log(filterBy);
             commit({ type: 'setFilter', filterBy })
             dispatch({ type: 'loadStays' })
         },
