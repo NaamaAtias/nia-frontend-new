@@ -95,7 +95,7 @@ export default {
   },
   methods: {
     filterListBy(filterType, filter) {
-      console.log(filter);
+      // console.log(filter);
       const filterBy = { filterType: filterType, filter: filter };
       this.$store.dispatch({ type: "setFilter", filterBy });
     },

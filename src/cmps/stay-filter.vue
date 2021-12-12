@@ -183,7 +183,7 @@ export default {
     searchLocation() {
       this.trip = this.$store.getters.trip;
       this.isTripSet = this.trip.location ? true : false;
-      console.log(this.trip);
+      // console.log(this.trip);
       return this.isTripSet ? this.trip.location : "Start your search";
     },
     searchDates() {
@@ -195,7 +195,7 @@ export default {
       return this.trip.persons ? this.trip.persons + " guests " : "Guests";
     },
     isTrip() {
-      console.log(this.isTripSet);
+      // console.log(this.isTripSet);
       return this.isTripSet ? "" : "display: none;";
     },
   },

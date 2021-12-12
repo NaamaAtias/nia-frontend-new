@@ -231,7 +231,7 @@ export default {
     };
   },
   async created() {
-    console.log("clear filter");
+    // console.log("clear filter");
     this.$store.dispatch({ type: "clearFilter" });
     window.addEventListener("scroll", this.handleScroll);
     var rateJerusalem = await this.$store.dispatch({

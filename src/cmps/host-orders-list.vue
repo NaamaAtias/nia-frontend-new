@@ -62,14 +62,10 @@ export default {
   },
   methods: {
     onAccept(orderId) {
-      const idx = this.orders.findIndex((order) => order._id === orderId);
-      console.log(idx);
-      this.orders[idx].isApproved = "approved"; //todo-save
+      this.$store.dispatch({type: "approveOrder", orderId, isApproved: true })
     },
     onReject(orderId) {
-      const idx = this.orders.findIndex((order) => order._id === orderId);
-      console.log(idx);
-      this.orders[idx].isApproved = "rejected"; //todo-save
+      this.$store.dispatch({type: "approveOrder", orderId, isApproved: 'rejected' })
     },
   },
 };

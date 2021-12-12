@@ -26,6 +26,7 @@
             <div class="check-in-order flex column">
               <label @click="datePicker = !datePicker">
                 Check in
+                <!-- <div @click="openDatePicker = !openDatePicker">Dec 12</div> -->
                 <date-picker @startDate="changeStartDate"></date-picker>
               </label>
             </div>
@@ -103,6 +104,7 @@ import guests from "./guests.vue";
 export default {
   data() {
     return {
+      openDatePicker: false, //new
       currTrip: null,
       currStay: {},
       datePicker: false,
@@ -120,7 +122,7 @@ export default {
   },
   mounted() {
     const button = this.$refs.btn;
-    console.log(button);
+    // console.log(button);
     button.addEventListener("mousemove", (e) => {
       const rect = button.getBoundingClientRect();
       const x = ((e.clientX - rect.left) * 100) / button.clientWidth;
@@ -155,7 +157,7 @@ export default {
   },
   methods: {
     sendOrder() {
-      console.log('sent')
+      // console.log('sent')
       this.currTrip.stay = {
         _id: this.currStay._id,
         name: this.currStay.name,
@@ -173,14 +175,14 @@ export default {
       this.isAvailable = false;
     },
     changeStartDate(date) {
-            console.log('change start')
+            // console.log('change start')
 
       this.startDate = date.getTime();
       const dataStr = date.toString();
       this.currTrip.startDate = dataStr.slice(4, 10);
     },
     changeEndDate(date) {
-                  console.log('change end')
+                  // console.log('change end')
 
       this.endDate = date.getTime();
       const dataStr = date.toString();
@@ -200,7 +202,7 @@ export default {
       ) {
         this.isAvailable = true;
       } else {
-        console.log(ev);
+        // console.log(ev);
         showMsg("Please enter number of guests according to capacity", "danger");
       }
     },
