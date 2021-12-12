@@ -1,5 +1,5 @@
 <template>
-  <div v-if="currentUser" class="host-page main-layout">
+  <div v-if="currentUser && orders" class="host-page main-layout">
     <h1>Pending / Accepted</h1>
     <div>
       <span>{{ numNewItems }}</span>
@@ -65,6 +65,8 @@ export default {
       return this.orders.length;
     },
     responseRate() {
+      // console.log(this.orders)
+      // if(!this.orders) return ''
       var totalApproved = 0;
       this.orders.map((order) => {
         if (order.isApproved) totalApproved++;
