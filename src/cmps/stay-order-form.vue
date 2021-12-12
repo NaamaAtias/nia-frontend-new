@@ -111,6 +111,7 @@ export default {
       endDate: 0,
       avgRate: 0,
       isAvailable: false,
+      dateInputStart: 0
     };
   },
   created() {

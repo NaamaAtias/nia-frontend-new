@@ -10,6 +10,7 @@ export const orderStore = {
         isOrdered: false,
         filterOrdersBy: { host: '', byUser: '', isAprooved: 'all' },
         // filterOrdersByHostId: '',
+        currSearch: {startDate: 0, endDate: 0}
 
     },
     getters: {
@@ -30,6 +31,12 @@ export const orderStore = {
         isOrdered(state) {
             return state.isOrdered;
         },
+        searchedStartDate() {
+            return state.currSearch.startDate;
+        },
+        searchedEndDate() {
+            return state.currSearch.endDate;
+        }
     },
     mutations: {
         setOrders(state, {orders}) {
@@ -60,7 +67,7 @@ export const orderStore = {
         },
         clearOrdersFilter(state) {
             state.filterBy =  { host: '', byUser: '', isAprooved: 'all' }
-        }
+        },
     },
     actions: {
         async addOrdertoDB(context, { order }) {

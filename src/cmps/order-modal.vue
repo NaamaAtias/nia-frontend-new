@@ -1,6 +1,5 @@
 <template>
-  <transition name="fade">
-  <div v-if="order">
+  <div>
     <div class="screen" @click="orderDone()"></div>
     <div class="order-modal">
       <p class="fs28 confirmation">Reserved</p>
@@ -16,7 +15,6 @@
       <p class="order-note fs 14 bold">Please make sure to recive the host confirmation</p>
     </div>
   </div>
-  </transition>
 </template>
 
 <script>
