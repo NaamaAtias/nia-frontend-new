@@ -7,7 +7,7 @@
 @media (min-width: 940px){
     .price-filter-container{
         position: fixed;
-        top: 24%;
+        top: 18%;
         left:50px;
         z-index: 10;
         width: 235px;
@@ -94,13 +94,13 @@
         display: flex;
         flex-direction: column;
         position: fixed;
-        top: 24%;
-        left: 150px;
+        top: 18%;
+        left: 210px;
         z-index: 10;
         width: 170px;
         margin: auto;
         background-color:#fff;
-        padding: 20px 0;
+        padding: 15px 10px;
         border-radius: 10px;
         gap: 5px;
         box-shadow: rgb(0 0 0 / 12%) 0px 6px 16px; 

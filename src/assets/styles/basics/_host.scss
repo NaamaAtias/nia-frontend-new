@@ -97,10 +97,12 @@ color: $clr4;
     padding-bottom: 8px;
 }
 .accept{
-    color: rgba(35, 190, 144, 0.829)
-    ;  
+    color: rgba(35, 190, 144, 0.829);
+    cursor: pointer;  
 }
 .reject{
     color: $clr1;
+    cursor: pointer;  
+
 }
 }
