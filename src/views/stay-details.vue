@@ -1,6 +1,6 @@
 <template>
   <section class="main-layout" v-if="stay">
-   <transition name="fade"> <order-modal v-if="isOrdered" /></transition>
+   <order-modal v-if="isOrdered" />
     <div class="stay-details">
       <h1 class="less-margin fs26 bold details-font">{{ stay.name }}</h1>
       <div class="details-header align-center">
