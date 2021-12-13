@@ -144,6 +144,12 @@
         font-size: 14px;
         color: $clr4;
     }
+    @include for-narrow-layout {
+        line-height: 1rem;
+    }
+    @include for-mobile-layout {
+        line-height: 1rem;
+    }
 }
 
 .stay-edit-long-info{

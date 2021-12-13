@@ -25,9 +25,9 @@
     }
 
     .el-carousel__container {
-        height: 190px;
+        height: 180px;
         @include for-mobile-layout {
-            height: 190px;
+            height: 180px;
         }
         @include for-narrow-layout {
             height: 400px;
@@ -39,8 +39,6 @@
             height: 180px;
         }
     }
-
-
 }
 
 .preview-crousel {
@@ -49,60 +47,6 @@
 
 .stay-card {
     cursor: pointer;
-}
-// @media (min-width: 500px) {
-//     .el-carousel-item {
-//         height: 550px;
-// }
-// }
-// @media (min-width: 740px) {
-//     .el-carousel-item {
-//         height: 200px;
-// }
-// }
-// @media (min-width: 1116px) {
-//         .el-carousel-item {
-//             height: 90;
-//     }
-// }
-
-// .el-carousel {
-//                 height: 190px;
-//         }
-
-.el-carousel__mask {
-    height: 100% !important;
-}
-.el-carousel__arrow {
-    background-color: white !important;
-    color: $clr7 !important;
-    font-weight: bolder !important;
-    box-shadow: 0px 0px 10px 0px #717171;
-}
-.el-carousel__arrow:hover {
-    background-color: white !important;
-    color: $clr7 !important;
-    weight: bolder !important;
-}
-
-.el-carousel__button {
-   width: 7px !important;
-   height: 7px !important;
-   border-radius: 50% !important;
-}
-
-.preview-text {
-    font-family: airbnb-book;
-    text-align: left;
-    line-height: 23px;
-    .preview-details {
-        letter-spacing: 0.02em;
-
-    }
-}
-
-.el-carousel__item.is-animating{
-    border-radius: 10px;
 }
 
 .preview-rate {

@@ -1,0 +1,51 @@
+
+.el-carousel__mask {
+    height: 100% !important;
+}
+.el-carousel__arrow {
+    background-color: white !important;
+    color: $clr7 !important;
+    font-weight: bolder !important;
+    box-shadow: 0px 0px 10px 0px #717171;
+}
+.el-carousel__arrow:hover {
+    background-color: white !important;
+    color: $clr7 !important;
+    weight: bolder !important;
+}
+
+.el-carousel__button {
+   width: 7px !important;
+   height: 7px !important;
+   border-radius: 50% !important;
+}
+
+.preview-text {
+    font-family: airbnb-book;
+    text-align: left;
+    line-height: 23px;
+    .preview-details {
+        letter-spacing: 0.02em;
+
+    }
+}
+
+.el-carousel__item.is-animating{
+    border-radius: 10px;
+}
+
+// .preview-crousel {
+// height: 100%;
+// }
+
+@include for-mobile-layout {
+    .el-carousel__arrow {
+        display: block;
+    }
+    .el-carousel__container {
+        height: 180px;
+    }
+    .el-carousel__item.is-animating{
+        border-radius: 0;
+    }
+}

@@ -70,8 +70,10 @@ export default {
   },
   methods: {
     addOrder(order) {
-      // console.log(order);
-      this.orders = [order, ...this.orders]      
+      console.log(order);
+      const filterBy = { filterType: "host", filter: this.currUser._id };
+      this.$store.dispatch({ type: "setOrdersFilter", filterBy });
+      this.orders = [order, ...this.orders];
     },
     async onAccept(orderId) {
       var newOrders = [];
