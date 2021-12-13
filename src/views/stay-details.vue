@@ -44,15 +44,6 @@
           :key="idx"
         />
       </div>
-      <div class="stay-details-imgs-container-mobile main-layout">
-        </div>
-        <img
-          v-for="(img, idx) in stay.imgUrls"
-          :class="'stay-img' + idx"
-          :src="img"
-          :key="idx"
-        />
-      </div>
       <section class="main-details-container flex">
         <section class="text-details">
           <div>
