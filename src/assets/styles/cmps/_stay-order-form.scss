@@ -11,7 +11,7 @@
     background-color: white;
     margin-top: 18.26px;
      @include for-mobile-layout {
-        width: 200px;
+        width: 100%;
      }
      @include for-narrow-layout {
         width: 250px;
@@ -22,6 +22,7 @@
      @include for-wide-layout {
         width: 342.6px;
     }
+
 
     .order-box {
         justify-content: flex-end;
@@ -181,4 +182,15 @@
     padding: 10px;
     font-weight: 800;
 }
+
+@include for-mobile-layout {
+    .stay-order-form {
+    width: 100vw;
+    position: fixed;
+    bottom: 0;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    }
+ }
 

@@ -1,7 +1,19 @@
 <template>
   <section class="main-layout" v-if="stay">
-   <order-modal v-if="isOrdered" />
+    <order-modal v-if="isOrdered" />
     <div class="stay-details">
+      <div class="stay-details-imgs-container-mobile full">
+        <!-- <div class="prev"> -->
+        <el-carousel trigger="click" :autoplay="false" :loop="false">
+          <el-carousel-item v-for="imgUrl in stay.imgUrls" :key="imgUrl">
+            <span class="heart-favorite" @click.stop="isFavorite = !isFavorite"
+              ><i class="fas fa-heart" :style="heartColor"></i
+            ></span>
+            <img :src="imgUrl" alt="" ref="img" />
+          </el-carousel-item>
+        </el-carousel>
+      </div>
+
       <h1 class="less-margin fs26 bold details-font">{{ stay.name }}</h1>
       <div class="details-header align-center">
         <div class="">
@@ -36,6 +48,8 @@
           </div>
         </div>
       </div>
+      <hr class="margin header-line" />
+
       <div class="stay-details-imgs-container main-layout">
         <img
           v-for="(img, idx) in stay.imgUrls"
@@ -44,15 +58,7 @@
           :key="idx"
         />
       </div>
-      <div class="stay-details-imgs-container-mobile main-layout">
-        </div>
-        <img
-          v-for="(img, idx) in stay.imgUrls"
-          :class="'stay-img' + idx"
-          :src="img"
-          :key="idx"
-        />
-      </div>
+
       <section class="main-details-container flex">
         <section class="text-details">
           <div>
@@ -182,7 +188,6 @@
           :center="{ lat: stay.loc.lat, lng: stay.loc.lng }"
           :zoom="13"
           map-type-id="terrain"
-          style="width: 1120px; height: 480px"
         >
         </GmapMap>
       </section>
@@ -207,6 +212,7 @@ export default {
   data() {
     return {
       stay: null,
+      isFavorite: false,
     };
   },
   methods: {
@@ -223,6 +229,11 @@ export default {
     },
     isOrdered() {
       return this.$store.getters.isOrdered;
+    },
+    heartColor() {
+      return this.isFavorite
+        ? "color: #ff375c; opacity: 100%"
+        : "color: #222222; opacity: 70%";
     },
   },
   watch: {
