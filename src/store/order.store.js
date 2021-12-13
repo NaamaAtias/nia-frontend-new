@@ -1,6 +1,6 @@
 import { orderService } from '../services/order.service.js';
 import { storageService } from '../services/async-storage.service.js';
-// import { socketService, SOCKET_EVENT_REVIEW_ADDED, SOCKET_EVENT_REVIEW_ABOUT_YOU } from '../services/socket.service'
+import { socketService, SOCKET_EVENT_ORDER_ADDED, SOCKET_EVENT_ORDER_TO_YOU } from '../services/socket.service'
 
 export const orderStore = {
     state: {
@@ -113,12 +113,21 @@ export const orderStore = {
                 // console.log(filterBy);
                 const orders = await orderService.query(filterBy);
                 context.commit({ type: 'setOrders', orders });
+                socketService.off(SOCKET_EVENT_ORDER_ADDED)
+                socketService.on(SOCKET_EVENT_ORDER_ADDED, order => {
+                    console.log('Got order from socket', order);
+                    context.commit({ type: 'addOrder', order })
+                })
+                socketService.off(SOCKET_EVENT_ORDER_TO_YOU)
+                socketService.on(SOCKET_EVENT_ORDER_TO_YOU, order => {
+                    console.log('order about me!', order);
+                    
+                })
             } catch (err) {
                 console.log('orderStore: Error in loadOrders', err);
                 throw err;
             }
         },
-
         setOrdersFilter({ commit, dispatch }, {filterBy}) {
             // console.log('ordersFilter', filterBy);
             commit({ type: 'setOrdersFilter', filterBy })

@@ -71,7 +71,7 @@ export default {
       this.orders.map((order) => {
         if (order.isApproved) totalApproved++;
       });
-      return (totalApproved/this.orders.length)*100;
+      return ((totalApproved/this.orders.length)*100).toFixed(0);
     },
     earnings() {
       var sum = 0;

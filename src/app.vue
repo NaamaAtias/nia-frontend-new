@@ -2,7 +2,7 @@
   <div id="app main-layout">
     <app-header />
     <router-view />
-    <user-msg />
+    <user-msg />    
   </div>
 </template>
 
@@ -13,7 +13,7 @@ import userMsg from "./cmps/user-msg";
 
 export default {
   created() {
-    this.$store.dispatch({ type: "loadUsers" });
+    this.$store.dispatch({ type: "loadUsers" });    
   },
   components: {
     appHeader,

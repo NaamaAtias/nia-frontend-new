@@ -58,104 +58,108 @@
           :key="idx"
         />
       </div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 83f1b493cec966ee01b408752d2c6c8cde35b55d
       <section class="main-details-container flex">
-        <section class="text-details">
-          <div>
-            <section class="hosted-by flex row">
-              <div>
-                <p class="less-margin fs22 bold">
-                  {{ stay.type }} hosted by {{ stay.host.fullName }}
-                </p>
-                <p>
-                  <span>{{ stay.capacity }} guests</span
-                  ><span class="dote"> · </span
-                  ><span> {{ stay.bedroom }} bedrooms</span
-                  ><span class="dote"> · </span><span> {{ stay.bed }} beds</span
-                  ><span class="dote"> · </span
-                  ><span> {{ stay.bath }} bath</span>
-                </p>
-              </div>
-              <user-avatar :imgUrl="stay.host.imgUrl"></user-avatar>
-            </section>
-
-            <hr class="margin" />
-            <div class="stay-details-features-main fs14">
-              <div class="stay-feature-container">
-                <div class="stay-feature-container-left">
-                  <img
-                    class="stay-features"
-                    src="https://res.cloudinary.com/itzikdahan/image/upload/v1639042599/nia-bnb/home_ib5ono.png"
-                    alt=""
-                  />
-                </div>
-                <div class="stay-feature-container-right">
-                  <p class="bold">Entire place</p>
-                  <p>You'll have the place to yourself.</p>
-                </div>
-              </div>
-              <div class="stay-feature-container">
-                <div class="stay-feature-container-left">
-                  <img
-                    class="stay-features"
-                    src="https://res.cloudinary.com/itzikdahan/image/upload/v1639042599/nia-bnb/sparkle_m0gx4w.png"
-                    alt=""
-                  />
-                </div>
-                <div class="stay-feature-container-right">
-                  <p class="bold">Enhanced Clean</p>
+          <section class="text-details">
+            <div>
+              <section class="hosted-by flex row">
+                <div>
+                  <p class="less-margin fs22 bold">
+                    {{ stay.type }} hosted by {{ stay.host.fullName }}
+                  </p>
                   <p>
-                    This host committed to niabnb's 5-step enhanced cleaning
-                    process.
+                    <span>{{ stay.capacity }} guests</span
+                    ><span class="dote"> · </span
+                    ><span> {{ stay.bedroom }} bedrooms</span
+                    ><span class="dote"> · </span
+                    ><span> {{ stay.bed }} beds</span
+                    ><span class="dote"> · </span
+                    ><span> {{ stay.bath }} bath</span>
                   </p>
                 </div>
+                <user-avatar :imgUrl="stay.host.imgUrl"></user-avatar>
+              </section>
+
+              <hr class="margin" />
+              <div class="stay-details-features-main fs14">
+                <div class="stay-feature-container">
+                  <div class="stay-feature-container-left">
+                    <img
+                      class="stay-features"
+                      src="https://res.cloudinary.com/itzikdahan/image/upload/v1639042599/nia-bnb/home_ib5ono.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="stay-feature-container-right">
+                    <p class="bold">Entire place</p>
+                    <p>You'll have the place to yourself.</p>
+                  </div>
+                </div>
+                <div class="stay-feature-container">
+                  <div class="stay-feature-container-left">
+                    <img
+                      class="stay-features"
+                      src="https://res.cloudinary.com/itzikdahan/image/upload/v1639042599/nia-bnb/sparkle_m0gx4w.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="stay-feature-container-right">
+                    <p class="bold">Enhanced Clean</p>
+                    <p>
+                      This host committed to niabnb's 5-step enhanced cleaning
+                      process.
+                    </p>
+                  </div>
+                </div>
+                <div class="stay-feature-container">
+                  <div class="stay-feature-container-left">
+                    <img
+                      class="stay-features"
+                      src="https://res.cloudinary.com/itzikdahan/image/upload/v1639053179/nia-bnb/door_vozorw.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="stay-feature-container-right">
+                    <p class="bold">Self check-in</p>
+                    <p>Check yourself in with the lockbox.</p>
+                  </div>
+                </div>
+                <div class="stay-feature-container">
+                  <div class="stay-feature-container-left">
+                    <img
+                      class="stay-features"
+                      src="https://res.cloudinary.com/itzikdahan/image/upload/v1639042604/nia-bnb/wifi_fa9ypi.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="stay-feature-container-right">
+                    <p class="bold">Wifi</p>
+                    <p>Guests often search for this popular amenity.</p>
+                  </div>
+                </div>
               </div>
-              <div class="stay-feature-container">
-                <div class="stay-feature-container-left">
-                  <img
-                    class="stay-features"
-                    src="https://res.cloudinary.com/itzikdahan/image/upload/v1639053179/nia-bnb/door_vozorw.png"
-                    alt=""
-                  />
-                </div>
-                <div class="stay-feature-container-right">
-                  <p class="bold">Self check-in</p>
-                  <p>Check yourself in with the lockbox.</p>
-                </div>
-              </div>
-              <div class="stay-feature-container">
-                <div class="stay-feature-container-left">
-                  <img
-                    class="stay-features"
-                    src="https://res.cloudinary.com/itzikdahan/image/upload/v1639042604/nia-bnb/wifi_fa9ypi.png"
-                    alt=""
-                  />
-                </div>
-                <div class="stay-feature-container-right">
-                  <p class="bold">Wifi</p>
-                  <p>Guests often search for this popular amenity.</p>
-                </div>
+              <hr class="margin" />
+              <section class="summary">
+                <p>
+                  {{ stay.summary }}
+                </p>
+              </section>
+              <hr class="margin" />
+              <div>
+                <p class="fs22 bold">What this place offers</p>
+                <stay-amenity
+                  v-for="item in stay.amenities"
+                  :key="item"
+                  :item="item"
+                />
               </div>
             </div>
-            <hr class="margin" />
-            <section class="summary">
-              <p>
-                {{ stay.summary }}
-              </p>
-            </section>
-            <hr class="margin" />
-            <div>
-              <p class="fs22 bold">What this place offers</p>
-              <stay-amenity
-                v-for="item in stay.amenities"
-                :key="item"
-                :item="item"
-              />
-            </div>
-          </div>
-        </section>
-        <section class="order-form-cmp">
-          <stay-order-form :stayId="stay._id"></stay-order-form>
+          </section>
+          <section class="order-form-cmp">
+            <stay-order-form :stayId="stay._id"></stay-order-form>
         </section>
       </section>
       <hr class="margin" />
@@ -180,10 +184,9 @@
             :review="review"
           />
         </div>
-        <hr class="margin" />
+        <hr />
       </section>
       <section class="main-layout map">
-        <p class="fs22 bold">Where you’ll be</p>
         <GmapMap
           :center="{ lat: stay.loc.lat, lng: stay.loc.lng }"
           :zoom="13"
