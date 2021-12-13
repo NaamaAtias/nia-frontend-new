@@ -17,7 +17,7 @@
       <div v-if="!isMobileSmallFilter && !isMenuOpen" :style="bigFilter">
         <stay-filter key="filter" />
       </div>
-      <div class="login-btn" @click="isMenuOpen = !isMenuOpen" >
+      <div class="login-btn" @click="isMenuOpen = !isMenuOpen">
         <div class="bar">
           <i class="fa fa-bars" aria-hidden="true"></i>
         </div>
@@ -28,7 +28,7 @@
           />
         </div> -->
         <div>
-          <login-menu v-if="isMenuOpen"/>
+          <login-menu v-if="isMenuOpen" />
         </div>
       </div>
     </div>
@@ -89,9 +89,9 @@
             <div class="user-img">
               <img :src="currUser" />
             </div>
-            <div>
-              <login-menu v-if="isMenuOpen" />
-            </div>
+          </div>
+          <div>
+            <login-menu v-if="isMenuOpen" />
           </div>
         </div>
       </nav>
