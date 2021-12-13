@@ -58,10 +58,6 @@
           :key="idx"
         />
       </div>
-<<<<<<< HEAD
-
-=======
->>>>>>> 83f1b493cec966ee01b408752d2c6c8cde35b55d
       <section class="main-details-container flex">
           <section class="text-details">
             <div>

@@ -71,12 +71,15 @@
         background-color: $clr6;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;        
+        justify-content: space-between; 
+        gap: 10px; 
+ 
         &.top{
+            gap: 10px; 
             h6{
                 font-size: 14px;
                 // margin-left: 40px;
-                margin-bottom: 30px;
+                margin-bottom: 30px; 
             }             
         }       
     }
@@ -171,8 +174,11 @@
             background-color: $clr6;
             display: flex;
             flex-direction: row;
-            justify-content: space-between;        
+            justify-content: space-between;  
+            gap: 10px; 
+      
             &.top{
+                gap: 10px; 
                 h6{
                     font-size: 14px;
                     padding-top: 5px;
@@ -271,8 +277,11 @@
             background-color: $clr6;
             display: flex;
             flex-direction: row;
-            justify-content: space-between;        
+            justify-content: space-between; 
+            gap: 10px; 
+       
             &.top{
+                gap: 10px; 
                 h6{
                     font-size: 14px;
                     padding-top: 5px;
