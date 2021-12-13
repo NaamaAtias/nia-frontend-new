@@ -37,6 +37,17 @@
       <nav :style="bgc">
         <div>
           <router-link class="logo" :style="bgc" to="/">
+            <div class="logo-img" :style="bImg">
+              <img src="../assets/img/logo-cloud.jpg" alt="" />
+            </div>
+            <div class="logo-img" :style="wImg">
+              <img src="../assets/img/logo-cloud-white.jpg" alt="" />
+            </div>
+            <div class="logo-txt">niabnb</div>
+          </router-link>
+
+          <!-- 
+          <router-link class="logo" :style="bgc" to="/">
             <div class="logo-img" v-if="home && !isScroll">
               <img src="../assets/img/logo-cloud.jpg" alt="" />
             </div>
@@ -44,7 +55,7 @@
               <img src="../assets/img/logo-cloud-white.jpg" alt="" />
             </div>
             <div class="logo-txt">niabnb</div>
-          </router-link>
+          </router-link> -->
         </div>
         <div
           class="small-filter"
@@ -76,9 +87,7 @@
               <i class="fa fa-bars" aria-hidden="true"></i>
             </div>
             <div class="user-img">
-              <img
-                :src="currUser"               
-              />
+              <img :src="currUser" />
             </div>
             <div>
               <login-menu v-if="isMenuOpen" />
@@ -136,6 +145,19 @@ export default {
     },
   },
   computed: {
+    bImg() {
+      return this.$route.name === "home" && !this.isScroll
+        ? "display: block;"
+        : "display: none;";
+    },
+    wImg() {
+      return (this.$route.name === "home" && this.isScroll) ||
+        this.$route.name !== "home"
+        ? "display: block;"
+        : "display: none;";
+    },
+
+    //**************************
     bgc() {
       return this.$route.name !== "home" || this.isScroll
         ? "background-color: #fff; color: rgb(255, 55, 92)"
@@ -173,12 +195,13 @@ export default {
       // console.log(this.isTripSet);
       return this.isTripSet ? "" : "display: none;";
     },
-    currUser(){
+    currUser() {
       // console.log(this.$store.getters.loggedinUser);
       const user = this.$store.getters.loggedinUser;
-      return user? user.imgUrl : "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_100,h_100,g_face/v1638252722/cats/nmlj2xgdlobdsrf7q22y.jpg"
-
-    }
+      return user
+        ? user.imgUrl
+        : "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_100,h_100,g_face/v1638252722/cats/nmlj2xgdlobdsrf7q22y.jpg";
+    },
   },
 };
 </script>

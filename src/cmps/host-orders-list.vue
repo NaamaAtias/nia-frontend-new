@@ -58,25 +58,37 @@ export default {
     this.currUser = this.$store.getters.loggedinUser;
     const filterBy = { filterType: "host", filter: this.currUser._id };
     this.$store.dispatch({ type: "setOrdersFilter", filterBy });
-    this.orders = this.$store.getters.orders;
+    var getOrders = this.$store.getters.orders;
+    for (let i = getOrders.length - 1; i >= 0; i--) {
+      this.orders.push(getOrders[i]);
+    }
   },
   methods: {
     async onAccept(orderId) {
+      var newOrders = []
       await this.$store.dispatch({
         type: "approveOrder",
         orderId,
         isApproved: true,
       });
-      console.log(this.$store.getters.orders);
-      this.orders = this.$store.getters.orders;
+      var getOrders = this.$store.getters.orders;
+      for (let i = getOrders.length - 1; i >= 0; i--) {
+        newOrders.push(getOrders[i]);
+      }
+      this.orders = newOrders;
     },
     async onReject(orderId) {
+      var newOrders = []
       await this.$store.dispatch({
         type: "approveOrder",
         orderId,
         isApproved: "rejected",
       });
-      this.orders = this.$store.getters.orders;
+      var getOrders = this.$store.getters.orders;
+      for (let i = getOrders.length - 1; i >= 0; i--) {
+        newOrders.push(getOrders[i]);
+      }
+      this.orders = newOrders;
     },
   },
 };

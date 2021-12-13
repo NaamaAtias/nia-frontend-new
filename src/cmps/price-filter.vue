@@ -4,7 +4,7 @@
       primaryColor="#717171"
       labelColor="none"
       holderColor="#DDDDDD"
-      handleColor="rgb(255, 55, 92)"
+      handleColor="#FFFFFF"
       :hideFromTo="true"
       :handleSize="20"
       :line-height="1"
@@ -75,7 +75,7 @@ export default {
   },
   methods: {
     filterByPrice() {
-      console.log(this.price);
+      // console.log(this.price);
       const filterBy = { filterType: "price", filter: this.price };
       this.$store.dispatch({ type: "setFilter", filterBy });
       this.$router.push("/stay/");

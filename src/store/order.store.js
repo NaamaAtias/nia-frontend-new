@@ -64,16 +64,11 @@ export const orderStore = {
             state.filterBy =  { host: '', byUser: '', isAprooved: 'all' }
         },
         updateOrder(state, {order}) {
-
-            console.log(order);
             var orders = state.orders.map(currOrder => {
-
                 if (order._id === currOrder._id){
-                    console.log('in@@@@@');
                     return order
                 } else return currOrder
             })
-            console.log(orders);
             state.orders = orders
         }
     },
@@ -81,10 +76,9 @@ export const orderStore = {
         async approveOrder(context, { orderId, isApproved }){            
             try {
                 const idx = context.state.orders.findIndex((order) => order._id === orderId)
-                console.log(idx, context.state.orders);
                 var order = JSON.parse(JSON.stringify(context.state.orders[idx]))
                 order.isApproved = isApproved
-               order = await orderService.updateApprove(order);
+                await orderService.updateApprove(order);
                 context.commit({ type: 'updateOrder', order });
                 return order;
             } catch (err) {

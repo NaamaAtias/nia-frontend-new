@@ -10,7 +10,7 @@ module.exports = {
     update
 }
 async function query(filterBy) {
-    console.log(filterBy);
+    // console.log(filterBy);
     try {
         const collection = await dbService.getCollection('order')
         // if (filterBy.host) {

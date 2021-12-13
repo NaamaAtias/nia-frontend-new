@@ -39,10 +39,11 @@ function signup(userName, password) {
 }
 
 function logout() {
-    sessionStorage.setItem(AUTH_URL, null)
+    sessionStorage.setItem(STORAGE_KEY_LOGGEDIN_USER, null)
     return Promise.resolve()
 }
 
 function getLoggedinUser() {
-    return JSON.parse(sessionStorage.getItem(AUTH_URL))
+    var user = JSON.parse(sessionStorage.getItem(STORAGE_KEY_LOGGEDIN_USER))
+    return user
 }
