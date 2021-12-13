@@ -1,6 +1,6 @@
 <template>
   <section class="stay-order-form flex column justify-center">
-    <div class="sticky-div">
+    <!-- <div class="sticky-div"> -->
       <div class="order-header flex row space-between align-center">
         <p>
           <span class="price-span">${{ currStay.price }} </span>/ night
@@ -92,7 +92,7 @@
           </div>
         </form>
       </div>
-    </div>
+    <!-- </div> -->
   </section>
 </template>
 
