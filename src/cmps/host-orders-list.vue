@@ -61,11 +61,22 @@ export default {
     this.orders = this.$store.getters.orders;
   },
   methods: {
-    onAccept(orderId) {
-      this.$store.dispatch({type: "approveOrder", orderId, isApproved: true })
+    async onAccept(orderId) {
+      await this.$store.dispatch({
+        type: "approveOrder",
+        orderId,
+        isApproved: true,
+      });
+      console.log(this.$store.getters.orders);
+      this.orders = this.$store.getters.orders;
     },
-    onReject(orderId) {
-      this.$store.dispatch({type: "approveOrder", orderId, isApproved: 'rejected' })
+    async onReject(orderId) {
+      await this.$store.dispatch({
+        type: "approveOrder",
+        orderId,
+        isApproved: "rejected",
+      });
+      this.orders = this.$store.getters.orders;
     },
   },
 };
