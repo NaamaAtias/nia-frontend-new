@@ -1,6 +1,6 @@
 const axios = require('axios')
 import { httpService } from './http.service'
-// import { socketService, SOCKET_EVENT_USER_UPDATED } from './socket.service'
+import { socketService } from './socket.service'
 // var gWatchedUser = null;
 const AUTH_URL = 'http://localhost:3030/api/auth/'
 const STORAGE_KEY_LOGGEDIN_USER = 'loggedinUser'
@@ -25,7 +25,7 @@ async function login(userName, password) {
      //new
 
     const user = await httpService.post('auth/login', {userName, password})
-    // socketService.emit('set-user-socket', user._id);
+    socketService.emit('set-user-socket', user._id);
     if (user) return _saveLocalUser(user)
 }
 
