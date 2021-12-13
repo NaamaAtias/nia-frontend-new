@@ -1,6 +1,6 @@
 import { orderService } from '../services/order.service.js';
 import { storageService } from '../services/async-storage.service.js';
-// import { socketService, SOCKET_EVENT_REVIEW_ADDED, SOCKET_EVENT_REVIEW_ABOUT_YOU } from '../services/socket.service'
+import { socketService, SOCKET_EVENT_ORDER_ADDED, SOCKET_EVENT_REVIEW_ABOUT_YOU } from '../services/socket.service'
 
 export const orderStore = {
     state: {
