@@ -185,6 +185,10 @@ img.stay-features {
 
 @include for-mobile-layout {
 
+    .reviews-details{
+        display: none;
+    }
+
     .order-form-cmp {
         width: 100%;
     }

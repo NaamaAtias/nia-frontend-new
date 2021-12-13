@@ -160,7 +160,7 @@
       </section>
       <hr class="margin" />
 
-      <section class="main-layout">
+      <section class="reviews-details main-layout">
         <div class="flex row fs22 bold">
           <span class="star"
             ><i
