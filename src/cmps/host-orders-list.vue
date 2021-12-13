@@ -62,10 +62,35 @@ export default {
     for (let i = getOrders.length - 1; i >= 0; i--) {
       this.orders.push(getOrders[i]);
     }
+    socketService.on("order-to-you", this.addOrder);
+  },
+  destroyed() {
+    socketService.off("order-to-you", this.addOrder);
+    // socketService.terminate();
   },
   methods: {
+    async addOrder(order) {
+      console.log(order);
+    //   this.orders = [];
+    //   const filterBy = { filterType: "host", filter: this.currUser._id };
+    //   this.$store.dispatch({ type: "setOrdersFilter", filterBy });
+    //   var getOrders = this.$store.getters.orders;
+    //   for (let i = getOrders.length - 1; i >= 0; i--) {
+    //   this.orders.push(getOrders[i]);
+    // }
+
+      // const filterBy = { filterType: "host", filter: this.currUser._id };
+      // await this.$store.dispatch({ type: "setOrdersFilter", filterBy });
+      // var getOrders = this.$store.getters.orders;
+      // this.orders= [];
+      // for (let i = getOrders.length - 1; i >= 0; i--) {
+        // this.orders.push(order);
+        this.orders = [order, ...this.orders]
+      
+    },
+
     async onAccept(orderId) {
-      var newOrders = []
+      var newOrders = [];
       await this.$store.dispatch({
         type: "approveOrder",
         orderId,
@@ -78,7 +103,7 @@ export default {
       this.orders = newOrders;
     },
     async onReject(orderId) {
-      var newOrders = []
+      var newOrders = [];
       await this.$store.dispatch({
         type: "approveOrder",
         orderId,
