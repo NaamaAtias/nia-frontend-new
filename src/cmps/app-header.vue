@@ -19,14 +19,8 @@
       </div>
       <div class="login-btn" @click="isMenuOpen = !isMenuOpen">
         <div class="bar">
-          <i class="fa fa-bars" aria-hidden="true"></i>
+          <i class="fa fa-bars" aria-hidden="true" :style="colorBar"></i>
         </div>
-        <!-- <div class="user-img">
-          <img
-            src="https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_100,h_100,g_face/v1638252722/cats/nmlj2xgdlobdsrf7q22y.jpg"
-            alt=""
-          />
-        </div> -->
         <div>
           <login-menu v-if="isMenuOpen" />
         </div>
@@ -45,21 +39,10 @@
             </div>
             <div class="logo-txt">niabnb</div>
           </router-link>
-
-          <!-- 
-          <router-link class="logo" :style="bgc" to="/">
-            <div class="logo-img" v-if="home && !isScroll">
-              <img src="../assets/img/logo-cloud.jpg" alt="" />
-            </div>
-            <div class="logo-img" v-else>
-              <img src="../assets/img/logo-cloud-white.jpg" alt="" />
-            </div>
-            <div class="logo-txt">niabnb</div>
-          </router-link> -->
         </div>
         <div
           class="small-filter"
-          v-if="isSmallFilter"
+          v-if="isSmallFilter && this.home || this.explore"
           :style="smallFilter"
           @click="isSmallFilter = !isSmallFilter"
         >
@@ -95,7 +78,7 @@
           </div>
         </div>
       </nav>
-      <div v-if="!isSmallFilter && !isMenuOpen" :style="bigFilter">
+      <div v-if="(!isSmallFilter && !isMenuOpen) || (!isMobileSmallFilter && !isMenuOpen)" :style="bigFilter">
         <stay-filter key="filter" />
       </div>
     </div>
@@ -107,7 +90,8 @@ import loginMenu from "./login-menu.vue";
 export default {
   data() {
     return {
-      home: null,
+      explore: false,
+      home: false,
       isScroll: false,
       isMenuOpen: false,
       isSmallFilter: true,
@@ -128,7 +112,7 @@ export default {
   },
   methods: {
     handleScroll(event) {
-      this.isScroll = window.scrollY !== 0 ? true : false;
+      this.isScroll = window.scrollY !== 0 ? true : false;      
       this.isSmallFilter = !this.home || this.isScroll ? true : false;
       this.isMobileSmallFilter = this.home || this.isScroll ? true : false;
     },
@@ -138,6 +122,7 @@ export default {
     "$route.name": {
       handler() {
         this.home = this.$route.name === "home" ? true : false;
+        this.explore = this.$route.name === "stayApp" ? true : false;
         this.isSmallFilter = this.home ? false : true;
         this.isMobileSmallFilter = this.home ? false : true;
       },
@@ -175,7 +160,7 @@ export default {
       return this.isSmallFilter ? "display: block;" : "display: none;";
     },
     mobileSmallFilter() {
-      return this.isMobileSmallFilter ? "display: block;" : "display: none;";
+      return (this.isMobileSmallFilter && this.home) ? "display: block;" : "display: none;";
     },
     searchLocation() {
       this.trip = this.$store.getters.trip;
@@ -202,6 +187,9 @@ export default {
         ? user.imgUrl
         : "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_100,h_100,g_face/v1638252722/cats/nmlj2xgdlobdsrf7q22y.jpg";
     },
+    colorBar(){
+      return this.$route.name !== "home" ? "color: #000000" : "color: #fff";
+    }
   },
 };
 </script>

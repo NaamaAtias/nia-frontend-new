@@ -80,7 +80,8 @@ header{
         flex-direction: row;
         color: $clr6;
         position: fixed;
-        right: 0;
+        right: 10px;
+        margin-bottom: 5px;
         top: 0;
         .bar{
             padding: 0.2em;

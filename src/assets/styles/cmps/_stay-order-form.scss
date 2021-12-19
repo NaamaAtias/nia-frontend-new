@@ -1,3 +1,173 @@
+@media (max-width: 960px){
+    .order-form-cmp{
+        left: 0;
+        width: 300px;
+    }
+    .stay-order-form {
+        display: flex;
+        // align-self: flex-start;
+        // align-items: flex-start;
+        // justify-self: flex-start;
+        margin: auto;
+        width: 300px;
+        height: fit-content;
+        text-align: center;
+        padding: 24px;
+        padding-top: 0;
+        border: 1px rgb(221, 221, 221) solid;
+        border-radius: 12px;
+        box-shadow: rgb(0 0 0 / 12%) 0px 6px 16px;
+        background-color: white;
+    
+        .order-box {
+            height: 100%;
+            width: 276px;
+   
+            .order-input {
+                width: 90%;
+                text-align: center;
+    
+                .order-dates {
+                    width: 100%;
+                    // text-align: center;
+                    // align-items: center;
+                    justify-content: space-between;
+                    text-align: center;
+    
+                    .check-in-order {
+                        border: 1px $clr4 solid;
+                        border-right: 0px;
+                        border-top-left-radius: 13px;
+                        width: 50%;
+                        justify-content: flex-start;
+                        text-align: center;
+                    }
+                    .check-out-order {
+                        border: 1px $clr4 solid;
+                        border-top-right-radius: 13px;
+                        width: 50%;
+                        text-align: center;
+                    }
+                    .mx-input {                    
+                        padding: 15px 0px 10px;
+                        font-family: airbnb-book;
+                        background-color: transparent;
+                    }
+                }
+    
+                .order-guests {
+                    border: 1px $clr4 solid;
+                    border-top: 0px;
+                    border-bottom-left-radius: 13px;
+                    border-bottom-right-radius: 13px;
+                    width: 100%;
+                    padding: 5px 0px !important;
+    
+                    input {
+                        background-color: transparent;
+                        border-color: transparent;
+                        padding: 0 10px;
+                        font-family: airbnb-book;
+                        outline: none;
+                        color: $clr4;
+                    }
+    
+                    label {
+                        padding: 5px 12px;
+                    }
+                }
+    
+                label {
+                    padding: 10px 12px;
+                    cursor: pointer;
+                    text-transform: uppercase;
+                    font-size: 10px;
+                    line-height: 12px;
+                    font-weight: 800;
+                    letter-spacing: 0.1px;
+                    font-family: airbnb-book;
+                    text-align: start;
+                }
+            }
+        }
+    }
+    
+    .order-btn {
+        --mouse-x: 50;
+        --mouse-y: 50;
+        padding: 20px 30px;
+        min-width: 200px;
+        width: 100%;
+        background-size: 200% 200%;
+        background-position: calc((100 - var(--mouse-x, 0)) * 1%)
+            calc((100 - var(--mouse-y, 0)) * 1%);
+        background-image: radial-gradient(
+            circle at center center,
+            rgb(255, 56, 92) 0%,
+            rgb(230, 30, 77) 27.5%,
+            rgb(227, 28, 95) 40%,
+            rgb(215, 4, 102) 57.5%,
+            rgb(189, 30, 89) 75%,
+            rgb(189, 30, 89) 100%
+        ) !important;
+        cursor: pointer;
+        border: none;
+        border-radius: 10px;
+        font-size: 16px;
+        line-height: 20px;
+        font-weight: 600;
+        color: white;
+        margin-top: 16px;
+        text-decoration: none;
+        font-family: airbnb-book;
+    }    
+   
+    .order-header {
+        font-family: airbnb-book;
+        color: $clr7;
+        padding-top: 0;
+    
+        .price-span {
+            font-size: 22px;
+            font-weight: 600;
+        }
+    
+        .rate-span {
+            .reviews-span {
+                color: $clr4;
+                padding-left: 2px;
+                text-decoration: underline;
+            }
+        }
+    }
+    
+    .price-details {
+        font-family: airbnb-book;
+        letter-spacing: 0.02em;
+        // justify-content: space-between;
+    
+        .prices-display-left {
+            width: 50%;
+            text-align: start;
+            text-decoration: underline;
+            line-height: 30px;
+        }
+        .prices-display-right {
+            width: 50%;
+            text-align: end;
+            line-height: 30px;
+        }
+    }
+    .total-price-display {
+        justify-content: space-between;
+        padding: 10px;
+        font-weight: 800;
+    }
+
+
+}
+
+@media (min-width: 960px){
 .stay-order-form {
     position: sticky;
     top: 120px;
@@ -10,9 +180,9 @@
     box-shadow: rgb(0 0 0 / 12%) 0px 6px 16px;
     background-color: white;
     margin-top: 18.26px;
-     @include for-mobile-layout {
-        width: 100%;
-     }
+    //  @include for-mobile-layout {
+        
+    //  }
      @include for-narrow-layout {
         width: 250px;
      }
@@ -182,15 +352,6 @@
     padding: 10px;
     font-weight: 800;
 }
+}
 
-@include for-mobile-layout {
-    .stay-order-form {
-    width: 100vw;
-    position: fixed;
-    bottom: 0;
-    top: 100%;
-    left: 0;
-    z-index: 1000;
-    }
- }
 

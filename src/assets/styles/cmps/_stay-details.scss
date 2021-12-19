@@ -111,8 +111,6 @@
     margin-top: 30px;
 }
 
-
-
 .text-details {
     width: 60%;
 }
@@ -186,7 +184,7 @@ img.stay-features {
 @include for-mobile-layout {
 
     .reviews-details{
-        display: none;
+        // display: none;
     }
 
     .order-form-cmp {
@@ -211,12 +209,13 @@ img.stay-features {
         width: 100%;
     }
     .stay-details {
+        
         width: 100%;
         >* {
             width: 100%;
         }
 
-        .details-header {
+        .details-header {            
             .details-btns {
                 display: none;
             }

@@ -46,17 +46,7 @@
         <div class="stay-gallery">
           <div class="upload-preview" style="background-image: url('null')">
             <label class="img-upload-label" for="imgUpload"
-              ><img src="../assets/img/share.jpg" alt=""><input
-                type="file"
-                accept="img/*"
-                class="img-upload-btn"
-                id="imgUpload"
-                               
-            /></label>
-          </div>
-          <div class="upload-preview" style="background-image: url('null')">
-            <label class="img-upload-label" for="imgUpload"
-              ><img src="../assets/img/share.jpg" alt=""><input
+              ><img src="../assets/img/share.jpg" alt="" /><input
                 type="file"
                 accept="img/*"
                 class="img-upload-btn"
@@ -65,7 +55,7 @@
           </div>
           <div class="upload-preview" style="background-image: url('null')">
             <label class="img-upload-label" for="imgUpload"
-              ><img src="../assets/img/share.jpg" alt=""><input
+              ><img src="../assets/img/share.jpg" alt="" /><input
                 type="file"
                 accept="img/*"
                 class="img-upload-btn"
@@ -74,7 +64,7 @@
           </div>
           <div class="upload-preview" style="background-image: url('null')">
             <label class="img-upload-label" for="imgUpload"
-              ><img src="../assets/img/share.jpg" alt=""><input
+              ><img src="../assets/img/share.jpg" alt="" /><input
                 type="file"
                 accept="img/*"
                 class="img-upload-btn"
@@ -83,7 +73,16 @@
           </div>
           <div class="upload-preview" style="background-image: url('null')">
             <label class="img-upload-label" for="imgUpload"
-              ><img src="../assets/img/share.jpg" alt=""><input
+              ><img src="../assets/img/share.jpg" alt="" /><input
+                type="file"
+                accept="img/*"
+                class="img-upload-btn"
+                id="imgUpload"
+            /></label>
+          </div>
+          <div class="upload-preview" style="background-image: url('null')">
+            <label class="img-upload-label" for="imgUpload"
+              ><img src="../assets/img/share.jpg" alt="" /><input
                 type="file"
                 accept="img/*"
                 class="img-upload-btn"
@@ -117,14 +116,16 @@
                   </select>
                 </div>
               </div>
-              <img
-                src="https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_100,h_100,g_face/v1638252722/cats/nmlj2xgdlobdsrf7q22y.jpg"
-                alt=""
-              />
-          <div class="order-form-container-input-price">
-            Price <input type="number" name="price" autocomplete="off" value="" />/ night
-          </div>
-
+              <user-avatar :imgUrl="currUser" />
+              <div class="order-form-container-input-price">
+                Price
+                <input
+                  type="number"
+                  name="price"
+                  autocomplete="off"
+                  value=""
+                />/ night
+              </div>
             </div>
             <div class="stay-feature-main-container">
               <div class="stay-feature-container">
@@ -184,52 +185,33 @@
             <div class="amenities-list-main-container">
               <h2>Amenities</h2>
               <div class="amenities-list">
-                <!-- <span
-                  ><input
-                    type="checkbox"
-                    id="TV"
-                    name="amenities"
-                    value="true"
-                    checked=""
-                  /><label for="TV"> TV</label></span
-                > --> 
-                    <span>
-                    <img class="tv" src="../assets/img/tv.png" alt="">
-                    <input
+                <span>
+                  <img class="tv" src="../assets/img/tv.png" alt="" />
+                  <input
                     type="checkbox"
                     id="tv"
                     name="amenities"
                     value="false"
                   /><label for="Wifi">TV</label></span
-                >                              
+                >
                 <span>
-                    <img class="wifi" src="../assets/img/wifi.png" alt="">
-                    <input
+                  <img class="wifi" src="../assets/img/wifi.png" alt="" />
+                  <input
                     type="checkbox"
                     id="Wifi"
                     name="amenities"
                     value="false"
                   /><label for="Wifi">Wifi</label></span
                 >
-                <!-- <span
-                  ><img src="../assets/img/wifi.png" alt="">
-                  <input
-                    type="checkbox"
-                    id="Air conditioning"
-                    name="amenities"
-                    value="false"
-                  /><label for="Air conditioning">AC </label></span
-                > -->
-                <span
-                  >
-                  <img src="../assets/img/smoking.png" alt=""><input
+                <span>
+                  <img src="../assets/img/smoking.png" alt="" /><input
                     type="checkbox"
                     id="Smoking allowed"
                     name="amenities"
                     value="false"
                   /><label for="Smoking_allowed">Smoking allowed </label></span
                 ><span
-                  ><img src="../assets/img/paws.png" alt="">
+                  ><img src="../assets/img/paws.png" alt="" />
                   <input
                     type="checkbox"
                     id="Pets allowed"
@@ -237,7 +219,11 @@
                     value="false"
                   /><label for="Pets allowed">Pets allowed </label></span
                 ><span
-                  ><img class="kitchen" src="../assets/img/kitchen.png" alt="">
+                  ><img
+                    class="kitchen"
+                    src="../assets/img/kitchen.png"
+                    alt=""
+                  />
                   <input
                     type="checkbox"
                     id="Cooking basics"
@@ -248,7 +234,6 @@
               </div>
             </div>
           </div>
-
         </section>
         <button type="submit" class="stay-edit-save-btn">Save</button>
       </form>
@@ -257,11 +242,25 @@
 </template>
 
 <script>
+import userAvatar from "../cmps/user-avatar.vue";
 export default {
   created() {
     window.scrollTo(0, 0);
   },
+  computed: {
+    currUser() {
+      const user = this.$store.getters.loggedinUser;
+      return user
+        ? user.imgUrl
+        : "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_100,h_100,g_face/v1638252722/cats/nmlj2xgdlobdsrf7q22y.jpg";
+    },
+  },
+    components: {
+      userAvatar,
+    },
+  
 };
+
 //todo - Allow creating, updating (and deleting) a stay
 </script>
 
