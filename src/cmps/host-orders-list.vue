@@ -75,7 +75,6 @@ export default {
       this.$store.dispatch({ type: "setOrdersFilter", filterBy });
       this.orders = [order, ...this.orders];
     },
-
     async onAccept(orderId) {
       var newOrders = [];
       await this.$store.dispatch({

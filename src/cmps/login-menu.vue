@@ -1,6 +1,6 @@
 <template>
   <section>
-    <div class="login-menu">
+    <div @click="isMenuOpen=!isMenuOpen" class="login-menu" :style="showMenu">
       <div class="login-menu-btn bold">
         <router-link to="/login">Sing up</router-link>
       </div>
@@ -18,8 +18,15 @@ export default {
   name: "login-menu",
   components: {},
   data() {
-    return {};
+    return {
+      isMenuOpen: true
+    };
   },
   methods: {},
+  computed: {
+    showMenu(){
+      return this.isMenuOpen? "display: block;" : "display: none;";
+    }
+  }
 };
 </script>

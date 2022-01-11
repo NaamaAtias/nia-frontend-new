@@ -36,13 +36,13 @@
         <div class="details-btns flex align-center">
           <div>
             <label class="share-btn" @click="share">
-              <img class="icon-btn" src="@/assets/img/share.jpg" />
+              <img class="icon-btn" src="../assets/img/share.jpg" />
               <button>Share</button>
             </label>
           </div>
           <div>
             <label class="share-btn" @click="save">
-              <img class="icon-btn" src="@/assets/img/heart.png" />
+              <img class="icon-btn" src="../assets/img/heart.png" />
               <button>Save</button>
             </label>
           </div>
@@ -160,7 +160,7 @@
       </section>
       <hr class="margin" />
 
-      <section class="main-layout">
+      <section class="reviews-details main-layout">
         <div class="flex row fs22 bold">
           <span class="star"
             ><i
