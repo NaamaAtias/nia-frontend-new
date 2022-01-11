@@ -98,6 +98,7 @@ export default {
       // console.log(filter);
       const filterBy = { filterType: filterType, filter: filter };
       this.$store.dispatch({ type: "setFilter", filterBy });
+      this.isOnTypeFilter = false;
     },
   },
   computed: {
