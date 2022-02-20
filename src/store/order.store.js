@@ -10,7 +10,8 @@ export const orderStore = {
         isOrdered: false,
         filterOrdersBy: { host: '', byUser: '', isAprooved: 'all' },
         // filterOrdersByHostId: '',
-        currSearch: {startDate: 0, endDate: 0}
+        currSearch: {startDate: 0, endDate: 0},
+        isMobileFooter: true
 
     },
     getters: {
@@ -31,6 +32,9 @@ export const orderStore = {
         isOrdered(state) {
             return state.isOrdered;
         },
+        isMobileFooter(state) {
+            return state.isMobileFooter;
+        },
         searchedStartDate() {
             return state.currSearch.startDate;
         },
@@ -42,7 +46,7 @@ export const orderStore = {
         setOrders(state, {orders}) {
             state.orders = orders;
         },
-         setOrder(state, { order }) {
+        setOrder(state, { order }) {
             state.currOrder = order;
             state.currTrip = {};
             state.isOrdered = true;
@@ -70,6 +74,9 @@ export const orderStore = {
                 } else return currOrder
             })
             state.orders = orders
+        },
+        toggleMobileForm(state) {
+            state.isMobileFooter = !state.isMobileFooter;
         }
     },
     actions: {

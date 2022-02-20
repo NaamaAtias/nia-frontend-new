@@ -40,10 +40,16 @@
 
 @include for-mobile-layout {
     .el-carousel__arrow {
-        display: block;
+        display: block !important;
+        background-color: transparent !important;
+        color: white !important;
+        font-size: 25px !important;
+        font-weight: 800 !important;
+        box-shadow: none !important;
+        text-shadow: #717171 !important;
     }
     .el-carousel__container {
-        height: 180px;
+        height: 260px;
     }
     .el-carousel__item.is-animating{
         border-radius: 0;

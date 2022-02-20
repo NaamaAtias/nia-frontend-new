@@ -19,7 +19,7 @@
       </div>
       <div class="login-btn" @click="isMenuOpen = !isMenuOpen">
         <div class="bar">
-          <i class="fa fa-bars" aria-hidden="true" :style="colorBar"></i>
+          <i v-if="home || explore" class="fa fa-bars" aria-hidden="true" :style="colorBar"></i>
         </div>
         <div>
           <login-menu v-if="isMenuOpen" />
@@ -142,7 +142,6 @@ export default {
         : "display: none;";
     },
 
-    //**************************
     bgc() {
       return this.$route.name !== "home" || this.isScroll
         ? "background-color: #fff; color: rgb(255, 55, 92)"
@@ -160,7 +159,7 @@ export default {
       return this.isSmallFilter ? "display: block;" : "display: none;";
     },
     mobileSmallFilter() {
-      return (this.isMobileSmallFilter && this.home) ? "display: block;" : "display: none;";
+      return (this.isMobileSmallFilter && (this.home || this.explore)) ? "display: block;" : "display: none;";
     },
     searchLocation() {
       this.trip = this.$store.getters.trip;

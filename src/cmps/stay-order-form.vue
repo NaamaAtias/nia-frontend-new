@@ -1,6 +1,6 @@
 <template>
-  <section class="stay-order-form flex column justify-center">
-    <!-- <div class="sticky-div"> -->
+  <section class="stay-order-form flex column justify-center" :class="toggleForm">
+      <div class="btn-close-form" @click="closeForm()" hidden>X</div>
       <div class="order-header flex row space-between align-center">
         <p>
           <span class="price-span">${{ currStay.price }} </span>/ night
@@ -10,8 +10,7 @@
             ><i
               class="fas fa-star"
               style="font-size: 12.5px; color: rgb(255, 55, 92)"
-            ></i
-          ></span>
+            ></i></span>
           <strong class="rate-span fs14">
             {{ avgRate }}
             <span class="reviews-span"
@@ -26,7 +25,6 @@
             <div class="check-in-order flex column">
               <label @click="datePicker = !datePicker">
                 Check in
-                <!-- <div @click="openDatePicker = !openDatePicker">Dec 12</div> -->
                 <date-picker @startDate="changeStartDate"></date-picker>
               </label>
             </div>
@@ -92,7 +90,6 @@
           </div>
         </form>
       </div>
-    <!-- </div> -->
   </section>
 </template>
 
@@ -104,7 +101,7 @@ import guests from "./guests.vue";
 export default {
   data() {
     return {
-      openDatePicker: false, //new
+      openDatePicker: false,
       currTrip: null,
       currStay: {},
       datePicker: false,
@@ -113,8 +110,8 @@ export default {
       endDate: 0,
       avgRate: 0,
       isAvailable: false,
-      dateInputStart: 0
-    };
+      dateInputStart: 0,
+    }
   },
   created() {
     this.currTrip = this.$store.getters.trip;
@@ -123,7 +120,6 @@ export default {
   },
   mounted() {
     const button = this.$refs.btn;
-    // console.log(button);
     button.addEventListener("mousemove", (e) => {
       const rect = button.getBoundingClientRect();
       const x = ((e.clientX - rect.left) * 100) / button.clientWidth;
@@ -151,6 +147,12 @@ export default {
     totalPrice() {
       return this.$store.getters.totalPrice;
     },
+    isMobileFooter() {
+      return this.$store.getters.isMobileFooter;
+    },
+    toggleForm() {
+      return {'toggle-hide': this.isMobileFooter, 'toggle-show': !this.isMobileFooter};
+    }
   },
   components: {
     datePicker,
@@ -158,7 +160,6 @@ export default {
   },
   methods: {
     sendOrder() {
-      // console.log('sent')
       this.currTrip.stay = {
         _id: this.currStay._id,
         name: this.currStay.name,
@@ -168,7 +169,6 @@ export default {
         _id: this.currStay.host._id,
         name: this.currStay.host.fullName
       }
-      //add user to the order object before saving it - if no user login as guest, should i add id to guest??
       this.currTrip.byUser = this.$store.getters.loggedinUser || {fullname: 'Guest user', imgUrl: '../assets/img/user-portrait.jpg'};
       this.currTrip.isApproved = false;
       this.$store.dispatch({ type: "addOrdertoDB", order: this.currTrip });
@@ -176,15 +176,11 @@ export default {
       this.isAvailable = false;
     },
     changeStartDate(date) {
-            // console.log('change start')
-
       this.startDate = date.getTime();
       const dataStr = date.toString();
       this.currTrip.startDate = dataStr.slice(4, 10);
     },
     changeEndDate(date) {
-                  // console.log('change end')
-
       this.endDate = date.getTime();
       const dataStr = date.toString();
       this.currTrip.endDate = dataStr.slice(4, 10);
@@ -203,10 +199,12 @@ export default {
       ) {
         this.isAvailable = true;
       } else {
-        // console.log(ev);
         showMsg("Please enter number of guests according to capacity", "danger");
       }
     },
+    closeForm() {
+      this.$store.commit({type: 'toggleMobileForm'});
+  },
   },
 };
 </script>

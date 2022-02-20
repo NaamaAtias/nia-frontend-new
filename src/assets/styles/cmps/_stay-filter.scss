@@ -58,110 +58,246 @@
     color: $clr6;
     }
 
-    .max-filter {
-            display: block;
-            width: 225px;
-            background-color: $clr6;     
-            display: flex;
-            flex-direction: column;
-            opacity: 1;
-            color: $clr5;
-            letter-spacing: 0.04em;
-            margin: auto;
+    .max-filter{
+        width: 100%;
+        min-height: 66px;
+        background-color: $clr6;     
+        display: flex;
+        flex-direction: row;
+        opacity: 1;
+        color: $clr5;
+        letter-spacing: 0.04em;
+        margin: auto;
+        text-align: left;
+        border-radius: 50px;
+        border: 1px solid $clr3;
+        box-shadow: 0.5px 0.5px 0.5px $clr3;
+
+        .filter-hover{
+            padding: 14px 0px 0px;
+            width: 25%;
             text-align: left;
-            border-radius: 10px;
-            border: 1px solid $clr3;
-            box-shadow: 0.5px 0.5px 0.5px $clr3;
-            padding-top: 6px;
             z-index: 100;
-            margin-top: 10px;  
             
-            .filter-hover{
-                padding: 12px 0px 6px;
-                text-align: left;
-                font-size: 12px;
-                gap: 1rem;
-                            
-                .filter-input, .mx-input{
-                    font-size: 11px;
-                }
-                
-                &.filter-location{
-                    .filter-input{
-                        padding-left: 1.2rem;
-                        text-transform: capitalize;
-                        z-index: 1;
-                    }
-                }
-                &.filter-check-in, &.filter-check-out{
-                    .filter-input{
-                        padding-left: 0.7rem;
-                    }
-                }
-            
-                &.filter-guests{
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: space-between;
-                    padding-right: 0.5em;
-                    .filter-input{
-                        padding-left: 1.2rem;
-                    }
-                    padding-bottom: 0;              
-                }
-            }
-            
-            button.filter-explore{
-                align-self: center;
-                padding: 0;
-                width: 48px;
-                height: 48px;
-                border-radius: 50%;
-                border: none;
-                background-color: $clr1;
-                opacity: 2;
-                margin-bottom: 0.4rem;    
-                .fa-search{
-                    color: $clr6;
-                    font-size: 16px;
-                    font-weight: 600;
-                }
-            }
-
-            .guests-note{
-                max-width: 150px;
-            }
-            
-            .filter-title{
-                padding: 0px 0px 2px;
-                cursor: pointer;
-                font-size: 12px;
-                font-weight: 600;
-                line-height: 10px;
-                letter-spacing: 0.04em;
-                text-align: left;
-                padding-left: 1.7em;
-                text-transform: capitalize;
-                width: 150px;
-            }
-
-            
-            .filter-input{
-                margin-top: 0.3rem;
-                color: $clr4;
-                font-weight: 400;
+            &.filter-location{
+                padding-left: 1em;
+                border-top-left-radius: 50px;
+                border-bottom-left-radius: 50px;
                 width: 100%;
-                font-size: 12px;
-                text-align: left;
-                padding-left: 6px;
+                .filter-input{
+                    padding-left: 1.2rem;
+                }
             }
-            
-            .search-btn-container{
-                align-self: center;
-            }
-        }
+            &.filter-check-in, &.filter-check-out{
+                width: 20%;
+                .filter-input{
+                    padding-left: 0.7rem;
+                }
 
-}
+                @include for-mobile-layout {
+                    display: none;
+                }
+            }
+        
+            &.filter-guests{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                width: 100%;
+                border-top-right-radius: 50px;
+                border-bottom-right-radius: 50px;
+                padding-right: 0.5em;
+                .filter-input{
+                    padding-left: 1.2rem;
+                }
+                @include for-mobile-layout {
+                    .filter-box-guests {
+                        display: none;
+                    }
+                    .search-btn-container {
+                            height: 35px;
+                            width: 35px;
+                        .filter-explore {
+                            height: 100%;
+                            width: 100%;
+                        }
+                    }  
+                }
+            }          
+        }    
+        .filter-hover:hover{
+            background-color: $clr3;
+            border-radius: 50px;
+            z-index: 100;       
+            .mx-input{
+                background-color: rgba(128, 128, 128, 0);
+               }
+        }    
+        button.filter-explore{
+            align-self: center;
+            padding: 0;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: none;
+            background-color: $clr1;
+            opacity: 2;
+            margin-bottom: 0.8rem;
+        
+            .fa-search{
+                color: $clr6;
+                font-size: 16px;
+                font-weight: 600;
+            }    
+            
+        }
+        
+        .filter-title{
+            padding: 0px 0px 2px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+            line-height: 16px;
+            letter-spacing: 0.04em;
+            text-align: left;
+            padding-left: 1.7em;
+         }
+        
+        .filter-input{
+            margin-top: 3px;
+            color: $clr4;
+            font-weight: 400;
+            width: 100%;
+            font-size: 14px;
+            text-align: left;
+            padding-left: 6px;
+        }
+        
+        .filter-space{
+         background-color: $clr3;
+         width: 2px;
+         margin-top: 1rem;
+         margin-bottom: 1rem;
+        }
+    
+        .guests{
+            min-width: 500px;
+        }
+        
+        .search-btn-container{
+            align-self: center;
+        }
+        }
+    }
+
+    // .max-filter {
+    //         display: block;
+    //         width: 225px;
+    //         background-color: $clr6;     
+    //         display: flex;
+    //         flex-direction: column;
+    //         opacity: 1;
+    //         color: $clr5;
+    //         letter-spacing: 0.04em;
+    //         margin: auto;
+    //         text-align: left;
+    //         border-radius: 10px;
+    //         border: 1px solid $clr3;
+    //         box-shadow: 0.5px 0.5px 0.5px $clr3;
+    //         padding-top: 6px;
+    //         z-index: 100;
+    //         margin-top: 10px; 
+    
+    // >* {
+    //     flex-grow:1;
+    // }
+            
+//             .filter-hover{
+//                 padding: 12px 0px 6px;
+//                 text-align: left;
+//                 font-size: 12px;
+//                 gap: 1rem;
+                            
+//                 .filter-input, .mx-input{
+//                     font-size: 11px;
+//                 }
+                
+//                 &.filter-location{
+//                     .filter-input{
+//                         padding-left: 1.2rem;
+//                         text-transform: capitalize;
+//                         z-index: 1;
+//                     }
+//                 }
+//                 &.filter-check-in, &.filter-check-out{
+//                     .filter-input{
+//                         padding-left: 0.7rem;
+//                     }
+//                 }
+            
+//                 &.filter-guests{
+//                     display: flex;
+//                     flex-direction: row;
+//                     justify-content: space-between;
+//                     padding-right: 0.5em;
+//                     .filter-input{
+//                         padding-left: 1.2rem;
+//                     }
+//                     padding-bottom: 0;              
+//                 }
+//             }
+            
+//             button.filter-explore{
+//                 align-self: center;
+//                 padding: 0;
+//                 width: 48px;
+//                 height: 48px;
+//                 border-radius: 50%;
+//                 border: none;
+//                 background-color: $clr1;
+//                 opacity: 2;
+//                 margin-bottom: 0.4rem;    
+//                 .fa-search{
+//                     color: $clr6;
+//                     font-size: 16px;
+//                     font-weight: 600;
+//                 }
+//             }
+
+//             .guests-note{
+//                 max-width: 150px;
+//             }
+            
+//             .filter-title{
+//                 padding: 0px 0px 2px;
+//                 cursor: pointer;
+//                 font-size: 12px;
+//                 font-weight: 600;
+//                 line-height: 10px;
+//                 letter-spacing: 0.04em;
+//                 text-align: left;
+//                 padding-left: 1.7em;
+//                 text-transform: capitalize;
+//                 // width: 150px;
+//             }
+
+            
+//             .filter-input{
+//                 margin-top: 0.3rem;
+//                 color: $clr4;
+//                 font-weight: 400;
+//                 width: 100%;
+//                 font-size: 12px;
+//                 text-align: left;
+//                 padding-left: 6px;
+//             }
+            
+//             .search-btn-container{
+//                 align-self: center;
+//             }
+//         }
+
+// }
 
 // @media (min-width: 830px) and (max-width: 960px){ 
 //     .mobile-small-filter *{
@@ -365,6 +501,7 @@
         padding: 10px;
         cursor: pointer;
         max-width: 100%;
+        margin: 0px 15px;
         .small-filter-txt{
             flex-direction: row;
             text-decoration: none;

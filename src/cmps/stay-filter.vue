@@ -29,7 +29,7 @@
       </div>
       <div class="filter-space"></div>
       <div class="filter-hover filter-guests">
-        <div>
+        <div class="filter-box-guests">
           <div @click="isOnGuests = !isOnGuests" class="filter-title">
             Guests
           </div>

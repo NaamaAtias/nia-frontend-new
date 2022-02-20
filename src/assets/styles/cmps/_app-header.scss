@@ -20,6 +20,10 @@ header{
         font-weight: 400;
         position: fixed;
         width: 100%;
+        nav {
+            display: flex;
+            flex-direction: row;
+            font-size: 14px;
         .logo {
             display: flex;
             flex-direction: row;
@@ -37,7 +41,8 @@ header{
             font-weight: bold;
             padding-left: 3px;
         }
-        }   
+        }
+    }   
         .header-right{
             align-self: center;
         }
@@ -93,7 +98,7 @@ header{
 }
 }
 
-@media (max-width: 760px){
+@media (max-width: 960px){
     .header-mobile{
         display: none;
     }
@@ -175,7 +180,7 @@ header{
     }
 }
 
-@media (min-width: 760px){
+@media (min-width: 960px){
     .header-mobile{
         display: none;
     }
