@@ -6,7 +6,7 @@ import reviewApp from './views/review-app.vue'
 import loginSignup from './views/login-signup.vue'
 import userDetails from './views/user-details.vue'
 import stayDetails from './views/stay-details.vue'
-import stayEdit from './views/stay-edit.vue'
+// import stayEdit from './views/stay-edit.vue'
 import host from './views/host.vue'
 
 Vue.use(Router)
@@ -30,11 +30,11 @@ export const router = new Router({
       name: 'stayDetails',
       component: stayDetails
     },
-    {
-      path: '/stay/edit/:id',
-      name: 'stayEdit',
-      component: stayEdit
-    },
+    // {
+    //   path: '/stay/edit/:id',
+    //   name: 'stayEdit',
+    //   component: stayEdit
+    // },
     {
       path: '/review',
       name: 'review',
