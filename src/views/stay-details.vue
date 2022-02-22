@@ -6,7 +6,7 @@
         <!-- <div class="prev"> -->
         <el-carousel trigger="click" :autoplay="false" :loop="false">
           <el-carousel-item v-for="imgUrl in stay.imgUrls" :key="imgUrl">
-            <span class="heart-favorite" @click.stop="isFavorite = !isFavorite"
+            <span class="heart-favorite" @click.stop="isFavorite = !isFavorite" :style="leftHeart"
               ><i class="fas fa-heart" :style="heartColor"></i
             ></span>
             <img :src="imgUrl" alt="" ref="img" />
@@ -237,6 +237,9 @@ export default {
         ? "color: #ff375c; opacity: 100%"
         : "color: #222222; opacity: 70%";
     },
+    leftHeart() {
+      return "left: 5%; right: 0%"
+    }
   },
   watch: {
     "$route.params.stayId": {

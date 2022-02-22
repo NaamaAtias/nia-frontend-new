@@ -1,6 +1,6 @@
 <template>
   <header>
-    <div class="header-mobile">
+    <div class="header-mobile" :style="bgcMobile">
       <div
         class="mobile-small-filter"
         v-if="isMobileSmallFilter"
@@ -14,15 +14,33 @@
           <i class="fas fa-search"></i>
         </button>
       </div>
-      <div v-if="!isMobileSmallFilter && !isMenuOpen" :style="bigFilter">
+      <div v-if="!isMobileSmallFilter && !isMenuOpen && (home || explore)">
         <stay-filter key="filter" />
       </div>
-      <div class="login-btn" @click="isMenuOpen = !isMenuOpen">
+      <div
+        v-if="isMobileSmallFilter"
+        class="login-btn"
+        @click="isMenuOpen = !isMenuOpen"
+      >
         <div class="bar">
-          <i v-if="home || explore" class="fa fa-bars" aria-hidden="true" :style="colorBar"></i>
+          <i
+            v-if="home"
+            class="fa fa-bars"
+            aria-hidden="true"
+            :style="colorBar"
+          ></i>
         </div>
         <div>
           <login-menu v-if="isMenuOpen" />
+        </div>
+      </div>
+      <div v-if="isMobileSmallFilter" class="back-btn" @click="backToPrev()">
+        <div class="bar">
+          <i
+            v-if="!home"
+            class="fa fa-solid fa-chevron-right"
+            :style="colorBar"
+          ></i>
         </div>
       </div>
     </div>
@@ -42,7 +60,7 @@
         </div>
         <div
           class="small-filter"
-          v-if="isSmallFilter && this.home || this.explore"
+          v-if="(isSmallFilter && this.home) || this.explore"
           :style="smallFilter"
           @click="isSmallFilter = !isSmallFilter"
         >
@@ -78,7 +96,13 @@
           </div>
         </div>
       </nav>
-      <div v-if="(!isSmallFilter && !isMenuOpen) || (!isMobileSmallFilter && !isMenuOpen)" :style="bigFilter">
+      <div
+        v-if="
+          (!isSmallFilter && !isMenuOpen) ||
+          (!isMobileSmallFilter && !isMenuOpen)
+        "
+        :style="bigFilter"
+      >
         <stay-filter key="filter" />
       </div>
     </div>
@@ -112,9 +136,14 @@ export default {
   },
   methods: {
     handleScroll(event) {
-      this.isScroll = window.scrollY !== 0 ? true : false;      
+      this.isScroll = window.scrollY !== 0 ? true : false;
       this.isSmallFilter = !this.home || this.isScroll ? true : false;
-      this.isMobileSmallFilter = this.home || this.isScroll ? true : false;
+      this.isMobileSmallFilter =
+        this.home || this.explore || this.isScroll ? true : false;
+    },
+    backToPrev() {
+      console.log(this.$route);
+      this.$router.go(-1);
     },
   },
 
@@ -147,6 +176,11 @@ export default {
         ? "background-color: #fff; color: rgb(255, 55, 92)"
         : "background-color: #000000; color: #fff";
     },
+    bgcMobile() {
+      return (this.$route.name == "home" && this.isScroll) || this.$route.name == "stayApp"
+        ? "background-color: #fff; color: rgb(255, 55, 92)"
+        : "background-color: transparent; color: #fff";
+    },
     routerClr() {
       return this.$route.name !== "home" || this.isScroll
         ? "color: #000000"
@@ -159,7 +193,9 @@ export default {
       return this.isSmallFilter ? "display: block;" : "display: none;";
     },
     mobileSmallFilter() {
-      return (this.isMobileSmallFilter && (this.home || this.explore)) ? "display: block;" : "display: none;";
+      return this.isMobileSmallFilter && (this.home || this.explore)
+        ? "display: block;"
+        : "display: none;";
     },
     searchLocation() {
       this.trip = this.$store.getters.trip;
@@ -186,9 +222,11 @@ export default {
         ? user.imgUrl
         : "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,w_100,h_100,g_face/v1638252722/cats/nmlj2xgdlobdsrf7q22y.jpg";
     },
-    colorBar(){
-      return this.$route.name !== "home" ? "color: #000000" : "color: #fff";
-    }
+    colorBar() {
+      return this.$route.name !== "home" || this.isScroll
+        ? "color: #000000"
+        : "color: #fff";
+    },
   },
 };
 </script>

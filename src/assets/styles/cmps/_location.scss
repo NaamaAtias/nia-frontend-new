@@ -14,6 +14,10 @@
         cursor: pointer;
         font-size: 12px;
         width: 70%;
+        @include for-mobile-layout {
+            width: 90%;
+            top: 115%;
+        }
     }
     .location-card{
         display: flex;

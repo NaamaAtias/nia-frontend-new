@@ -21,7 +21,7 @@
         .small-filter-txt{
             flex-direction: row;
             text-decoration: none;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 500;
             letter-spacing: 0.04em;
             color: $clr5;
@@ -38,7 +38,7 @@
         button.small-filter-explore{
             position: fixed;
             top: 1.5px;
-            margin: 1px;
+            // margin: 1px;
             right: 1.5px;
             width: 25px;
             height: 25px;
@@ -72,12 +72,20 @@
         border-radius: 50px;
         border: 1px solid $clr3;
         box-shadow: 0.5px 0.5px 0.5px $clr3;
+        @include for-mobile-layout {
+            margin-top: 5px;
+            z-index: 1000;
+        }
 
         .filter-hover{
             padding: 14px 0px 0px;
             width: 25%;
             text-align: left;
             z-index: 100;
+
+            @include for-mobile-layout {
+                padding: 14px;
+            }
             
             &.filter-location{
                 padding-left: 1em;
@@ -86,6 +94,9 @@
                 width: 100%;
                 .filter-input{
                     padding-left: 1.2rem;
+                }
+                @include for-mobile-layout {
+                    width: 500%;
                 }
             }
             &.filter-check-in, &.filter-check-out{
@@ -111,12 +122,15 @@
                     padding-left: 1.2rem;
                 }
                 @include for-mobile-layout {
+                    justify-content: center;
+
                     .filter-box-guests {
                         display: none;
                     }
                     .search-btn-container {
                             height: 35px;
                             width: 35px;
+                            margin-right: 10px;
                         .filter-explore {
                             height: 100%;
                             width: 100%;
@@ -161,6 +175,9 @@
             letter-spacing: 0.04em;
             text-align: left;
             padding-left: 1.7em;
+            @include for-mobile-layout {
+                display: none;
+            }
          }
         
         .filter-input{
@@ -171,6 +188,9 @@
             font-size: 14px;
             text-align: left;
             padding-left: 6px;
+            @include for-mobile-layout {
+                font-size: 1.2em;
+            }
         }
         
         .filter-space{
@@ -189,300 +209,6 @@
         }
         }
     }
-
-    // .max-filter {
-    //         display: block;
-    //         width: 225px;
-    //         background-color: $clr6;     
-    //         display: flex;
-    //         flex-direction: column;
-    //         opacity: 1;
-    //         color: $clr5;
-    //         letter-spacing: 0.04em;
-    //         margin: auto;
-    //         text-align: left;
-    //         border-radius: 10px;
-    //         border: 1px solid $clr3;
-    //         box-shadow: 0.5px 0.5px 0.5px $clr3;
-    //         padding-top: 6px;
-    //         z-index: 100;
-    //         margin-top: 10px; 
-    
-    // >* {
-    //     flex-grow:1;
-    // }
-            
-//             .filter-hover{
-//                 padding: 12px 0px 6px;
-//                 text-align: left;
-//                 font-size: 12px;
-//                 gap: 1rem;
-                            
-//                 .filter-input, .mx-input{
-//                     font-size: 11px;
-//                 }
-                
-//                 &.filter-location{
-//                     .filter-input{
-//                         padding-left: 1.2rem;
-//                         text-transform: capitalize;
-//                         z-index: 1;
-//                     }
-//                 }
-//                 &.filter-check-in, &.filter-check-out{
-//                     .filter-input{
-//                         padding-left: 0.7rem;
-//                     }
-//                 }
-            
-//                 &.filter-guests{
-//                     display: flex;
-//                     flex-direction: row;
-//                     justify-content: space-between;
-//                     padding-right: 0.5em;
-//                     .filter-input{
-//                         padding-left: 1.2rem;
-//                     }
-//                     padding-bottom: 0;              
-//                 }
-//             }
-            
-//             button.filter-explore{
-//                 align-self: center;
-//                 padding: 0;
-//                 width: 48px;
-//                 height: 48px;
-//                 border-radius: 50%;
-//                 border: none;
-//                 background-color: $clr1;
-//                 opacity: 2;
-//                 margin-bottom: 0.4rem;    
-//                 .fa-search{
-//                     color: $clr6;
-//                     font-size: 16px;
-//                     font-weight: 600;
-//                 }
-//             }
-
-//             .guests-note{
-//                 max-width: 150px;
-//             }
-            
-//             .filter-title{
-//                 padding: 0px 0px 2px;
-//                 cursor: pointer;
-//                 font-size: 12px;
-//                 font-weight: 600;
-//                 line-height: 10px;
-//                 letter-spacing: 0.04em;
-//                 text-align: left;
-//                 padding-left: 1.7em;
-//                 text-transform: capitalize;
-//                 // width: 150px;
-//             }
-
-            
-//             .filter-input{
-//                 margin-top: 0.3rem;
-//                 color: $clr4;
-//                 font-weight: 400;
-//                 width: 100%;
-//                 font-size: 12px;
-//                 text-align: left;
-//                 padding-left: 6px;
-//             }
-            
-//             .search-btn-container{
-//                 align-self: center;
-//             }
-//         }
-
-// }
-
-// @media (min-width: 830px) and (max-width: 960px){ 
-//     .mobile-small-filter *{
-//         display: none;
-//     }
-//     .small-filter {
-//     display: flex;
-//     flex-direction: row;
-//     border: 1px solid $clr3;
-//     box-shadow: 0.5px 0.5px 0.5px $clr3;
-//     border-radius: 50px;
-//     padding: 10px;
-//     cursor: pointer;
-//     max-width: 100%;
-//     .small-filter-txt{
-//         flex-direction: row;
-//         text-decoration: none;
-//         font-size: 14px;
-//         font-weight: 500;
-//         letter-spacing: 0.04em;
-//         color: $clr5;
-//         padding-right: 10px;
-//         padding-left: 7px;
-//         text-transform: capitalize;
-        
-//     }
-//     .small-filter-txt:nth-child(2){
-//         border-right: 1px solid $clr3;
-//         border-left: 1px solid $clr3;
-//         padding: 0 10px;      
-//     }
-//     .small-filter-txt:nth-child(3){
-//         padding: 0 10px;      
-//     }
-//     button.small-filter-explore{
-//         padding: 0;
-//         width: 30px;
-//         height: 30px;
-//         border-radius: 50%;
-//         border: none;
-//         background-color: $clr1;
-//         opacity: 2; 
-//         a.fa-search{
-//             color: $clr6;
-//             font-size: 14px;
-//             font-weight: 400;
-//         }
-//     }
-// }
-
-// header nav a:last-of-type{
-// padding: 0;
-// }
-// .fa-search:before{
-//     color: $clr6;
-// }
-
-// .max-filter{    
-//     width: 600px;
-//     height: 66px;
-//     background-color: $clr6;     
-//     display: flex;
-//     flex-direction: row;
-//     opacity: 1;
-//     color: $clr5;
-//     letter-spacing: 0.04em;
-//     margin: auto;
-//     text-align: left;
-//     border-radius: 50px;
-//     border: 1px solid $clr3;
-//     box-shadow: 0.5px 0.5px 0.5px $clr3;
-//     z-index: 100;
-// }
-
-// .filter-hover{
-//     padding: 12px 0px 0px;
-//     width: 25%;
-//     text-align: left;
-//     font-size: 12px;
-//     z-index: 100;
-
-//     .filter-input, .mx-input{
-//         font-size: 11px;
-//     }
-    
-//     &.filter-location{
-//         padding-left: 1em;
-//         border-top-left-radius: 50px;
-//         border-bottom-left-radius: 50px;
-//         width: 100%;
-//         .filter-input{
-//             padding-left: 1.2rem;
-//         }
-//     }
-//     &.filter-check-in, &.filter-check-out{
-//         width: 20%;
-//         .filter-input{
-//             padding-left: 0.7rem;
-//         }
-//     }
-
-//     &.filter-guests{
-//         display: flex;
-//         flex-direction: row;
-//         justify-content: space-between;
-//         width: 100%;
-//         border-top-right-radius: 50px;
-//         border-bottom-right-radius: 50px;
-//         padding-right: 0.5em;
-//         .filter-input{
-//             padding-left: 1.2rem;
-//         }              
-//     }
-
-
-// }
-
-// .guests{
-//     min-width: 400px;
-// }
-
-// .guests-note{
-//     max-width: 150px;
-// }
-
-// .filter-hover:hover{
-//     background-color: $clr3;
-//     border-radius: 50px;
-//     z-index: 100;
-//     .mx-input{
-//         background-color: rgba(128, 128, 128, 0);
-//        }
-// }
-
-// button.filter-explore{
-//     align-self: center;
-//     padding: 0;
-//     width: 48px;
-//     height: 48px;
-//     border-radius: 50%;
-//     border: none;
-//     background-color: $clr1;
-//     opacity: 2;
-//     margin-bottom: 0.8rem;
-
-//     .fa-search{
-//         color: $clr6;
-//         font-size: 16px;
-//         font-weight: 600;
-//     }    
-    
-// }
-
-// .filter-title{
-//     padding: 0px 0px 2px;
-//     cursor: pointer;
-//     font-size: 12px;
-//     font-weight: 600;
-//     line-height: 16px;
-//     letter-spacing: 0.04em;
-//     text-align: left;
-//     padding-left: 1.7em;
-//  }
-
-// .filter-input{
-//     margin-top: 0.5rem;
-//     color: $clr4;
-//     font-weight: 400;
-//     width: 100%;
-//     font-size: 14px;
-//     text-align: left;
-//     padding-left: 6px;
-// }
-
-// .filter-space{
-//  background-color: $clr3;
-//  width: 2px;
-//  margin-top: 1rem;
-//  margin-bottom: 1rem;
-// }
-
-// .search-btn-container{
-//     align-self: center;
-// }
-// }
 
 @media (min-width: 960px){
     .mobile-small-filter *{
