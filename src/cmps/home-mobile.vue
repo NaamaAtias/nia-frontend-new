@@ -1,124 +1,36 @@
 <template>
   <section>
-    <div :style="homeBgc">
-      <div>
-        <div class="home-img-desk main-layout">
-          <router-link to="/stay">
-            <div class="home-img-grid">
-              <div class="home-img">
-                <img src="../assets/img/home-img.jpg" />
-              </div>
-              <p>
-                Discover<br />
-                stays to live,<br />
-                or just relax.
-              </p>
-            </div>
-          </router-link>
-        </div>
-        <div class="home-img-mobile">
-          <router-link to="/stay">
-            <div class="home-img-mobile-grid">
-              <div class="home-img">
-                <img src="../assets/img/home-img.jpg" />
-              </div>
-              <p>Live anywhere.</p>
-            </div>
-          </router-link>
-        </div>
-      </div>
-    </div>
     <div class="home-explore main-layout">
-      <!-- <home-mobile class="home-mobile"/> -->
-      <div class="explore-location">
+      <div class="explore-location-mobile">
         <h1>Top rated</h1>
         <div class="explore-locations top">
-          <div
-            class="explore-location"
-            @click.stop="goToDetails('61b20f7868826438744c6dbb')"
-          >
-            <img
-              src="https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,h_300,w_257,g_face/v1638306503/castle/pexels-super-claudioo-6697718_lxbsuh.jpg"
-              alt=""
-            />
-            <h6>
-              <i
-                class="fas fa-star"
-                style="font-size: 14px; color: rgb(255, 55, 92)"
-              ></i
-              ><span>{{ avgStayRateJerusalem }}</span>
-              <span class="reviewsInTopRated"
-                >({{ reviewsJerusalem }} reviews)</span
-              ><br />
-              Holy City, Jerusalem
-            </h6>
-          </div>
-          <div
-            class="explore-location"
-            @click.stop="goToDetails('61b20f7868826438744c6dcb')"
-          >
-            <img
-              src="https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,h_300,w_257,g_face/v1638304898/New%20York/pexels-max-vakhtbovych-7195534_mqb90n.jpg"
-              alt=""
-            />
-            <h6>
-              <i
-                class="fas fa-star"
-                style="font-size: 14px; color: rgb(255, 55, 92)"
-              ></i
-              ><span>{{ avgStayRateNY }}</span>
-              <span class="reviewsInTopRated">({{ reviewsNY }} reviews)</span
-              ><br />
-              Life in New York, New York
-            </h6>
-          </div>
-          <div
-            class="explore-location"
-            @click.stop="goToDetails('61b20f7868826438744c6dc3')"
-          >
-            <img
-              src="https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,h_300,w_257,g_face/v1638304278/London/pexels-daria-shevtsova-3326213_hwgyif.jpg"
-              alt=""
-            />
-            <h6>
-              <i
-                class="fas fa-star"
-                style="font-size: 14px; color: rgb(255, 55, 92)"
-              ></i
-              ><span>{{ avgStayRateBoutique }}</span>
-              <span class="reviewsInTopRated"
-                >({{ reviewsBoutique }} reviews)</span
-              ><br />
-              Boutique studio, Budapest
-            </h6>
-          </div>
-          <div
-            class="explore-location"
-            @click.stop="goToDetails('61b2f4c8f6d9df0cb72a14a1')"
-          >
-            <img
-              src="https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,h_300,w_257,g_face/v1638304311/London/pexels-connor-danylenko-3075532_ulswcp.jpg"
-              alt=""
-            />
-            <h6>
-              <i
-                class="fas fa-star"
-                style="font-size: 14px; color: rgb(255, 55, 92)"
-              ></i
-              ><span>{{ avgStayRateLondon }}</span>
-              <span class="reviewsInTopRated"
-                >({{ reviewsLondon }} reviews)</span
-              ><br />
-              London Bridge, London
-            </h6>
+          <div class="top-rated-locations">
+            <el-carousel trigger="click" :autoplay="false" :loop="false">
+              <el-carousel-item v-for="item in topRated" :key="item.id">
+                <div class="carousel-top explore-location-mobile" @click.stop="goToDetails(item.id)">
+                  <img :src="item.url" alt="" ref="img" />
+                  <h6>
+                    <i
+                      class="fas fa-star"
+                      style="font-size: 14px; color: rgb(255, 55, 92)"
+                    ></i
+                    ><span>{{ item.avg }}</span>
+                    <span class="reviewsInTopRated"
+                      >({{ item.reviews }} reviews)</span
+                    ><br />
+                    {{ item.title }}
+                  </h6>
+                </div>
+              </el-carousel-item>
+            </el-carousel>
           </div>
         </div>
       </div>
-      <div class="explore-location">
+      <div class="explore-location-mobile">
         <h1>Popular destinations</h1>
         <div class="explore-locations">
           <div
-            class="explore-location"
+            class="explore-location-mobile"
             @click.stop="goToStays('city', 'London')"
           >
             <img
@@ -128,7 +40,7 @@
             <h6>London</h6>
           </div>
           <div
-            class="explore-location"
+            class="explore-location-mobile"
             @click.stop="goToStays('city', 'New York')"
           >
             <img
@@ -139,7 +51,7 @@
           </div>
 
           <div
-            class="explore-location"
+            class="explore-location-mobile"
             @click.stop="goToStays('city', 'Budapest')"
           >
             <img
@@ -149,7 +61,7 @@
             <h6>Budapest</h6>
           </div>
           <div
-            class="explore-location"
+            class="explore-location-mobile"
             @click.stop="goToStays('city', 'Jerusalem')"
           >
             <img
@@ -160,11 +72,11 @@
           </div>
         </div>
       </div>
-      <div class="explore-location">
+      <div class="explore-location-mobile">
         <h1>Unique stays</h1>
         <div class="explore-locations">
           <div
-            class="explore-location"
+            class="explore-location-mobile"
             @click.stop="goToStays('type', 'houseboat')"
           >
             <img
@@ -174,7 +86,7 @@
             <h6>Houseboat</h6>
           </div>
           <div
-            class="explore-location"
+            class="explore-location-mobile"
             @click.stop="goToStays('type', 'castle')"
           >
             <img
@@ -183,7 +95,10 @@
             />
             <h6>Castle</h6>
           </div>
-          <div class="explore-location" @click.stop="goToStays('type', 'luxe')">
+          <div
+            class="explore-location-mobile"
+            @click.stop="goToStays('type', 'luxe')"
+          >
             <img
               src="https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,h_300,w_257,g_face/v1638307307/Paris/pexels-maria-orlova-4916534_jyewl6.jpg"
               alt=""
@@ -191,7 +106,7 @@
             <h6>Luxe</h6>
           </div>
           <div
-            class="explore-location"
+            class="explore-location-mobile"
             @click.stop="goToStays('type', 'apartment')"
           >
             <img
@@ -213,9 +128,7 @@
 </template>
 
 <script>
-import homeMobile from '../cmps/home-mobile.vue';
 export default {
-  components: { homeMobile },
   created() {
     window.scrollTo(0, 0);
   },
@@ -231,6 +144,36 @@ export default {
       reviewsLondon: "",
       avgStayRateBoutique: "",
       reviewsBoutique: "",
+      topRated: [
+        {
+          id: "61b20f7868826438744c6dbb",
+          url: "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,h_300,w_257,g_face/v1638304311/London/pexels-connor-danylenko-3075532_ulswcp.jpg",
+          title: "Holy City, Jerusalem",
+          avg: this.avgStayRateJerusalem,
+          reviews: this.reviewsJerusalem,
+        },
+        {
+          id: "61b20f7868826438744c6dcb",
+          url: "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,h_300,w_257,g_face/v1638304898/New%20York/pexels-max-vakhtbovych-7195534_mqb90n.jpg",
+          title: "Life in New York, New York",
+          avg: this.avgStayRateNY,
+          reviews: this.reviewsInTopRated,
+        },
+        {
+          id: "61b20f7868826438744c6dc3",
+          url: "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,h_300,w_257,g_face/v1638304278/London/pexels-daria-shevtsova-3326213_hwgyif.jpg",
+          title: "Boutique studio, Budapest",
+          avg: this.avgStayRateBoutique,
+          reviews: this.reviewsBoutique,
+        },
+        {
+          id: "61b2f4c8f6d9df0cb72a14a1",
+          url: "https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,h_300,w_257,g_face/v1638304311/London/pexels-connor-danylenko-3075532_ulswcp.jpg",
+          title: "London Bridge, London",
+          avg: this.avgStayRateLondon,
+          reviews: this.reviewsLondon,
+        },
+      ],
     };
   },
   async created() {
@@ -280,12 +223,6 @@ export default {
       this.$router.push("/stay/");
     },
   },
-  computed: {
-    homeBgc() {
-      return this.isScroll
-        ? "background-color: #fff"
-        : "background-color: #000000";
-    },
-  },
+  computed: {},
 };
 </script>
