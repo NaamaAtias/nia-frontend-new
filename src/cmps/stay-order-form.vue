@@ -176,11 +176,13 @@ export default {
       this.isAvailable = false;
     },
     changeStartDate(date) {
+      console.log("changeStartDate",date);//naama
       this.startDate = date.getTime();
       const dataStr = date.toString();
       this.currTrip.startDate = dataStr.slice(4, 10);
     },
     changeEndDate(date) {
+      console.log("changeEndDate",date);//naama
       this.endDate = date.getTime();
       const dataStr = date.toString();
       this.currTrip.endDate = dataStr.slice(4, 10);

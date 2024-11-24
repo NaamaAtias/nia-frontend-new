@@ -35,7 +35,7 @@
         <div class="explore-locations top">
           <div
             class="explore-location"
-            @click.stop="goToDetails('61b20f7868826438744c6dbb')"
+            @click.stop="goToDetails('6739b673a676c4e233cb614e')"
           >
             <img
               src="https://res.cloudinary.com/db0wqgy42/image/upload/c_thumb,h_300,w_257,g_face/v1638306503/castle/pexels-super-claudioo-6697718_lxbsuh.jpg"

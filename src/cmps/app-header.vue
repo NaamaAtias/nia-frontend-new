@@ -80,10 +80,10 @@
           <router-link class="hover" :style="routerClr" to="/stay"
             >Explore</router-link
           >
-          <router-link class="hover" :style="routerClr" to="/stay/edit/:id"
+          <router-link class="invisible" :style="routerClr" to="/stay/edit/:id"
             >Become a Host</router-link
           >
-          <div class="login-btn" @click="isMenuOpen = !isMenuOpen">
+          <div class="login-btn" @click="isMenuOpen = !isMenuOpen" @blur="isMenuOpen=false">
             <div class="bar">
               <i class="fa fa-bars" aria-hidden="true"></i>
             </div>

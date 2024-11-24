@@ -139,6 +139,7 @@ export default {
   components: { datePicker, location, guests },
   methods: {
     addStartDate(date) {
+      console.log("addStartDate/stay-filter",date);//naama
       this.startDate = date.getTime();
       const dataStr = date.toString();
       this.searchData.startDate = dataStr.slice(4, 10);

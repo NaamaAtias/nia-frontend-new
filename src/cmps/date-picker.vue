@@ -28,6 +28,7 @@ export default {
   },
   methods: {
     setDate(input) {
+      console.log("setDate/date-picker",input);//naama
       this.$emit("startDate", input);
       this.$emit("endDate", input);
     },
